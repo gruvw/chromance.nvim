@@ -16,16 +16,16 @@ function M.get(c, config, _)
     NeoTreeStatusLine = { bg = sidebar_bg, fg = sidebar_bg },
     NeoTreeCursor = {
       bg = c.list.activeSelectionBackground,
-      bg_base = sidebar_bg,
+      -- bg_base = sidebar_bg,
     },
     NeoTreeCursorLine = {
       bg = c.list.activeSelectionBackground,
-      bg_base = sidebar_bg,
+      -- bg_base = sidebar_bg,
       bold = true,
     },
     NeoTreeCursorLineSign = {
       bg = c.list.activeSelectionBackground,
-      bg_base = sidebar_bg,
+      -- bg_base = sidebar_bg,
     },
     NeoTreeWinSeparator = {
       bg = c.editor.background,

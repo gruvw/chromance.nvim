@@ -1,16 +1,15 @@
 ---@class Helper
 local M = {}
 
+-- TODO clean color helper file
+
 ---@param background? HexColor | "NONE"
 local function get_blend_background(background)
   if background ~= nil and background ~= "NONE" then
     return background
   end
 
-  local filter = require("chromance.colorscheme").filter
-  ---@type Palette
-  local c = require("chromance.colorscheme.palette." .. filter)
-  return c.background
+  return "#222222"
 end
 
 ---@param hex HexColor

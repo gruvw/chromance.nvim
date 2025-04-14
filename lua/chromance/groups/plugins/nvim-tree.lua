@@ -27,7 +27,7 @@ function M.get(c, config, _)
     NvimTreeSpecialFile = { fg = c.white },
     NvimTreeCursorLine = {
       bg = c.list.activeSelectionBackground,
-      bg_base = sidebar_bg,
+      -- bg_base = sidebar_bg,
     },
 
     NvimTreeGitIgnored = { fg = c.gitDecoration.ignoredResourceForeground },

@@ -145,7 +145,7 @@ M.setup = function(c, config, hp)
     }, -- Popup menu: scrollbar.
     PmenuThumb = {
       bg = c.scrollbarSlider.hoverBackground,
-      bg_base = c.editorSuggestWidget.background,
+      -- bg_base = c.editorSuggestWidget.background,
     },
     -- Question = { bg = C.bg, fg = C.gray }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine = { bg = C.bg }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.

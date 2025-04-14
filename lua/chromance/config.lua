@@ -1,7 +1,8 @@
-local util = require("chromance.util")
+local M = {}
+
 ---@class ChromanceOptions
 ---@field plugins? PluginConfig
-local config = {
+local default_options = {
   transparent_background = false,
   terminal_colors = true,
   devicons = false,
@@ -37,30 +38,16 @@ local config = {
 }
 
 ---@class Config: ChromanceOptions
-local M = setmetatable({}, {
-  __index = function(_, k)
-    return rawget(config or {}, k)
-  end,
-  __newindex = function(t, k, v)
-    if rawget(config or {}, k) ~= nil then
-      error("chromance.nvim: Attempt to change option " .. k .. " directly, use `setup` instead")
-    else
-      rawset(t, k, v)
-    end
-  end,
-  __call = function(t, ...)
-    return t.setup(...)
-  end,
-})
+M.options = nil
 
 ---@param options? ChromanceOptions
 M.setup = function(options)
-  config = vim.tbl_deep_extend("force", config, options or {})
+  M.options = vim.tbl_deep_extend("force", {}, default_options, options or {})
 end
 
 ---@param options? ChromanceOptions
 M.extend = function(options)
-  config = vim.tbl_deep_extend("force", {}, config or options, options or {})
+  return options and vim.tbl_deep_extend("force", {}, M.options, options) or M.options
 end
 
 M.setup()

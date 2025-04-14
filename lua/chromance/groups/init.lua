@@ -1,7 +1,8 @@
-local Helper = require("chromance.color_helper")
-local Util = require("chromance.util")
+local Helper = require("chromance.util.color_helper")
 local Config = require("chromance.config")
-local Colorscheme = require("chromance.colorscheme")
+local terminal = require("chromance.util.terminal")
+
+-- TODO clean up group init file
 
 ---@class ChromanceTheme
 ---@field mini chromance.theme.plugins.mini
@@ -9,7 +10,7 @@ local M = {}
 
 setmetatable(M, {
   __index = function(_, k)
-    local plugin = require("chromance.theme.plugins" .. k)
+    local plugin = require("chromance.groups.plugins" .. k)
     return plugin
   end,
 })
@@ -62,26 +63,24 @@ local PLUGINS = {
 ---@param colors Colors
 ---@return HighlightGroups
 local function get_hl_group_tbl(colors)
-  local editor = require("chromance.theme.editor").setup(colors, Config, Helper)
-  local syntax = require("chromance.theme.syntax").setup(colors, Config, Helper)
-  local semantic_tokens = require("chromance.theme.semantic_tokens").setup(colors, Config, Helper)
-  local extra = require("chromance.theme.extra").setup(colors, Config, Helper)
+  local editor = require("chromance.groups.editor").setup(colors, Config.options, Helper)
+  local syntax = require("chromance.groups.syntax").setup(colors, Config.options, Helper)
+  local semantic_tokens = require("chromance.groups.semantic_tokens").setup(colors, Config.options, Helper)
   --  The HlGroups class represents a collection of highlighter groups.
   --  Each group is identified by a string key (e.g. "editor") and holds the result of calling the `setup` function of a corresponding highlighter module (e.g. `editor.setup`).
   --  The class has a single field, `hl_groups`, which is a table containing the highlighter groups.
   --- @type HighlightGroups
   local hl_group_tbl = {}
-  hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, editor, syntax, semantic_tokens, extra)
+  hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, editor, syntax, semantic_tokens)
   for _, name in ipairs(PLUGINS) do
     local config_ok, plugin = xpcall(require, function(...)
-      Util.log("Failed to load highlight group: " .. name .. "\n" .. debug.traceback(...), "error")
       return ...
-    end, "chromance.theme.plugins." .. name)
+    end, "chromance.groups.plugins." .. name)
     if config_ok then
-      hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, Config, Helper))
+      hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, Config.options, Helper))
     end
   end
-  hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, Config.override and Config.override(colors) or {})
+  -- hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, Config.override and Config.override(colors) or {})
   return hl_group_tbl
 end
 
@@ -93,11 +92,11 @@ M.highlight_groups = function(colors)
   local hl_groups = get_hl_group_tbl(colors)
 
   if Config.terminal_colors then
-    Util.extra.terminal(Colorscheme)
+    terminal.terminal(colors)
   end
 
   if Config.devicons then
-    devicons.setup(Colorscheme)
+    devicons.setup(colors)
   end
 
   return hl_groups
