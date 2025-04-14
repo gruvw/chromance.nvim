@@ -1,6 +1,4 @@
-local Util = require("chromance.util")
-local Config = require("chromance.config")
-
+---@class Colors
 local colors = {
   dark2 = "#131313",
   dark1 = "#191919",
@@ -18,25 +16,6 @@ local colors = {
   dimmed4 = "#525053",
   dimmed5 = "#363537",
 };
-
----@class ColorschemeOptions
-local cs = {}
-
----@class Colors: ColorschemeOptions
-local M = setmetatable({
-  filter = Config.filter,
-}, {
-  __index = function(m, k)
-    local color = rawget(cs or {}, k)
-    if color == nil then
-      cs = m()
-    end
-    return rawget(cs or {}, k)
-  end,
-  __call = function(t, ...)
-    return t.get(...)
-  end,
-})
 
 local hp = require("chromance.color_helper")
 
@@ -220,26 +199,9 @@ M.get = function()
     foreground = p.accent2,
   }
 
-  cs.base = {
-    dark = p.dark2, -- "#19181a"
-    black = p.dark1, --"#221f22",
-    red = p.accent1, -- "#ff6188",
-    green = p.accent4, -- "#a9dc76",
-    yellow = p.accent3, -- "#ffd866",
-    blue = p.accent2, -- "#fc9867",
-    magenta = p.accent6, -- "#ab9df2",
-    cyan = p.accent5, -- "#78dce8",
-    white = p.text, -- "#fcfcfa",
-    dimmed1 = p.dimmed1, -- "#c1c0c0",
-    dimmed2 = p.dimmed2, -- "#939293",
-    dimmed3 = p.dimmed3, -- "#727072",
-    dimmed4 = p.dimmed4, -- "#5b595c",
-    dimmed5 = p.dimmed5, -- "#403e41",
-  }
-
   cs = vim.tbl_deep_extend("force", cs, Config.overrideScheme and Config.overrideScheme(cs, p, Config, hp) or {})
 
   return cs
 end
 
-return M
+return colors
