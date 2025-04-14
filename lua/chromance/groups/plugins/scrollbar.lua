@@ -5,7 +5,7 @@ function M.get(c, _, _)
   return {
     ScrollbarHandle = {
       bg = c.scrollbarSlider.hoverBackground,
-      fg = c.base.white,
+      fg = c.white,
     },
     ScrollbarCursorHandle = { bg = c.scrollbarSlider.hoverBackground },
     ScrollbarCursor = {
@@ -14,7 +14,7 @@ function M.get(c, _, _)
     },
 
     ScrollbarSearchHandle = { bg = c.scrollbarSlider.hoverBackground },
-    ScrollbarSearch = { bg = c.editor.background, fg = c.base.white },
+    ScrollbarSearch = { bg = c.editor.background, fg = c.white },
 
     ScrollbarErrorHandle = {
       bg = c.scrollbarSlider.hoverBackground,

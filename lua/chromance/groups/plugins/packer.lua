@@ -3,14 +3,14 @@ local M = {}
 --- @param c Colors The color palette
 function M.get(c, _, _)
   return {
-    packerString = { fg = c.base.blue },
-    packerHash = { fg = c.base.blue },
-    packerOutput = { fg = c.base.yellow },
-    packerRelDate = { fg = c.base.magenta },
-    packerSuccess = { fg = c.base.green },
-    packerStatusSuccess = { fg = c.base.green },
-    packerStatusFail = { fg = c.base.red, bg = c.editorHoverWidget.background },
-    packerFail = { fg = c.base.red, bg = c.editorHoverWidget.background },
+    packerString = { fg = c.blue },
+    packerHash = { fg = c.blue },
+    packerOutput = { fg = c.yellow },
+    packerRelDate = { fg = c.magenta },
+    packerSuccess = { fg = c.green },
+    packerStatusSuccess = { fg = c.green },
+    packerStatusFail = { fg = c.red, bg = c.editorHoverWidget.background },
+    packerFail = { fg = c.red, bg = c.editorHoverWidget.background },
   }
 end
 

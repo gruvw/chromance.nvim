@@ -4,8 +4,8 @@ local M = {}
 function M.get(c, _, _)
   return {
     WildMenu = {
-      bg = c.base.yellow,
-      fg = c.base.black,
+      bg = c.yellow,
+      fg = c.black,
       bold = true,
       underline = false,
     },

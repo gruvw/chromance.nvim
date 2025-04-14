@@ -10,19 +10,19 @@ function M.get(c, _, _)
     },
     NoiceCmdlinePopupBorderSearch = {
       bg = c.editor.background,
-      fg = c.base.blue,
+      fg = c.blue,
     },
-    NoiceCmdlineIconSearch = { fg = c.base.blue },
-    NoiceFormatProgressDone = { bg = c.base.yellow, fg = c.base.black, bold = true },
-    NoiceFormatProgressTodo = { bg = c.base.dimmed3, fg = c.base.dimmed5 },
-    NoiceLspProgressTitle = { fg = c.base.dimmed2 },
-    NoiceLspProgressClient = { fg = c.base.cyan },
+    NoiceCmdlineIconSearch = { fg = c.blue },
+    NoiceFormatProgressDone = { bg = c.yellow, fg = c.black, bold = true },
+    NoiceFormatProgressTodo = { bg = c.dimmed3, fg = c.dimmed5 },
+    NoiceLspProgressTitle = { fg = c.dimmed2 },
+    NoiceLspProgressClient = { fg = c.cyan },
     NoiceConfirm = { bg = c.notifications.background, fg = c.notifications.foreground },
     NoiceConfirmBorder = { bg = c.notifications.background, fg = c.notifications.border },
     NoiceFormatConfirm = { bg = c.button.background, fg = c.button.foreground },
     NoiceFormatConfirmDefault = { bg = c.button.hoverBackground, fg = c.button.foreground },
     NoiceSplit = { bg = c.editor.background },
-    NoiceMini = { fg = c.base.dimmed4 },
+    NoiceMini = { fg = c.dimmed4 },
   }
 end
 

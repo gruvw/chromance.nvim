@@ -94,11 +94,11 @@ function M.get(c, config, hp)
     },
     BufferLineBackground = {
       bg = tab.inactiveBackground,
-      fg = hp.blend(c.base.white, normalAlpha, tab.inactiveBackground),
+      fg = hp.blend(c.white, normalAlpha, tab.inactiveBackground),
     },
     BufferLineBufferVisible = {
       bg = tab.unfocusedActiveBackground,
-      fg = hp.blend(c.base.white, visibleAlpha, c.editor.background),
+      fg = hp.blend(c.white, visibleAlpha, c.editor.background),
     },
     -- Duplicate
     BufferLineDuplicateSelected = {
@@ -107,11 +107,11 @@ function M.get(c, config, hp)
     },
     BufferLineDuplicate = {
       bg = tab.inactiveBackground,
-      fg = hp.blend(c.base.white, normalAlpha * duplicateAlpha, tab.inactiveBackground),
+      fg = hp.blend(c.white, normalAlpha * duplicateAlpha, tab.inactiveBackground),
     },
     BufferLineDuplicateVisible = {
       bg = tab.unfocusedActiveBackground,
-      fg = hp.blend(c.base.white, visibleAlpha * duplicateAlpha, tab.unfocusedActiveBackground),
+      fg = hp.blend(c.white, visibleAlpha * duplicateAlpha, tab.unfocusedActiveBackground),
     },
     -- CloseButton
     BufferLineCloseButtonSelected = {
@@ -120,11 +120,11 @@ function M.get(c, config, hp)
     },
     BufferLineCloseButton = {
       bg = tab.inactiveBackground,
-      fg = c.base.white,
+      fg = c.white,
     },
     BufferLineCloseButtonVisible = {
       bg = tab.unfocusedActiveBackground,
-      fg = c.base.white,
+      fg = c.white,
     },
     -- separator
     BufferLineSeparatorSelected = {
@@ -146,11 +146,11 @@ function M.get(c, config, hp)
     },
     BufferLineModified = {
       bg = tab.inactiveBackground,
-      fg = c.base.white,
+      fg = c.white,
     },
     BufferLineModifiedVisible = {
       bg = tab.unfocusedActiveBackground,
-      fg = c.base.white,
+      fg = c.white,
     },
     -- Warning
     BufferLineWarningSelected = {
@@ -251,19 +251,19 @@ function M.get(c, config, hp)
     -- Pick
     BufferLinePickSelected = {
       bg = tab.activeBackground,
-      fg = c.base.red,
+      fg = c.red,
     },
     BufferLinePick = {
       bg = tab.inactiveBackground,
-      fg = c.base.red,
+      fg = c.red,
     },
     BufferLinePickVisible = {
       bg = tab.unfocusedActiveBackground,
-      fg = c.base.red,
+      fg = c.red,
     },
     BufferLineTab = {
       bg = tab.inactiveBackground,
-      fg = hp.blend(c.base.white, normalAlpha, tab.inactiveBackground),
+      fg = hp.blend(c.white, normalAlpha, tab.inactiveBackground),
     },
     BufferLineTabClose = {
       bg = tabsBackground,

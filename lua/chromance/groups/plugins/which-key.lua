@@ -6,12 +6,12 @@ function M.get(c, config, _)
   local isBackgroundClear = vim.tbl_contains(config.background_clear, "which-key")
   local whichkey_bg = c.editorSuggestWidget.background
   local transparent_bg = c.editor.background
-  local transparent_bg_border = c.base.dimmed2
+  local transparent_bg_border = c.dimmed2
   return {
-    WhichKey = { fg = c.base.blue },
-    WhichKeySeperator = { fg = c.base.red },
-    WhichKeyGroup = { fg = c.base.magenta },
-    WhichKeyDesc = { fg = c.base.yellow },
+    WhichKey = { fg = c.blue },
+    WhichKeySeperator = { fg = c.red },
+    WhichKeyGroup = { fg = c.magenta },
+    WhichKeyDesc = { fg = c.yellow },
     WhichKeyNormal = { bg = isBackgroundClear and transparent_bg or whichkey_bg },
     WhichKeyBorder = isBackgroundClear and {
       bg = transparent_bg,

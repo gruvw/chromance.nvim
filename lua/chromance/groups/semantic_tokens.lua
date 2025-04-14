@@ -16,7 +16,7 @@ M.setup = function(c, config, hp)
     ["@lsp.type.escapeSequence"]               = { link = "@string.escape" },
     ["@lsp.type.formatSpecifier"]              = { link = "@markup.list" },
     ["@lsp.type.generic"]                      = { link = "@variable" },
-    ["@lsp.type.interface"]                    = { fg = hp.lighten(c.base.cyan, 10) },
+    ["@lsp.type.interface"]                    = { fg = hp.lighten(c.cyan, 10) },
     ["@lsp.type.keyword"]                      = { link = "@keyword" },
     ["@lsp.type.lifetime"]                     = { link = "@keyword.storage" },
     ["@lsp.type.namespace"]                    = { link = "@module" },
@@ -30,7 +30,7 @@ M.setup = function(c, config, hp)
     ["@lsp.type.string"]                       = { link = "@string" },
     ["@lsp.type.type"]                         = {},  -- use treesitter styles
     ["@lsp.type.typeAlias"]                    = { link = "@type.definition" },
-    ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = c.base.red },
+    ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = c.red },
     ["@lsp.type.variable"]                     = {},  -- use treesitter styles for regular variables
     ["@lsp.typemod.class.defaultLibrary"]      = { link = "@type.builtin" },
     ["@lsp.typemod.enum.defaultLibrary"]       = { link = "@type.builtin" },
@@ -43,8 +43,8 @@ M.setup = function(c, config, hp)
     ["@lsp.typemod.operator.injected"]         = { link = "@operator" },
     ["@lsp.typemod.string.injected"]           = { link = "@string" },
     ["@lsp.typemod.struct.defaultLibrary"]     = { link = "@type.builtin" },
-    ["@lsp.typemod.type.defaultLibrary"]       = { fg = hp.lighten(c.base.cyan, 15) },
-    ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = hp.lighten(c.base.cyan, 15) },
+    ["@lsp.typemod.type.defaultLibrary"]       = { fg = hp.lighten(c.cyan, 15) },
+    ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = hp.lighten(c.cyan, 15) },
     ["@lsp.typemod.variable.callable"]         = { link = "@function" },
     ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"]         = { link = "@variable" },

@@ -17,14 +17,14 @@ function M.get(c, config, _)
     },
     NvimTreeWinSeparator = {
       bg = c.editor.background,
-      fg = isBackgroundClear and c.base.black or c.editor.background,
+      fg = isBackgroundClear and c.black or c.editor.background,
     },
 
     NvimTreeFolderName = { fg = c.sideBar.foreground },
     NvimTreeOpenedFolderName = { fg = c.sideBar.foreground, italic = true },
     NvimTreeEmptyFolderName = { fg = c.sideBar.foreground, italic = true },
-    NvimTreeImageFile = { fg = c.base.white },
-    NvimTreeSpecialFile = { fg = c.base.white },
+    NvimTreeImageFile = { fg = c.white },
+    NvimTreeSpecialFile = { fg = c.white },
     NvimTreeCursorLine = {
       bg = c.list.activeSelectionBackground,
       bg_base = sidebar_bg,
@@ -39,12 +39,12 @@ function M.get(c, config, _)
     NvimTreeGitDeleted = { fg = c.gitDecoration.deletedResourceForeground },
     NvimTreeGitMerge = { fg = c.gitDecoration.conflictingResourceForeground },
 
-    NvimTreeSymlink = { fg = c.base.white },
+    NvimTreeSymlink = { fg = c.white },
     NvimTreeRootFolder = {
       fg = c.sideBarSectionHeader.foreground,
       bold = true,
     },
-    NvimTreeExecFile = { fg = c.base.green },
+    NvimTreeExecFile = { fg = c.green },
   }
 end
 

@@ -14,11 +14,11 @@ function M.get(c, config, _)
       fg = isBackgroundClear and c.editorSuggestWidget.foreground or c.editorSuggestWidget.background,
     },
     RenamerTitle = isBackgroundClear and {
-      fg = c.base.yellow,
+      fg = c.yellow,
       bold = true,
     } or {
-      bg = c.base.yellow,
-      fg = c.base.black,
+      bg = c.yellow,
+      fg = c.black,
       bold = true,
     },
   }

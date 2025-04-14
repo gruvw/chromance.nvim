@@ -57,7 +57,7 @@ local PLUGINS = {
 -- Example:
 -- local hl_groups = {
 --   Normal = { bg = c.editor.background, fg = c.editor.foreground, }, -- normal text
---   ["@modifier"] = { fg = c.base.red, italic = true },
+--   ["@modifier"] = { fg = c.red, italic = true },
 -- }
 ---@param colors Colors
 ---@return HighlightGroups

@@ -4,15 +4,15 @@ local M = {}
 --- @param c Colors The color palette
 function M.get(c, _, _)
   return {
-    MiniIndentscopeSymbol = { fg = c.base.blue },
+    MiniIndentscopeSymbol = { fg = c.blue },
 
     -- mini.status
-    MiniStatuslineModeNormal = { fg = c.base.black, bg = c.base.green },
-    MiniStatuslineModeInsert = { fg = c.base.black, bg = c.base.yellow },
-    MiniStatuslineModeCommand = { fg = c.base.black, bg = c.base.red },
-    MiniStatuslineModeVisual = { fg = c.base.black, bg = c.base.cyan },
-    MiniStatuslineModeReplace = { fg = c.base.black, bg = c.base.blue },
-    MiniStatuslineModeOther = { fg = c.base.black, bg = c.base.white },
+    MiniStatuslineModeNormal = { fg = c.black, bg = c.green },
+    MiniStatuslineModeInsert = { fg = c.black, bg = c.yellow },
+    MiniStatuslineModeCommand = { fg = c.black, bg = c.red },
+    MiniStatuslineModeVisual = { fg = c.black, bg = c.cyan },
+    MiniStatuslineModeReplace = { fg = c.black, bg = c.blue },
+    MiniStatuslineModeOther = { fg = c.black, bg = c.white },
   }
 end
 

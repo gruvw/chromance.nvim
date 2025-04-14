@@ -5,9 +5,9 @@ function M.get(c, _, _)
   return {
     FidgetTask = {
       bg = c.editor.background,
-      fg = c.base.white,
+      fg = c.white,
     },
-    FidgetTitle = { bg = c.editor.background, fg = c.base.yellow },
+    FidgetTitle = { bg = c.editor.background, fg = c.yellow },
   }
 end
 

@@ -29,7 +29,7 @@ function M.get(c, config, _)
     },
     NeoTreeWinSeparator = {
       bg = c.editor.background,
-      fg = isBackgroundClear and c.base.black or c.editor.background,
+      fg = isBackgroundClear and c.black or c.editor.background,
     },
     NeoTreeRootName = {
       -- bg = C.sideBarSectionHeader.background,
@@ -58,11 +58,11 @@ function M.get(c, config, _)
     },
     NeoTreeTitleBar = {
       bg = sidebar_bg,
-      fg = c.base.yellow,
+      fg = c.yellow,
       bold = true,
     },
     NeoTreeFloatTitle = {
-      bg = c.base.yellow,
+      bg = c.yellow,
       fg = sidebar_bg,
       bold = true,
     },

@@ -6,9 +6,9 @@ function M.get(c, _, hp)
   local lazy_bg = hp.lighten(c.sideBar.background, 5)
   return {
     LazyButton = { bg = c.button.background, fg = c.button.foreground },
-    LazyComment = { fg = c.base.yellow },
-    LazyH1 = { bg = c.base.yellow, fg = c.base.black, bold = true },
-    LazyH2 = { fg = c.base.green, bold = true },
+    LazyComment = { fg = c.yellow },
+    LazyH1 = { bg = c.yellow, fg = c.black, bold = true },
+    LazyH2 = { fg = c.green, bold = true },
     LazyButtonActive = {
       bg = c.button.hoverBackground,
       fg = c.button.foreground,
@@ -25,13 +25,13 @@ function M.get(c, _, hp)
     },
     LazyProp = {
       bg = lazy_bg,
-      fg = c.base.green,
+      fg = c.green,
     },
-    LazyUrl = { fg = c.base.cyan },
+    LazyUrl = { fg = c.cyan },
     LazyDir = { link = "LazyUrl" },
-    LazySpecial = { fg = c.base.yellow, bold = true },
-    LazyReasonStart = { fg = c.base.green },
-    LazyReasonCmd = { fg = c.base.cyan },
+    LazySpecial = { fg = c.yellow, bold = true },
+    LazyReasonStart = { fg = c.green },
+    LazyReasonCmd = { fg = c.cyan },
   }
 end
 

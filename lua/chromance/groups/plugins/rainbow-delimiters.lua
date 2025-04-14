@@ -3,13 +3,13 @@ local M = {}
 --- @param c Colors The color palette
 function M.get(c, _, _)
   return {
-    RainbowDelimiterRed = { fg = c.base.red },
-    RainbowDelimiterYellow = { fg = c.base.yellow },
-    RainbowDelimiterBlue = { fg = c.base.cyan },
-    RainbowDelimiterOrange = { fg = c.base.blue },
-    RainbowDelimiterGreen = { fg = c.base.green },
-    RainbowDelimiterViolet = { fg = c.base.magenta },
-    RainbowDelimiterCyan = { fg = c.base.cyan },
+    RainbowDelimiterRed = { fg = c.red },
+    RainbowDelimiterYellow = { fg = c.yellow },
+    RainbowDelimiterBlue = { fg = c.cyan },
+    RainbowDelimiterOrange = { fg = c.blue },
+    RainbowDelimiterGreen = { fg = c.green },
+    RainbowDelimiterViolet = { fg = c.magenta },
+    RainbowDelimiterCyan = { fg = c.cyan },
   }
 end
 

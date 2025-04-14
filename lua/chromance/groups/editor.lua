@@ -7,12 +7,12 @@ M.setup = function(c, config, hp)
   local float_winBackgroundClear = vim.tbl_contains(config.background_clear, "float_win")
   return {
     ColorColumn = {
-      bg = c.base.dimmed5
+      bg = c.dimmed5
     }, -- used for the columns set with 'colorcolumn'
-    Conceal = { bg = c.editor.background, fg = c.base.dimmed3 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal = { bg = c.editor.background, fg = c.dimmed3 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
-      bg = c.base.white,
-      fg = c.base.white,
+      bg = c.white,
+      fg = c.white,
     }, -- character under the cursor
     -- lCursor      = {}, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     = {bg = theme.palette.red}, -- like Cursor, but used when in IME mode |CursorIM|
@@ -34,7 +34,7 @@ M.setup = function(c, config, hp)
     }, -- directory names (and other special names in listings)
     CursorLineFold = {
       bg = c.editor.background,
-      fg = c.base.white,
+      fg = c.white,
     },
     DiffAdd = {
       bg = c.diffEditor.insertedLineBackground,
@@ -58,7 +58,7 @@ M.setup = function(c, config, hp)
     }, -- error messages on the command line
     VertSplit = {
       bg = c.editor.background,
-      fg = c.base.black,
+      fg = c.black,
     }, -- the column separating vertically split windows
     Folded = {
       bg = c.editor.foldBackground,
@@ -76,7 +76,7 @@ M.setup = function(c, config, hp)
       fg = c.editorLineNumber.foreground,
     }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     MatchParen = {
-      fg = c.base.yellow,
+      fg = c.yellow,
       bold = true,
       underline = true,
     }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -90,7 +90,7 @@ M.setup = function(c, config, hp)
       link = "ModeMsg",
     }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = {
-      fg = c.base.yellow,
+      fg = c.yellow,
     }, -- |more-prompt| ufo
     NonText = {
       fg = c.editor.background,
@@ -108,23 +108,23 @@ M.setup = function(c, config, hp)
       fg = c.editorSuggestWidget.foreground,
     } or {
       -- bg = c.editorHoverWidget.background,
-      bg = c.base.black,
-      fg = c.base.dimmed1,
+      bg = c.black,
+      fg = c.dimmed1,
     }, -- Normal text in floating windows. example PackerNormal
     FloatBorder = float_winBackgroundClear and {
       bg = c.editor.background,
       fg = c.editorSuggestWidget.foreground,
     } or {
       bg = c.editor.background,
-      fg = c.base.black,
+      fg = c.black,
     },
     FloatTitle = float_winBackgroundClear and {
       bg = c.editor.background,
-      fg = c.base.yellow,
+      fg = c.yellow,
       bold = true,
     } or {
-      bg = c.base.yellow,
-      fg = c.base.black,
+      bg = c.yellow,
+      fg = c.black,
     },
     Pmenu = float_winBackgroundClear and {
       bg = c.editor.background,
@@ -162,8 +162,8 @@ M.setup = function(c, config, hp)
       underline = true,
       bold = true,
     } or {
-      bg = c.base.yellow,
-      fg = c.base.black,
+      bg = c.yellow,
+      fg = c.black,
       underline = false,
       bold = true,
     }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
@@ -183,7 +183,7 @@ M.setup = function(c, config, hp)
     TablineFill = { link = "BufferLineFill" }, -- tab pages line, where there are no labels
     TablineSel = { link = "BufferLineBufferSelected" }, -- tab pages line, active tab page label
     Title = {
-      fg = c.base.yellow,
+      fg = c.yellow,
       bold = true,
     }, -- titles for output from ":set all", ":autocmd"
     Visual = {
@@ -197,29 +197,29 @@ M.setup = function(c, config, hp)
     }, -- warning messages
     WinSeparator = {
       -- bg = c.editor.background,
-      fg = c.base.black,
+      fg = c.black,
     }, -- the column separating windows
     Whitespace = {
-      fg = c.base.dimmed4,
+      fg = c.dimmed4,
     }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu = { bg = C.blue, fg = C.black }, -- current match in 'wildmenu' completion
 
     -- Git
-    diffAdded = { fg = c.base.green },
-    diffChanged = { fg = c.base.yellow },
-    diffRemoved = { fg = c.base.red },
-    diffFile = { fg = c.base.yellow },
-    diffNewFile = { fg = c.base.yellow },
-    diffLine = { fg = c.base.cyan },
+    diffAdded = { fg = c.green },
+    diffChanged = { fg = c.yellow },
+    diffRemoved = { fg = c.red },
+    diffFile = { fg = c.yellow },
+    diffNewFile = { fg = c.yellow },
+    diffLine = { fg = c.cyan },
     -- Spelling
-    SpellBad = { fg = c.base.red, sp = c.base.red, undercurl = true },
-    SpellCap = { fg = c.base.red, sp = c.base.red, undercurl = true },
-    SpellLocal = { fg = c.base.red, sp = c.base.red, undercurl = true },
-    SpellRare = { fg = c.base.red, sp = c.base.red, undercurl = true },
+    SpellBad = { fg = c.red, sp = c.red, undercurl = true },
+    SpellCap = { fg = c.red, sp = c.red, undercurl = true },
+    SpellLocal = { fg = c.red, sp = c.red, undercurl = true },
+    SpellRare = { fg = c.red, sp = c.red, undercurl = true },
     -- Neovim
-    healthError = { fg = c.base.red },
-    healthSuccess = { fg = c.base.green },
-    healthWarning = { fg = c.base.blue },
+    healthError = { fg = c.red },
+    healthSuccess = { fg = c.green },
+    healthWarning = { fg = c.blue },
   }
 end
 
