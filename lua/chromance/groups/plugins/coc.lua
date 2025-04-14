@@ -1,6 +1,6 @@
 local M = {}
 
---- @param c Colorscheme The color palette
+--- @param c Colors The color palette
 function M.get(c, _, _)
   return {
     CocGitAddedSign = { bg = c.editor.background, fg = c.gitDecoration.addedResourceForeground },

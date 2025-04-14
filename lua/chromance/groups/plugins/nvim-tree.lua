@@ -1,6 +1,6 @@
 local M = {}
 
---- @param c Colorscheme The color palette
+--- @param c Colors The color palette
 --- @param config Config
 function M.get(c, config, _)
   local isBackgroundClear = vim.tbl_contains(config.background_clear, "nvim-tree")

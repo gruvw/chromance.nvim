@@ -72,7 +72,7 @@
 ---@field g number A number between 0 and 255
 ---@field b number A number between 0 and 255
 
----@class HighlightGroupOpt
+---@class HighlightValue
 ---@field bg_base? HexColor The base color of `bg`. This is used to calculate the RGBA color.
 ---@field fg_base? HexColor The base color of `fg`. This is used to calculate the RGBA color.
 ---@field fg? HexColor foreground: color name or "#RRGGBB", see note.
@@ -94,4 +94,4 @@
 
 ---@alias HighlightGroup string
 
----@class HighlightGroupTbl: { [HighlightGroup]: HighlightGroupOpt }
+---@class HighlightGroups: { [HighlightGroup]: HighlightValue }

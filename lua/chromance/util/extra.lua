@@ -1,7 +1,7 @@
 ---@class chromance.util.extri
 local M = {}
 
----@param colors Colorscheme
+---@param colors Colors
 function M.terminal(colors)
   -- dark
   vim.g.terminal_color_0 = colors.base.black

@@ -1,18 +1,25 @@
 local config = require("chromance.config")
-local util = require("chromance.util")
-local theme = require("chromance.theme")
-local command = require("chromance.command")
+local groups = require("chromance.groups")
+local highlight = require("chromance.util.highlight")
+local colors = require("chromance.colors");
 
 ---@class Chromance
 local M = {}
 
-M.load = function()
-  util.theme.load(theme.setup())
+function M.load()
+  if vim.g.colors_name then
+    vim.cmd([[hi clear]])
+  end
+
+  vim.o.termguicolors = true
+  vim.g.colors_name = "chromance"
+
+  local hl_groups = groups.highlight_groups(colors);
+  highlight.apply_groups(hl_groups)
 end
 
 M.setup = function(options)
   config.setup(options)
-  command.create_filter_command()
 end
 
 return M

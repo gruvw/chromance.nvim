@@ -1,7 +1,7 @@
 ---@class chromance.theme.plugins.mini
 local M = {}
 
---- @param c Colorscheme The color palette
+--- @param c Colors The color palette
 function M.get(c, _, _)
   return {
     MiniIndentscopeSymbol = { fg = c.base.blue },

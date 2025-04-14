@@ -59,17 +59,17 @@ local PLUGINS = {
 --   Normal = { bg = c.editor.background, fg = c.editor.foreground, }, -- normal text
 --   ["@modifier"] = { fg = c.base.red, italic = true },
 -- }
----@param colorscheme Colorscheme
----@return HighlightGroupTbl
-local function get_hl_group_tbl(colorscheme)
-  local editor = require("chromance.theme.editor").setup(colorscheme, Config, Helper)
-  local syntax = require("chromance.theme.syntax").setup(colorscheme, Config, Helper)
-  local semantic_tokens = require("chromance.theme.semantic_tokens").setup(colorscheme, Config, Helper)
-  local extra = require("chromance.theme.extra").setup(colorscheme, Config, Helper)
+---@param colors Colors
+---@return HighlightGroups
+local function get_hl_group_tbl(colors)
+  local editor = require("chromance.theme.editor").setup(colors, Config, Helper)
+  local syntax = require("chromance.theme.syntax").setup(colors, Config, Helper)
+  local semantic_tokens = require("chromance.theme.semantic_tokens").setup(colors, Config, Helper)
+  local extra = require("chromance.theme.extra").setup(colors, Config, Helper)
   --  The HlGroups class represents a collection of highlighter groups.
   --  Each group is identified by a string key (e.g. "editor") and holds the result of calling the `setup` function of a corresponding highlighter module (e.g. `editor.setup`).
   --  The class has a single field, `hl_groups`, which is a table containing the highlighter groups.
-  --- @type HighlightGroupTbl
+  --- @type HighlightGroups
   local hl_group_tbl = {}
   hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, editor, syntax, semantic_tokens, extra)
   for _, name in ipairs(PLUGINS) do
@@ -78,28 +78,19 @@ local function get_hl_group_tbl(colorscheme)
       return ...
     end, "chromance.theme.plugins." .. name)
     if config_ok then
-      hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colorscheme, Config, Helper))
+      hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, Config, Helper))
     end
   end
-  hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, Config.override and Config.override(colorscheme) or {})
+  hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, Config.override and Config.override(colors) or {})
   return hl_group_tbl
 end
 
----@return HighlightGroupTbl
-M.setup = function()
+---@param colors Colors
+---@return HighlightGroups
+M.highlight_groups = function(colors)
   local devicons = require("chromance.devicons")
 
-  local colorscheme = Colorscheme(Config.filter)
-  -- print(colorscheme.editor.background)
-  -- print(colorscheme.tab.activeBackground)
-  local hl_group_tbl = get_hl_group_tbl(colorscheme)
-  -- print(Helper.lighten(colorscheme.tab.activeBackground, 10))
-  -- M.temp = vim.tbl_deep_extend("force", colorscheme.tab or {}, true and {
-  --   activeBackground = Helper.lighten(colorscheme.tab.activeBackground, 10),
-  --   inactiveBackground = Helper.lighten(colorscheme.tab.inactiveBackground, 10),
-  --   unfocusedActiveBackground = Helper.lighten(colorscheme.tab.unfocusedActiveBackground, 10),
-  -- } or {})
-  -- print(vim.inspect(M.temp))
+  local hl_groups = get_hl_group_tbl(colors)
 
   if Config.terminal_colors then
     Util.extra.terminal(Colorscheme)
@@ -109,7 +100,7 @@ M.setup = function()
     devicons.setup(Colorscheme)
   end
 
-  return hl_group_tbl
+  return hl_groups
 end
 
 return M

@@ -1,6 +1,6 @@
 local M = {}
 
----@param c Colorscheme
+---@param c Colors
 M.setup = function(c)
   local status_ok, webDevicons = pcall(require, "nvim-web-devicons")
   if not status_ok then

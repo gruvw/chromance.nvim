@@ -30,7 +30,7 @@ M.add_underline = function(bufferline_groups)
   end
 end
 
---- @param c Colorscheme The color palette
+--- @param c Colors The color palette
 --- @param config Config
 --- @param hp Helper
 function M.get(c, config, hp)
@@ -307,7 +307,7 @@ function M.get(c, config, hp)
   return bufferline_groups
 end
 
----@return HighlightGroupTbl?
+---@return HighlightGroups?
 M.setup_bufferline_icon = function(icon_hl_name, icon_color)
   if icon_hl_name == nil then
     return

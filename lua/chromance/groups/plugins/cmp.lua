@@ -1,6 +1,6 @@
 local M = {}
 
---- @param c Colorscheme The color palette
+--- @param c Colors The color palette
 --- @param hp Helper
 function M.get(c, _, hp)
   return {
