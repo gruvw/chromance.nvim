@@ -31,10 +31,4 @@ function M.terminal(colors)
   vim.g.terminal_color_14 = colors.base.cyan
 end
 
-function M.is_daytime()
-  local current_time = os.time()
-  local current_hour = tonumber(os.date("%H", current_time))
-  return current_hour >= 6 and current_hour < 18
-end
-
 return M

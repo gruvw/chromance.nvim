@@ -1,9 +1,6 @@
 local util = require("chromance.util")
 ---@class ChromanceOptions
 ---@field plugins? PluginConfig
----@field override? fun(c: Colorscheme)
----@field overridePalette? fun(filter: Filter) A function to override palette
----@field overrideScheme? fun(cs: Colorscheme, p: ColorschemeOptions, Config: ChromanceOptions, hp: Helper) A function to override scheme
 local config = {
   transparent_background = false,
   terminal_colors = true,
@@ -17,12 +14,6 @@ local config = {
     parameter = { italic = true }, -- parameter pass in function
     annotation = { italic = true },
     tag_attribute = { italic = true }, -- attribute of tag in reactjs
-  },
-  filter = vim.o.background == "light" and "classic" or "pro", -- classic | octagon | pro | machine | ristretto | spectrum
-  day_night = {
-    enable = false,
-    day_filter = "pro", -- classic | octagon | pro | machine | ristretto | spectrum
-    night_filter = "spectrum", -- classic | octagon | pro | machine | ristretto | spectrum
   },
   inc_search = "background", -- underline | background
   background_clear = {
@@ -65,10 +56,6 @@ local M = setmetatable({}, {
 ---@param options? ChromanceOptions
 M.setup = function(options)
   config = vim.tbl_deep_extend("force", config, options or {})
-  local day_night = config.day_night
-  if day_night and day_night.enable then
-    config.filter = util.extra.is_daytime() and day_night.day_filter or day_night.night_filter
-  end
 end
 
 ---@param options? ChromanceOptions

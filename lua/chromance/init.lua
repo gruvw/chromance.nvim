@@ -7,7 +7,6 @@ local command = require("chromance.command")
 local M = {}
 
 M.load = function()
-  config.extend({ filter = "spectrum" })
   util.theme.load(theme.setup())
 end
 

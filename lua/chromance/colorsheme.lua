@@ -25,19 +25,8 @@ local hp = require("chromance.color_helper")
 ---@param filter Filter
 ---@return ColorschemeOptions
 M.get = function(filter)
-  local filters = { "light", "classic", "machine", "octagon", "pro", "ristretto", "spectrum" }
-
-  if not vim.tbl_contains(filters, filter) then
-    local msg = 'Invalid filter, expected  "light", "classic", "machine", "octagon", "pro", "ristretto" or "spectrum"'
-    local level = "info"
-    filter = "pro"
-    Util.log(msg, level)
-  end
-
-  M.filter = filter
-
   ---@module "chromance.colorscheme.palette.pro"
-  local palette = require("chromance.colorscheme.palette." .. M.filter)
+  local palette = require("chromance.colorscheme.colors")
   local p =
     vim.tbl_deep_extend("force", palette, Config.overridePalette and Config.overridePalette(filter) or {})
 
