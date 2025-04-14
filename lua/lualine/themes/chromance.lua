@@ -1,10 +1,10 @@
-local colors = require("chromance.colorscheme")
+local colors = require("chromance.colors").get();
 
 local M = {}
 
 M.normal = {
-  a = { bg = colors.base.yellow, fg = colors.base.black, gui = "bold" },
-  b = { bg = colors.base.dimmed5, fg = colors.base.yellow },
+  a = { bg = colors.yellow, fg = colors.dark1, gui = "bold" },
+  b = { bg = colors.dimmed5, fg = colors.yellow },
   c = {
     bg = colors.statusBar.background,
     fg = colors.statusBar.activeForeground,
@@ -16,29 +16,29 @@ M.normal = {
 }
 
 M.insert = {
-  a = { bg = colors.base.green, fg = colors.base.black },
-  b = { bg = colors.base.dimmed5, fg = colors.base.green },
+  a = { bg = colors.green, fg = colors.dark1 },
+  b = { bg = colors.dimmed5, fg = colors.green },
 }
 
 M.command = {
-  a = { bg = colors.base.yellow, fg = colors.base.black },
-  b = { bg = colors.base.dimmed5, fg = colors.base.yellow },
+  a = { bg = colors.yellow, fg = colors.dark1 },
+  b = { bg = colors.dimmed5, fg = colors.yellow },
 }
 
 M.visual = {
-  a = { bg = colors.base.magenta, fg = colors.base.black },
-  b = { bg = colors.base.dimmed5, fg = colors.base.magenta },
+  a = { bg = colors.red, fg = colors.dark1 },
+  b = { bg = colors.dimmed5, fg = colors.red },
 }
 
 M.replace = {
-  a = { bg = colors.base.red, fg = colors.base.black },
-  b = { bg = colors.base.dimmed5, fg = colors.base.red },
+  a = { bg = colors.red, fg = colors.dark1 },
+  b = { bg = colors.dimmed5, fg = colors.red },
 }
 
 M.inactive = {
-  a = { bg = colors.base.black, fg = colors.base.yellow },
-  b = { bg = colors.base.black, fg = colors.base.black },
-  -- c = { bg = colors.base.black, fg = colors.base.black },
+  a = { bg = colors.dark1, fg = colors.yellow },
+  b = { bg = colors.dark1, fg = colors.dark1 },
+  -- c = { bg = colors.dark1, fg = colors.black },
 }
 
 return M

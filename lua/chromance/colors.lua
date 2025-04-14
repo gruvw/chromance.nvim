@@ -8,19 +8,18 @@ local colors = {
   dark1 = "#191919",
   background = "#222222",
   text = "#f7f1ff",
-  accent1 = "#fc618d",
-  accent2 = "#fd9353",
-  accent3 = "#fce566",
-  accent4 = "#7bd88f",
-  accent5 = "#5ad4e6",
-  accent6 = "#948ae3",
+  red = "#fc618d",
+  orange = "#fd9353",
+  yellow = "#fce566",
+  green = "#7bd88f",
+  cyan = "#5ad4e6",
+  purple = "#948ae3",
   dimmed1 = "#bab6c0",
   dimmed2 = "#8b888f",
   dimmed3 = "#69676c",
   dimmed4 = "#525053",
   dimmed5 = "#363537",
 };
-
 
 ---@return Colors
 function M.get(options)
@@ -33,7 +32,7 @@ function M.get(options)
     lineHighlightBackground = hp.blend(colors.text, 0.05, colors.background), -- "#fcfcfa0c", -- background: background
     selectionBackground = hp.blend(colors.dimmed1, 0.15, colors.background), --"#c1c0c027", -- background: background
     findMatchBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- background: background
-    findMatchBorder = colors.accent3,
+    findMatchBorder = colors.yellow,
     findMatchHighlightBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- background: background
     foldBackground = hp.blend(colors.text, 0.1, colors.background), -- "#fcfcfa0c", -- background: background
     wordHighlightBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- illuminateRead
@@ -70,9 +69,9 @@ function M.get(options)
   }
 
   cs.editorGutter = {
-    addedBackground = colors.accent4, -- "#a9dc76",
-    deletedBackground = colors.accent1, -- "#ff6188",
-    modifiedBackground = colors.accent2, -- "#fc9867",
+    addedBackground = colors.green, -- "#a9dc76",
+    deletedBackground = colors.red, -- "#ff6188",
+    modifiedBackground = colors.orange, -- "#fc9867",
   }
 
   cs.sideBar = {
@@ -109,37 +108,37 @@ function M.get(options)
   }
 
   cs.gitDecoration = {
-    addedResourceForeground = colors.accent4, -- "#a9dc76",
-    conflictingResourceForeground = colors.accent2, -- "#fc9867",
-    deletedResourceForeground = colors.accent1, -- "#ff6188",
+    addedResourceForeground = colors.green, -- "#a9dc76",
+    conflictingResourceForeground = colors.orange, -- "#fc9867",
+    deletedResourceForeground = colors.red, -- "#ff6188",
     ignoredResourceForeground = colors.dimmed4, -- "#5b595c",
-    modifiedResourceForeground = colors.accent3, -- "#ffd866",
-    stageDeletedResourceForeground = colors.accent1, -- "#ff6188",
-    stageModifiedResourceForeground = colors.accent3, -- "#ffd866",
+    modifiedResourceForeground = colors.yellow, -- "#ffd866",
+    stageDeletedResourceForeground = colors.red, -- "#ff6188",
+    stageModifiedResourceForeground = colors.yellow, -- "#ffd866",
     untrackedResourceForeground = colors.dimmed2, -- "#c1c0c0",
   }
 
   cs.inputValidation = {
     errorBackground = colors.dimmed5, -- "#403e41",
-    errorBorder = colors.accent1, -- "#ff6188",
-    errorForeground = colors.accent1, --"#ff6188",
+    errorBorder = colors.red, -- "#ff6188",
+    errorForeground = colors.red, --"#ff6188",
     infoBackground = colors.dimmed5, -- "#403e41",
-    infoBorder = colors.accent5, --"#78dce8",
-    infoForeground = colors.accent5, --"#78dce8",
+    infoBorder = colors.cyan, --"#78dce8",
+    infoForeground = colors.cyan, --"#78dce8",
     warningBackground = colors.dimmed5, --"#403e41",
-    warningBorder = colors.accent2, --"#fc9867",
-    warningForeground = colors.accent2, --"#fc9867",
+    warningBorder = colors.orange, --"#fc9867",
+    warningForeground = colors.orange, --"#fc9867",
   }
 
   cs.errorLens = {
-    errorBackground = hp.blend(colors.accent1, 0.1),
-    errorForeground = colors.accent1,
-    warningBackground = hp.blend(colors.accent2, 0.1),
-    warningForeground = colors.accent2,
-    infoBackground = hp.blend(colors.accent5, 0.1),
-    infoForeground = colors.accent5,
-    hintBackground = hp.blend(colors.accent5, 0.1),
-    hintForeground = colors.accent5,
+    errorBackground = hp.blend(colors.red, 0.1),
+    errorForeground = colors.red,
+    warningBackground = hp.blend(colors.orange, 0.1),
+    warningForeground = colors.orange,
+    infoBackground = hp.blend(colors.cyan, 0.1),
+    infoForeground = colors.cyan,
+    hintBackground = hp.blend(colors.cyan, 0.1),
+    hintForeground = colors.cyan,
   }
 
   cs.terminal = {
@@ -147,12 +146,12 @@ function M.get(options)
     foreground = colors.text, -- "#fcfcfa",
     dark = colors.dark2, -- "#19181a"
     black = colors.dark1, --"#221f22",
-    red = colors.accent1, -- "#ff6188",
-    green = colors.accent4, -- "#a9dc76",
-    yellow = colors.accent3, -- "#ffd866",
-    blue = colors.accent2, -- "#fc9867",
-    magenta = colors.accent6, -- "#ab9df2",
-    cyan = colors.accent5, -- "#78dce8",
+    red = colors.red, -- "#ff6188",
+    green = colors.green, -- "#a9dc76",
+    yellow = colors.yellow, -- "#ffd866",
+    blue = colors.orange, -- "#fc9867",
+    magenta = colors.purple, -- "#ab9df2",
+    cyan = colors.cyan, -- "#78dce8",
     white = colors.text, -- "#fcfcfa",
     dimmed1 = colors.dimmed1, -- "#c1c0c0",
     dimmed2 = colors.dimmed2, -- "#939293",
@@ -173,8 +172,8 @@ function M.get(options)
 
   cs.tab = {
     activeBackground = colors.background,
-    activeBorder = colors.accent3, -- "#ffd866",
-    activeForeground = colors.accent3, -- "#ffd866",
+    activeBorder = colors.yellow, -- "#ffd866",
+    activeForeground = colors.yellow, -- "#ffd866",
     inactiveBackground = hp.lighten(colors.background, 15),
     inactiveForeground = colors.dimmed2, -- "#939293",
     unfocusedActiveBackground = colors.background, -- "#272822",
@@ -190,15 +189,15 @@ function M.get(options)
   }
 
   cs.diffEditor = {
-    insertedLineBackground = hp.blend(colors.accent4, 0.1, colors.dark1), -- #a9dc7619
-    removedLineBackground = hp.blend(colors.accent1, 0.1, colors.dark1), -- #ff618819
-    modifiedLineBackground = hp.blend(colors.accent2, 0.1, colors.dark1), -- #fc986719
+    insertedLineBackground = hp.blend(colors.green, 0.1, colors.dark1), -- #a9dc7619
+    removedLineBackground = hp.blend(colors.red, 0.1, colors.dark1), -- #ff618819
+    modifiedLineBackground = hp.blend(colors.orange, 0.1, colors.dark1), -- #fc986719
   }
 
   cs.diffEditorOverview = {
-    insertedForeground = hp.blend(colors.accent4, 0.65, cs.diffEditor.insertedLineBackground), -- #a9dc76a5
-    removedForeground = hp.blend(colors.accent1, 0.65, cs.diffEditor.removedLineBackground), -- #ff6188a5
-    modifiedForeground = hp.blend(colors.accent2, 0.65, cs.diffEditor.modifiedLineBackground), -- #fc9867a5
+    insertedForeground = hp.blend(colors.green, 0.65, cs.diffEditor.insertedLineBackground), -- #a9dc76a5
+    removedForeground = hp.blend(colors.red, 0.65, cs.diffEditor.removedLineBackground), -- #ff6188a5
+    modifiedForeground = hp.blend(colors.orange, 0.65, cs.diffEditor.modifiedLineBackground), -- #fc9867a5
   }
 
   cs.notifications = {
@@ -207,13 +206,13 @@ function M.get(options)
     foreground = colors.dimmed1,
   }
   cs.notificationsErrorIcon = {
-    foreground = colors.accent1,
+    foreground = colors.red,
   }
   cs.notificationsInfoIcon = {
-    foreground = colors.accent5,
+    foreground = colors.cyan,
   }
   cs.notificationsWarningIcon = {
-    foreground = colors.accent2,
+    foreground = colors.orange,
   }
 
   return cs

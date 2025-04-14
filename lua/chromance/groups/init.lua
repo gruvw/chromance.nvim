@@ -80,7 +80,6 @@ local function get_hl_group_tbl(colors)
       hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, Config.options, Helper))
     end
   end
-  -- hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, Config.override and Config.override(colors) or {})
   return hl_group_tbl
 end
 
