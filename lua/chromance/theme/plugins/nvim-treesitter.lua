@@ -86,7 +86,7 @@ function M.get(c, config, _)
     ["@markup.emphasis"]                  = { fg = c.white, italic = true },
     ["@markup.environment"]               = { fg = c.white },
     ["@markup.environment.name"]          = { fg = c.white },
-    ["@markup.heading"]                   = { fg = c.green, bold = true },
+    ["@markup.heading"]                   = { fg = c.yellow, bold = true },
     ["@markup.italic"]                    = { fg = c.white, italic = true },
     ["@markup.link"]                      = { fg = c.blue, underline = true },
     ["@markup.link.label"]                = { fg = c.blue, underline = true },
@@ -190,7 +190,6 @@ function M.get(c, config, _)
     ["@string.yaml"]                      = { fg = c.yellow },
   }
   for i = 1, 9 do
-    spec["@markup.heading." .. i .. ".markdown"] = { fg = c.yellow }
     spec["@markup.heading." .. i .. ".marker.markdown"] = { fg = c.dimmed2 }
   end
   return spec

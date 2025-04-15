@@ -3,6 +3,8 @@ local hp = require("chromance.utils.color_helper")
 
 local M = {}
 
+-- TODO setup basic colors
+
 ---@class Colors
 local colors = {
   dark2 = "#131313",
@@ -42,6 +44,7 @@ function M.get()
     colors.green,
     colors.cyan,
     colors.purple,
+    colors.grey,
   }
 
   cs.editor = {

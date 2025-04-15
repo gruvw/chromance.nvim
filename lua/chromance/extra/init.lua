@@ -7,13 +7,12 @@ local M = {}
 
 ---@param colors Colors
 function M.apply_extra(colors)
-
   if config.terminal_colors then
     terminal.terminal(colors)
   end
 
   if config.options.devicons then
-    devicons.setup(colors)
+    devicons.apply_icons(colors)
   end
 end
 

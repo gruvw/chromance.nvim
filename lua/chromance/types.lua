@@ -1,3 +1,5 @@
+-- TODO clear types
+
 ---@class ChromanceIcon
 ---@field hl_name string
 ---@field color string

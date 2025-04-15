@@ -55,15 +55,19 @@ end
 ---@param palette [HexColor]
 function M.find_closest_color(hex, palette)
   local hrgb = hex_to_rgb(hex)
+
   local min_dist = math.huge
   local closest = palette[1]
 
   for _, color in ipairs(palette) do
     local prgb = hex_to_rgb(color)
+
     local dr = hrgb.r - prgb.r
     local dg = hrgb.g - prgb.g
     local db = hrgb.b - prgb.b
+
     local dist = dr * dr + dg * dg + db * db
+
     if dist < min_dist then
       min_dist = dist
       closest = color
