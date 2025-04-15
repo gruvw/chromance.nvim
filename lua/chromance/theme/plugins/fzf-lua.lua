@@ -15,7 +15,7 @@ function M.get(c, config, hp)
     FzfLuaBackdrop = { bg = c.dark },
     FzfLuaPreviewNormal = { bg = transparent_bg },
     FzfLuaPreviewBorder = { link = "FzfLuaBorder" },
-    FzfLuaPreviewTitle = { bg = transparent_bg, fg = c.blue, bold = true },
+    FzfLuaPreviewTitle = { bg = transparent_bg, fg = c.cyan, bold = true },
     FzfLuaCursorLine = { bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg), bold = true },
     FzfLuaScrollBorderEmpty = { link = "FzfLuaBorder" },
     FzfLuaScrollBorderFull = { link = "FzfLuaBorder" },
@@ -25,7 +25,7 @@ function M.get(c, config, hp)
     FzfLuaHeaderText = { fg = c.green },
     FzfLuaFzfHeader = { fg = common_fg },
     FzfLuaFzfInfo = { fg = c.grey },
-    FzfLuaFzfPointer = { fg = c.blue },
+    FzfLuaFzfPointer = { fg = c.cyan },
   }
 end
 

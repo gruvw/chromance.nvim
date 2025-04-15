@@ -6,15 +6,15 @@ function M.setup(c, config, _)
   local styles = config.styles
   return {
     Comment = { fg = c.grey, italic = styles.comment.italic }, -- Comments
-    Constant = { fg = c.magenta }, -- (preferred) any constant
+    Constant = { fg = c.red }, -- (preferred) any constant
     String = { fg = c.yellow }, --   a string constant: "this is a string"
-    Character = { fg = c.magenta }, -- a character constant: 'c', '\n'
-    Number = { fg = c.magenta }, -- a number constant: 234, 0xff
-    Boolean = { fg = c.magenta }, -- a boolean constant: TRUE, false
-    Float = { fg = c.magenta }, -- a floating point constant: 2.3e10
+    Character = { fg = c.red }, -- a character constant: 'c', '\n'
+    Number = { fg = c.red }, -- a number constant: 234, 0xff
+    Boolean = { fg = c.red }, -- a boolean constant: TRUE, false
+    Float = { fg = c.red }, -- a floating point constant: 2.3e10
     Identifier = { fg = c.white }, -- (preferred) any variable name
     Function = { fg = c.green }, -- function name (also: methods for classes)
-    Statement = { fg = c.magenta }, -- (preferred) any statement
+    Statement = { fg = c.red }, -- (preferred) any statement
     Conditional = { fg = c.red }, --  if, then, else, endif, switch, etc
     Repeat = { fg = c.red }, -- for, do, while, etc
     Label = { fg = c.red }, -- case, default, etc
@@ -30,8 +30,8 @@ function M.setup(c, config, _)
     StorageClass = { fg = c.red, italic = styles.type.italic }, -- static, register, volatile, etc
     Structure = { fg = c.cyan, italic = styles.type.italic }, -- struct, union, enum, etc
     Typedef = { fg = c.red }, -- A typedef
-    Special = { fg = c.blue }, -- (preferred) any special symbol
-    SpecialChar = { fg = c.blue }, -- special character in a constant
+    Special = { fg = c.cyan }, -- (preferred) any special symbol
+    SpecialChar = { fg = c.cyan }, -- special character in a constant
     -- Tag = {}, -- you can use CTRL-] on this
     Delimiter = { fg = c.white }, -- character that needs attention
     SpecialComment = { fg = c.grey }, -- special things inside a comment
@@ -43,7 +43,7 @@ function M.setup(c, config, _)
     Error = { fg = c.inputValidation.errorForeground }, -- (preferred) any erroneous construct
     Todo = {
       bg = c.editor.background,
-      fg = c.magenta,
+      fg = c.red,
       bold = true,
     }, -- (preferred) anything that needs extra attention; mostly the keywords TO_DO FI_XME etc
     javaAnnotation = { fg = c.dimmed2 },

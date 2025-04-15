@@ -8,20 +8,20 @@ function M.get(c, config, _)
   local isContextStartUnderline = config.plugins.indent_blankline.context_start_underline
   return {
     IndentBlanklineChar = { fg = c.editorIndentGuide.background },
-    IndentBlanklineContextChar = isContextPro and { fg = c.blue } or {
+    IndentBlanklineContextChar = isContextPro and { fg = c.cyan } or {
       fg = c.editorIndentGuide.activeBackground,
     },
     IndentBlanklineContextStart = {
-      sp = isContextPro and c.blue or c.editorIndentGuide.activeBackground,
+      sp = isContextPro and c.cyan or c.editorIndentGuide.activeBackground,
       underline = isContextStartUnderline,
     },
     IndentBlanklineSpaceChar = { fg = c.editor.background }, -- highlight the character Tab
     IndentBlankLineIndent1 = { fg = c.red },
-    IndentBlankLineIndent2 = { fg = c.blue },
+    IndentBlankLineIndent2 = { fg = c.cyan },
     IndentBlankLineIndent3 = { fg = c.yellow },
     IndentBlankLineIndent4 = { fg = c.green },
     IndentBlankLineIndent5 = { fg = c.cyan },
-    IndentBlankLineIndent6 = { fg = c.magenta },
+    IndentBlankLineIndent6 = { fg = c.red },
   }
 end
 

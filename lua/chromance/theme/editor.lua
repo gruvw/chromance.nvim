@@ -202,7 +202,7 @@ function M.setup(c, config, hp)
     Whitespace = {
       fg = c.dimmed4,
     }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    -- WildMenu = { bg = C.blue, fg = C.black }, -- current match in 'wildmenu' completion
+    -- WildMenu = { bg = C.cyan, fg = C.black }, -- current match in 'wildmenu' completion
 
     -- Git
     diffAdded = { fg = c.green },
@@ -219,7 +219,7 @@ function M.setup(c, config, hp)
     -- Neovim
     healthError = { fg = c.red },
     healthSuccess = { fg = c.green },
-    healthWarning = { fg = c.blue },
+    healthWarning = { fg = c.cyan },
   }
 end
 
