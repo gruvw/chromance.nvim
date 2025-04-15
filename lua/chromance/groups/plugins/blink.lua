@@ -6,7 +6,7 @@ local M = {}
 function M.get(c, config, hp)
   local float_winBackgroundClear = vim.tbl_contains(config.background_clear, "float_win")
   return {
-    BlinkCmpMenu = { bg = c.editorSuggestWidget.background, fg = hp.lighten(c.editorSuggestWidget.foreground, -15) },
+    BlinkCmpMenu = { bg = c.editorSuggestWidget.background, fg = hp.blend(c.editorSuggestWidget.foreground, 0.1, c.text) },
     -- BlinkCmpMenuSelection = float_winBackgroundClear and {
     --   bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7),
     --   bold = true,
@@ -15,13 +15,13 @@ function M.get(c, config, hp)
     --   bg = c.editorSuggestWidget.selectedBackground,
     --   bold = true,
     -- },
-    BlinkCmpLabelDescription = { fg = hp.lighten(c.dimmed1, 3) },
+    BlinkCmpLabelDescription = { fg = c.dimmed1 },
     BlinkCmpLabelDeprecated = { fg = nil, bg = nil, strikethrough = true },
     BlinkCmpGhostText = { link = "Comment" },
-    BlinkCmpLabel = { fg = hp.lighten(c.editorSuggestWidget.foreground, -15) },
+    BlinkCmpLabel = { fg = c.editorSuggestWidget.foreground },
     BlinkCmpLabelMatch = { fg = c.editorSuggestWidget.highlightForeground, bold = true },
     BlinkCmpSource = { fg = c.editorSuggestWidget.foreground },
-    BlinkCmpKind = { fg = hp.lighten(c.editorSuggestWidget.foreground, -15) },
+    BlinkCmpKind = { fg = c.editorSuggestWidget.foreground },
     BlinkCmpKindArray = { fg = c.red },
     BlinkCmpKindBoolean = { fg = c.red },
     BlinkCmpKindClass = { fg = c.cyan },

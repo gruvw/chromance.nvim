@@ -14,7 +14,7 @@ function M.get(c, _, _)
     },
     NoiceCmdlineIconSearch = { fg = c.blue },
     NoiceFormatProgressDone = { bg = c.yellow, fg = c.black, bold = true },
-    NoiceFormatProgressTodo = { bg = c.dimmed3, fg = c.dimmed5 },
+    NoiceFormatProgressTodo = { bg = c.grey, fg = c.dimmed5 },
     NoiceLspProgressTitle = { fg = c.dimmed2 },
     NoiceLspProgressClient = { fg = c.cyan },
     NoiceConfirm = { bg = c.notifications.background, fg = c.notifications.foreground },

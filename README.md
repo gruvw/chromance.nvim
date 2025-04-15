@@ -7,3 +7,7 @@ An opinionated sleek and vibrant Neovim color theme.
 ## Installation
 
 <!-- TODO document install -->
+
+<!-- Important -->
+
+<!-- Set the configuration BEFORE loading the color scheme with colorscheme chromance. -->

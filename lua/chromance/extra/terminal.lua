@@ -1,4 +1,4 @@
----@class chromance.util.extri
+---@class chromance.utils.extri
 local M = {}
 
 ---@param colors Colors

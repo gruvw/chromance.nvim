@@ -1,4 +1,5 @@
-local hp = require("chromance.util.color_helper")
+local config = require("chromance.config")
+local hp = require("chromance.utils.color_helper")
 
 local M = {}
 
@@ -7,7 +8,7 @@ local colors = {
   dark2 = "#131313",
   dark1 = "#191919",
   background = "#222222",
-  text = "#f7f1ff",
+  text = "#F2F2F2",
   red = "#fc618d",
   orange = "#fd9353",
   yellow = "#fce566",
@@ -15,16 +16,33 @@ local colors = {
   cyan = "#5ad4e6",
   purple = "#948ae3",
   dimmed1 = "#bab6c0",
-  dimmed2 = "#8b888f",
-  dimmed3 = "#69676c",
+  dimmed2 = "#8A8A8A",
+  grey = "#707070",
   dimmed4 = "#525053",
   dimmed5 = "#363537",
 };
 
+-- TODO clear cs groups
+-- TODO try to avoid the get call (try to apply config overwrite and check if it works, also test lualine, overwrite yellow to try)
+
 ---@return Colors
-function M.get(options)
+function M.get()
+  -- use to change colors based on config
+  local options = config.options
+
   ---@class Colors
   local cs = colors;
+
+  -- allowed icon colors
+  cs.icon_colors = {
+    colors.text,
+    colors.red,
+    colors.orange,
+    colors.yellow,
+    colors.green,
+    colors.cyan,
+    colors.purple,
+  }
 
   cs.editor = {
     background = colors.background,
@@ -55,12 +73,12 @@ function M.get(options)
     border = colors.dimmed5, -- "#403e41",
     foreground = colors.dimmed1, -- "#c1c0c0",
     highlightForeground = colors.text, -- "#fcfcfa",
-    selectedBackground = colors.dimmed3, -- "#727072",
+    selectedBackground = colors.grey, -- "#727072",
   }
 
   cs.editorIndentGuide = {
     background = colors.dimmed5, -- "#403e41",
-    activeBackground = colors.dimmed3, -- "#5b595c",
+    activeBackground = colors.grey, -- "#5b595c",
   }
 
   cs.editorInlayHint = {
@@ -131,13 +149,13 @@ function M.get(options)
   }
 
   cs.errorLens = {
-    errorBackground = hp.blend(colors.red, 0.1),
+    errorBackground = hp.blend(colors.red, 0.1, colors.background),
     errorForeground = colors.red,
-    warningBackground = hp.blend(colors.orange, 0.1),
+    warningBackground = hp.blend(colors.orange, 0.1, colors.background),
     warningForeground = colors.orange,
-    infoBackground = hp.blend(colors.cyan, 0.1),
+    infoBackground = hp.blend(colors.cyan, 0.1, colors.background),
     infoForeground = colors.cyan,
-    hintBackground = hp.blend(colors.cyan, 0.1),
+    hintBackground = hp.blend(colors.cyan, 0.1, colors.background),
     hintForeground = colors.cyan,
   }
 
@@ -155,7 +173,7 @@ function M.get(options)
     white = colors.text, -- "#fcfcfa",
     dimmed1 = colors.dimmed1, -- "#c1c0c0",
     dimmed2 = colors.dimmed2, -- "#939293",
-    dimmed3 = colors.dimmed3, -- "#727072",
+    dimmed3 = colors.grey, -- "#727072",
     dimmed4 = colors.dimmed4, -- "#5b595c",
     dimmed5 = colors.dimmed5, -- "#403e41",
   }
@@ -174,7 +192,7 @@ function M.get(options)
     activeBackground = colors.background,
     activeBorder = colors.yellow, -- "#ffd866",
     activeForeground = colors.yellow, -- "#ffd866",
-    inactiveBackground = hp.lighten(colors.background, 15),
+    inactiveBackground = hp.blend(colors.background, 0.15, colors.text),
     inactiveForeground = colors.dimmed2, -- "#939293",
     unfocusedActiveBackground = colors.background, -- "#272822",
     unfocusedActiveBorder = colors.dimmed2, -- "#939293",
@@ -184,7 +202,7 @@ function M.get(options)
   cs.statusBar = {
     -- background = p.dark1,
     background = colors.dark2,
-    foreground = colors.dimmed3,
+    foreground = colors.grey,
     activeForeground = colors.dimmed1,
   }
 

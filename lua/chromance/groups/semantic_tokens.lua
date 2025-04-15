@@ -3,7 +3,7 @@ local M = {}
 --- @param c Colors The color palette
 --- @param config Config
 --- @param hp Helper
-M.setup = function(c, config, hp)
+function M.setup(c, config, hp)
   return {
     ["@lsp.type.boolean"]                      = { link = "@boolean" },
     ["@lsp.type.builtinType"]                  = { link = "@type.builtin" },
@@ -16,7 +16,7 @@ M.setup = function(c, config, hp)
     ["@lsp.type.escapeSequence"]               = { link = "@string.escape" },
     ["@lsp.type.formatSpecifier"]              = { link = "@markup.list" },
     ["@lsp.type.generic"]                      = { link = "@variable" },
-    ["@lsp.type.interface"]                    = { fg = hp.lighten(c.cyan, 10) },
+    ["@lsp.type.interface"]                    = { fg = c.cyan },
     ["@lsp.type.keyword"]                      = { link = "@keyword" },
     ["@lsp.type.lifetime"]                     = { link = "@keyword.storage" },
     ["@lsp.type.namespace"]                    = { link = "@module" },
@@ -43,8 +43,8 @@ M.setup = function(c, config, hp)
     ["@lsp.typemod.operator.injected"]         = { link = "@operator" },
     ["@lsp.typemod.string.injected"]           = { link = "@string" },
     ["@lsp.typemod.struct.defaultLibrary"]     = { link = "@type.builtin" },
-    ["@lsp.typemod.type.defaultLibrary"]       = { fg = hp.lighten(c.cyan, 15) },
-    ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = hp.lighten(c.cyan, 15) },
+    ["@lsp.typemod.type.defaultLibrary"]       = { fg = c.cyan },
+    ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = c.cyan },
     ["@lsp.typemod.variable.callable"]         = { link = "@function" },
     ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"]         = { link = "@variable" },

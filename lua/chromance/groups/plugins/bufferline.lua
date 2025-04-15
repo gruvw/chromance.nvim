@@ -9,13 +9,13 @@ local options = {
   background_clear = true,
 }
 
-M.add_bold = function(bufferline_groups)
+function M.add_bold(bufferline_groups)
   for _, hlValue in pairs(bufferline_groups) do
     hlValue["bold"] = true
   end
 end
 
-M.add_underline = function(bufferline_groups)
+function M.add_underline(bufferline_groups)
   for key, hlValue in pairs(bufferline_groups) do
     if string.find(key, "Selected") then
       hlValue["underline"] = M.isUnderlined.selected
@@ -57,12 +57,11 @@ function M.get(c, config, hp)
   local isBackgroundClear = vim.tbl_contains(config.background_clear, "bufferline")
 
   local tabsBackground = isBackgroundClear and c.editor.background or c.editorGroupHeader.tabsBackground
-  local amt = 10
 
   local tab = vim.tbl_deep_extend("force", c.tab or {}, isBackgroundClear and {
-    activeBackground = hp.lighten(c.tab.activeBackground, amt),
-    inactiveBackground = hp.lighten(c.tab.inactiveBackground, amt),
-    unfocusedActiveBackground = hp.lighten(c.tab.unfocusedActiveBackground, amt),
+    activeBackground = c.tab.activeBackground,
+    inactiveBackground = c.tab.inactiveBackground,
+    unfocusedActiveBackground = c.tab.unfocusedActiveBackground,
   } or {})
   M.get_tab = function()
     return tab
@@ -308,7 +307,7 @@ function M.get(c, config, hp)
 end
 
 ---@return HighlightGroups?
-M.setup_bufferline_icon = function(icon_hl_name, icon_color)
+function M.setup_bufferline_icon(icon_hl_name, icon_color)
   if icon_hl_name == nil then
     return
   end

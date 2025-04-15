@@ -68,7 +68,7 @@ function M.get(c, config, _)
 
     -- Strings & Characters
     ["@string"]                           = { fg = c.yellow },
-    ["@string.documentation"]             = { fg = c.dimmed3 },
+    ["@string.documentation"]             = { fg = c.grey },
     ["@string.escape"]                    = { fg = c.magenta },
     ["@string.regexp"]                    = { fg = c.yellow },
     ["@character"]                        = { fg = c.yellow },

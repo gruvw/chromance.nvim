@@ -3,13 +3,13 @@ local M = {}
 --- @param c Colors The color palette
 --- @param config Config
 --- @param hp Helper
-M.setup = function(c, config, hp)
+function M.setup(c, config, hp)
   local float_winBackgroundClear = vim.tbl_contains(config.background_clear, "float_win")
   return {
     ColorColumn = {
       bg = c.dimmed5
     }, -- used for the columns set with 'colorcolumn'
-    Conceal = { bg = c.editor.background, fg = c.dimmed3 }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal = { bg = c.editor.background, fg = c.grey }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
       bg = c.white,
       fg = c.white,
@@ -21,7 +21,7 @@ M.setup = function(c, config, hp)
     }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = {
       bg = c.editor.lineHighlightBackground,
-    }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground
     CursorLineNr = {
       bg = c.editor.background,
       fg = c.editorLineNumber.activeForeground,
@@ -134,14 +134,14 @@ M.setup = function(c, config, hp)
       fg = c.editorSuggestWidget.foreground,
     }, -- Popup menu: normal item.
     PmenuSel = float_winBackgroundClear and {
-      bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7),
+      bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7, c.background),
       bold = true,
     } or {
       bg = c.editorSuggestWidget.selectedBackground,
       bold = true,
     },
     PmenuSbar = {
-      bg = hp.lighten(c.editorSuggestWidget.background, -10),
+      bg = hp.blend(c.editorSuggestWidget.background, 0.1, c.text),
     }, -- Popup menu: scrollbar.
     PmenuThumb = {
       bg = c.scrollbarSlider.hoverBackground,

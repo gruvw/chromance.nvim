@@ -10,10 +10,10 @@ function M.get(c, config, hp)
   local transparent_bg_border = c.dimmed2
   -- background
   local preview_bg = c.dimmed5
-  local prompt_bg = hp.lighten(c.dimmed5, 10)
+  local prompt_bg = c.dimmed5
   local result_bg = c.dimmed5
   -- foreground
-  local common_fg = hp.lighten(c.sideBar.foreground, 30)
+  local common_fg = c.sideBar.foreground
   return {
     TelescopeSelection = isBackgroundClear and {
       bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg),

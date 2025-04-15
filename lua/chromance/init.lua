@@ -1,7 +1,8 @@
 local config = require("chromance.config")
 local groups = require("chromance.groups")
-local highlight = require("chromance.util.highlight")
+local highlight = require("chromance.utils.highlight")
 local colors = require("chromance.colors")
+local extra = require("chromance.extra")
 
 ---@class Chromance
 local M = {}
@@ -14,12 +15,14 @@ function M.load()
   vim.o.termguicolors = true
   vim.g.colors_name = "chromance"
 
-  local cs = colors.get(config.options);
+  local cs = colors.get();
   local hl_groups = groups.highlight_groups(cs);
-  highlight.apply_groups(hl_groups)
+  highlight.apply_highlights(hl_groups)
+
+  extra.apply_extra(cs)
 end
 
-M.setup = function(options)
+function M.setup(options)
   config.setup(options)
 end
 

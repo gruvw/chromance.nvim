@@ -1,6 +1,5 @@
-local Helper = require("chromance.util.color_helper")
-local Config = require("chromance.config")
-local terminal = require("chromance.util.terminal")
+local Helper = require("chromance.utils.color_helper")
+local config = require("chromance.config")
 
 -- TODO clean up group init file
 
@@ -62,10 +61,10 @@ local PLUGINS = {
 -- }
 ---@param colors Colors
 ---@return HighlightGroups
-local function get_hl_group_tbl(colors)
-  local editor = require("chromance.groups.editor").setup(colors, Config.options, Helper)
-  local syntax = require("chromance.groups.syntax").setup(colors, Config.options, Helper)
-  local semantic_tokens = require("chromance.groups.semantic_tokens").setup(colors, Config.options, Helper)
+function M.highlight_groups(colors)
+  local editor = require("chromance.groups.editor").setup(colors, config.options, Helper)
+  local syntax = require("chromance.groups.syntax").setup(colors, config.options, Helper)
+  local semantic_tokens = require("chromance.groups.semantic_tokens").setup(colors, config.options, Helper)
   --  The HlGroups class represents a collection of highlighter groups.
   --  Each group is identified by a string key (e.g. "editor") and holds the result of calling the `setup` function of a corresponding highlighter module (e.g. `editor.setup`).
   --  The class has a single field, `hl_groups`, which is a table containing the highlighter groups.
@@ -77,28 +76,10 @@ local function get_hl_group_tbl(colors)
       return ...
     end, "chromance.groups.plugins." .. name)
     if config_ok then
-      hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, Config.options, Helper))
+      hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, config.options, Helper))
     end
   end
   return hl_group_tbl
-end
-
----@param colors Colors
----@return HighlightGroups
-M.highlight_groups = function(colors)
-  local devicons = require("chromance.devicons")
-
-  local hl_groups = get_hl_group_tbl(colors)
-
-  if Config.terminal_colors then
-    terminal.terminal(colors)
-  end
-
-  if Config.devicons then
-    devicons.setup(colors)
-  end
-
-  return hl_groups
 end
 
 return M

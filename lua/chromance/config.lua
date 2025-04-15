@@ -1,5 +1,7 @@
 local M = {}
 
+-- TODO clear config options
+
 ---@class ChromanceOptions
 ---@field plugins? PluginConfig
 local default_options = {
@@ -41,12 +43,12 @@ local default_options = {
 M.options = nil
 
 ---@param options? ChromanceOptions
-M.setup = function(options)
+function M.setup(options)
   M.options = vim.tbl_deep_extend("force", {}, default_options, options or {})
 end
 
 ---@param options? ChromanceOptions
-M.extend = function(options)
+function M.extend(options)
   return options and vim.tbl_deep_extend("force", {}, M.options, options) or M.options
 end
 

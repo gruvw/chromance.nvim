@@ -3,7 +3,7 @@ local M = {}
 --- @param c Colors The color palette
 --- @param hp Helper
 function M.get(c, _, hp)
-  local lazy_bg = hp.lighten(c.sideBar.background, 5)
+  local lazy_bg = c.sideBar.background
   return {
     LazyButton = { bg = c.button.background, fg = c.button.foreground },
     LazyComment = { fg = c.yellow },
@@ -16,7 +16,7 @@ function M.get(c, _, hp)
     },
     LazyNormal = {
       bg = lazy_bg,
-      fg = hp.lighten(c.sideBar.foreground, 5),
+      fg = c.sideBar.foreground,
     },
     LazyProgressDone = { bg = lazy_bg, fg = c.tab.activeBorder },
     LazyProgressTodo = {

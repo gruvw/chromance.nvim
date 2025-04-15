@@ -2,10 +2,10 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
-M.setup = function(c, config, _)
+function M.setup(c, config, _)
   local styles = config.styles
   return {
-    Comment = { fg = c.dimmed3, italic = styles.comment.italic }, -- Comments
+    Comment = { fg = c.grey, italic = styles.comment.italic }, -- Comments
     Constant = { fg = c.magenta }, -- (preferred) any constant
     String = { fg = c.yellow }, --   a string constant: "this is a string"
     Character = { fg = c.magenta }, -- a character constant: 'c', '\n'
@@ -34,7 +34,7 @@ M.setup = function(c, config, _)
     SpecialChar = { fg = c.blue }, -- special character in a constant
     -- Tag = {}, -- you can use CTRL-] on this
     Delimiter = { fg = c.white }, -- character that needs attention
-    SpecialComment = { fg = c.dimmed3 }, -- special things inside a comment
+    SpecialComment = { fg = c.grey }, -- special things inside a comment
     -- Debug = {}, -- debugging statements
     Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
     Bold = { bold = true },
@@ -45,7 +45,7 @@ M.setup = function(c, config, _)
       bg = c.editor.background,
       fg = c.magenta,
       bold = true,
-    }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    }, -- (preferred) anything that needs extra attention; mostly the keywords TO_DO FI_XME etc
     javaAnnotation = { fg = c.dimmed2 },
   }
 end
