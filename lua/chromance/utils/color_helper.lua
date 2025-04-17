@@ -26,6 +26,33 @@ local function rgb_to_hex(rgb)
   return "#" .. red .. green .. blue
 end
 
+-- Convert RGB to HSV
+local function rgb_to_hsv(r, g, b)
+  r, g, b = r / 255, g / 255, b / 255
+  local max_val = math.max(r, g, b)
+  local min_val = math.min(r, g, b)
+  local delta = max_val - min_val
+
+  local h = 0
+  if delta ~= 0 then
+    if max_val == r then
+      h = ((g - b) / delta) % 6
+    elseif max_val == g then
+      h = ((b - r) / delta) + 2
+    else
+      h = ((r - g) / delta) + 4
+    end
+    h = h * 60
+  end
+  if h < 0 then h = h + 360 end
+
+  return {
+    h = h,
+    s = max_val,
+    v = (max_val == 0 and 0 or delta / max_val),
+  }
+end
+
 ---@param alpha HexColorAlpha
 ---@param background HexColor
 local function rgba(red, green, blue, alpha, background)
@@ -50,29 +77,6 @@ function M.blend(hex, alpha, base)
   return rgba(rgb.r, rgb.g, rgb.b, alpha, base)
 end
 
--- Convert RGB to HSV
-local function rgb_to_hsv(r, g, b)
-  r, g, b = r / 255, g / 255, b / 255
-  local max_val = math.max(r, g, b)
-  local min_val = math.min(r, g, b)
-  local delta = max_val - min_val
-
-  local h = 0
-  if delta ~= 0 then
-    if max_val == r then
-      h = ((g - b) / delta) % 6
-    elseif max_val == g then
-      h = ((b - r) / delta) + 2
-    else
-      h = ((r - g) / delta) + 4
-    end
-    h = h * 60
-  end
-  if h < 0 then h = h + 360 end
-
-  return h, max_val, (max_val == 0 and 0 or delta / max_val)
-end
-
 -- Find the closest color based on hue distance
 ---@param hex HexColor
 ---@param palette [HexColor]
@@ -87,7 +91,7 @@ function M.find_closest_color(hex, palette)
     local prgb = hex_to_rgb(color)
     local phue = rgb_to_hsv(prgb.r, prgb.g, prgb.b)
 
-    local hue_diff = math.abs(hhue - phue)
+    local hue_diff = math.abs(hhue.h - phue.h)
     hue_diff = math.min(hue_diff, 360 - hue_diff) -- shortest circular distance
 
     if hue_diff < min_dist then
