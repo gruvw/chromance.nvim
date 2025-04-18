@@ -6,7 +6,7 @@ local M = {}
 function M.get(c, config, hp)
   local transparent_bg = c.editor.background
 
-  local common_fg = hp.blend(c.sideBar.foreground, 0.3, c.text)
+  local common_fg = hp.blend(c.sideBar.foreground, 0.3, c.white)
 
   return {
     FzfLuaNormal = { bg = transparent_bg, fg = common_fg },

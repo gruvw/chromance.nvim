@@ -23,36 +23,14 @@ function M.get(c, config, hp)
       bold = true,
     },
 
-    TelescopeSelectionCaret = isBackgroundClear and {
-      bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg),
-      bold = true,
-    } or {
-      bg = hp.blend(c.green, 0.2, result_bg),
-      fg = c.green,
-    },
-
-    TelescopeNormal = isBackgroundClear and {
-      bg = c.editor.background,
-      fg = common_fg,
-    } or {
-      bg = c.editorHoverWidget.background,
-      fg = common_fg,
-    },
+    TelescopeSelectionCaret = { bg = c.editor.background, fg = c.green, bold = true },
+    TelescopeNormal = c.styles.normal,
     TelescopePromptCounter = {
       fg = c.red,
       bold = true,
     },
-    TelescopeBorder = isBackgroundClear and {
-      bg = c.editor.background,
-      fg = c.tab.unfocusedActiveBorder,
-    } or {
-      bg = c.editor.background,
-      fg = c.editorHoverWidget.background,
-    },
-    TelescopeMatching = {
-      fg = c.cyan,
-      bold = true,
-    },
+    TelescopeBorder = c.styles.border,
+    TelescopeMatching = c.styles.matchPrimary,
 
     TelescopePreviewLine = { link = "TelescopeSelection" },
 
@@ -62,21 +40,9 @@ function M.get(c, config, hp)
       fg = c.black,
       bold = true,
     },
-    TelescopePromptNormal = isBackgroundClear and {
-      bg = transparent_bg,
-      fg = common_fg,
-    } or {
-      bg = prompt_bg,
-      fg = common_fg,
-    },
-    TelescopePromptBorder = isBackgroundClear and {
-      bg = transparent_bg,
-      fg = transparent_bg_border,
-    } or {
-      bg = transparent_bg,
-      fg = prompt_bg,
-    },
-    TelescopePromptPrefix = { fg = c.cyan },
+    TelescopePromptNormal = c.styles.normal,
+    TelescopePromptBorder = c.styles.border,
+    TelescopePromptPrefix = { fg = c.green },
 
     -- preview
     TelescopePreviewTitle = {
@@ -84,20 +50,8 @@ function M.get(c, config, hp)
       fg = c.black,
       bold = true,
     },
-    TelescopePreviewNormal = isBackgroundClear and {
-      bg = transparent_bg,
-      fg = common_fg,
-    } or {
-      bg = preview_bg,
-      fg = common_fg,
-    },
-    TelescopePreviewBorder = isBackgroundClear and {
-      bg = transparent_bg,
-      fg = transparent_bg_border,
-    } or {
-      bg = transparent_bg,
-      fg = preview_bg,
-    },
+    TelescopePreviewNormal = c.styles.normal,
+    TelescopePreviewBorder = c.styles.border,
 
     -- result
     TelescopeResultsTitle = {
@@ -105,20 +59,8 @@ function M.get(c, config, hp)
       fg = c.black,
       bold = true,
     },
-    TelescopeResultsNormal = isBackgroundClear and {
-      bg = transparent_bg,
-      fg = common_fg,
-    } or {
-      bg = result_bg,
-      fg = common_fg,
-    },
-    TelescopeResultsBorder = isBackgroundClear and {
-      bg = transparent_bg,
-      fg = transparent_bg_border,
-    } or {
-      bg = transparent_bg,
-      fg = result_bg,
-    },
+    TelescopeResultsNormal = c.styles.normal,
+    TelescopeResultsBorder = c.styles.border,
   }
 end
 

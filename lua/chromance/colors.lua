@@ -4,22 +4,23 @@ local hp = require("chromance.utils.color_helper")
 local M = {}
 
 -- TODO setup basic colors
+-- TODO apply new colors everywhere
 
 ---@class Colors
 local colors = {
-  dark2 = "#131313",
-  dark1 = "#191919",
-  background = "#222222",
-  text = "#F2F2F2",
+  black = "#0F0F0F",
+  dark = "#1F1F1F",
+  grey = "#707070",
+  white = "#F2F2F2",
   red = "#fc618d",
   orange = "#fd9353",
   yellow = "#fce566",
   green = "#7bd88f",
   cyan = "#5ad4e6",
   purple = "#948ae3",
+  dark2 = "#131313",
   dimmed1 = "#bab6c0",
   dimmed2 = "#8A8A8A",
-  grey = "#707070",
   dimmed4 = "#525053",
   dimmed5 = "#363537",
 };
@@ -37,7 +38,7 @@ function M.get()
 
   -- allowed icon colors
   cs.icon_colors = {
-    colors.text,
+    colors.white,
     colors.red,
     colors.orange,
     colors.yellow,
@@ -48,17 +49,41 @@ function M.get()
   }
 
   cs.editor = {
-    background = colors.background,
-    foreground = colors.text,
-    lineHighlightBackground = hp.blend(colors.text, 0.05, colors.background), -- "#fcfcfa0c", -- background: background
-    selectionBackground = hp.blend(colors.dimmed1, 0.15, colors.background), --"#c1c0c027", -- background: background
-    findMatchBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- background: background
+    background = colors.dark,
+    text = colors.white,
+    border = colors.white,
+    lineHighlightBackground = hp.blend(colors.white, 0.05, colors.dark), -- "#fcfcfa0c", -- background: background
+    selectionBackground = hp.blend(colors.dimmed1, 0.15, colors.dark), --"#c1c0c027", -- background: background
+    findMatchBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#fcfcfa26", -- background: background
     findMatchBorder = colors.yellow,
-    findMatchHighlightBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- background: background
-    foldBackground = hp.blend(colors.text, 0.1, colors.background), -- "#fcfcfa0c", -- background: background
-    wordHighlightBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- illuminateRead
-    selectionHighlightBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- illuminateText
-    wordHighlightStrongBackground = hp.blend(colors.text, 0.15, colors.background), -- "#fcfcfa26", -- illuminateWrite
+    findMatchHighlightBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#fcfcfa26", -- background: background
+    foldBackground = hp.blend(colors.white, 0.1, colors.dark), -- "#fcfcfa0c", -- background: background
+    wordHighlightBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#fcfcfa26", -- illuminateRead
+    selectionHighlightBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#fcfcfa26", -- illuminateText
+    wordHighlightStrongBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#fcfcfa26", -- illuminateWrite
+  }
+
+  cs.styles = {
+    normal = {
+      bg = cs.editor.background,
+      fg = cs.editor.text,
+    },
+    border = {
+      bg = cs.editor.background,
+      fg = cs.editor.border,
+    },
+    matchPrimary = {
+      bg = colors.yellow,
+      fg = colors.dark,
+      underline = false,
+      bold = true,
+    },
+    matchSecondary = {
+      bg = colors.orange,
+      fg = colors.dark,
+      underline = false,
+      bold = true,
+    },
   }
 
   cs.editorLineNumber = {
@@ -68,14 +93,14 @@ function M.get()
 
   cs.editorHoverWidget = {
     background = colors.dimmed5,
-    border = colors.background,
+    border = colors.dark,
   }
 
   cs.editorSuggestWidget = {
     background = colors.dimmed5, -- "#403e41",
     border = colors.dimmed5, -- "#403e41",
     foreground = colors.dimmed1, -- "#c1c0c0",
-    highlightForeground = colors.text, -- "#fcfcfa",
+    highlightForeground = colors.white, -- "#fcfcfa",
     selectedBackground = colors.grey, -- "#727072",
   }
 
@@ -96,7 +121,7 @@ function M.get()
   }
 
   cs.sideBar = {
-    background = colors.dark1, -- "#221f22",
+    background = colors.black, -- "#221f22",
     foreground = colors.dimmed2, -- "#939293",
   }
 
@@ -105,11 +130,11 @@ function M.get()
   }
 
   cs.list = {
-    activeSelectionBackground = hp.blend(colors.text, 0.11, cs.sideBar.background), -- "#fcfcfa1c", -- background: sideBarBackground,
+    activeSelectionBackground = hp.blend(colors.white, 0.11, cs.sideBar.background), -- "#fcfcfa1c", -- background: sideBarBackground,
   }
 
   cs.sideBarSectionHeader = {
-    background = colors.dark1, -- "#221f22",
+    background = colors.black, -- "#221f22",
     foreground = colors.dimmed1, -- "#c1c0c0",
   }
 
@@ -121,11 +146,11 @@ function M.get()
     background = colors.dimmed5, -- "#403e41",
     foreground = colors.dimmed1, -- "#c1c0c0",
     hoverBackground = colors.dimmed4, -- "#5b595c",
-    separator = colors.background, -- "#272822",
+    separator = colors.dark, -- "#272822",
   }
 
   cs.scrollbarSlider = {
-    hoverBackground = hp.blend(colors.dimmed1, 0.15, colors.background), -- "#c1c0c026", -- background: background
+    hoverBackground = hp.blend(colors.dimmed1, 0.15, colors.dark), -- "#c1c0c026", -- background: background
   }
 
   cs.gitDecoration = {
@@ -152,28 +177,28 @@ function M.get()
   }
 
   cs.errorLens = {
-    errorBackground = hp.blend(colors.red, 0.1, colors.background),
+    errorBackground = hp.blend(colors.red, 0.1, colors.dark),
     errorForeground = colors.red,
-    warningBackground = hp.blend(colors.orange, 0.1, colors.background),
+    warningBackground = hp.blend(colors.orange, 0.1, colors.dark),
     warningForeground = colors.orange,
-    infoBackground = hp.blend(colors.cyan, 0.1, colors.background),
+    infoBackground = hp.blend(colors.cyan, 0.1, colors.dark),
     infoForeground = colors.cyan,
-    hintBackground = hp.blend(colors.cyan, 0.1, colors.background),
+    hintBackground = hp.blend(colors.cyan, 0.1, colors.dark),
     hintForeground = colors.cyan,
   }
 
   cs.terminal = {
     background = colors.dimmed5, -- "#403e41",
-    foreground = colors.text, -- "#fcfcfa",
+    foreground = colors.white, -- "#fcfcfa",
     dark = colors.dark2, -- "#19181a"
-    black = colors.dark1, --"#221f22",
+    black = colors.black, --"#221f22",
     red = colors.red, -- "#ff6188",
     green = colors.green, -- "#a9dc76",
     yellow = colors.yellow, -- "#ffd866",
     blue = colors.orange, -- "#fc9867",
     magenta = colors.purple, -- "#ab9df2",
     cyan = colors.cyan, -- "#78dce8",
-    white = colors.text, -- "#fcfcfa",
+    white = colors.white, -- "#fcfcfa",
     dimmed1 = colors.dimmed1, -- "#c1c0c0",
     dimmed2 = colors.dimmed2, -- "#939293",
     dimmed3 = colors.grey, -- "#727072",
@@ -183,21 +208,21 @@ function M.get()
 
   cs.terminalCursor = {
     background = "#ffffff", -- "#00000000",
-    foreground = colors.text, -- "#fcfcfa",
+    foreground = colors.white, -- "#fcfcfa",
   }
 
   cs.editorGroupHeader = {
-    tabsBackground = colors.dark1, -- "#221f22",
-    tabsBorder = colors.dark1, -- "#221f22",
+    tabsBackground = colors.black, -- "#221f22",
+    tabsBorder = colors.black, -- "#221f22",
   }
 
   cs.tab = {
-    activeBackground = colors.background,
+    activeBackground = colors.dark,
     activeBorder = colors.yellow, -- "#ffd866",
     activeForeground = colors.yellow, -- "#ffd866",
-    inactiveBackground = hp.blend(colors.background, 0.15, colors.text),
+    inactiveBackground = hp.blend(colors.dark, 0.15, colors.white),
     inactiveForeground = colors.dimmed2, -- "#939293",
-    unfocusedActiveBackground = colors.background, -- "#272822",
+    unfocusedActiveBackground = colors.dark, -- "#272822",
     unfocusedActiveBorder = colors.dimmed2, -- "#939293",
     unfocusedActiveForeground = colors.dimmed1, -- "#c1c0c0",
   }
@@ -210,9 +235,9 @@ function M.get()
   }
 
   cs.diffEditor = {
-    insertedLineBackground = hp.blend(colors.green, 0.1, colors.dark1), -- #a9dc7619
-    removedLineBackground = hp.blend(colors.red, 0.1, colors.dark1), -- #ff618819
-    modifiedLineBackground = hp.blend(colors.orange, 0.1, colors.dark1), -- #fc986719
+    insertedLineBackground = hp.blend(colors.green, 0.1, colors.black), -- #a9dc7619
+    removedLineBackground = hp.blend(colors.red, 0.1, colors.black), -- #ff618819
+    modifiedLineBackground = hp.blend(colors.orange, 0.1, colors.black), -- #fc986719
   }
 
   cs.diffEditorOverview = {

@@ -48,7 +48,7 @@ function M.setup(c, config, hp)
       bg = c.diffEditor.removedLineBackground,
       fg = c.diffEditorOverview.removedForeground,
     },
-    DiffText = { bg = c.editor.background, fg = c.editor.foreground }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText = { bg = c.editor.background, fg = c.editor.text }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer = {
       fg = c.editor.background,
     }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
@@ -97,11 +97,11 @@ function M.setup(c, config, hp)
     }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|. Example the character space between words
     Normal = {
       bg = c.editor.background,
-      fg = c.editor.foreground,
+      fg = c.editor.text,
     }, -- normal text
     NormalNC = {
       bg = c.editor.background,
-      fg = c.editor.foreground,
+      fg = c.editor.text,
     },
     NormalFloat = float_winBackgroundClear and {
       bg = c.editor.background,
@@ -113,7 +113,7 @@ function M.setup(c, config, hp)
     }, -- Normal text in floating windows. example PackerNormal
     FloatBorder = float_winBackgroundClear and {
       bg = c.editor.background,
-      fg = c.editorSuggestWidget.foreground,
+      fg = c.editor.text,
     } or {
       bg = c.editor.background,
       fg = c.black,
@@ -134,14 +134,14 @@ function M.setup(c, config, hp)
       fg = c.editorSuggestWidget.foreground,
     }, -- Popup menu: normal item.
     PmenuSel = float_winBackgroundClear and {
-      bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7, c.background),
+      bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7, c.dark),
       bold = true,
     } or {
       bg = c.editorSuggestWidget.selectedBackground,
       bold = true,
     },
     PmenuSbar = {
-      bg = hp.blend(c.editorSuggestWidget.background, 0.1, c.text),
+      bg = hp.blend(c.editorSuggestWidget.background, 0.1, c.white),
     }, -- Popup menu: scrollbar.
     PmenuThumb = {
       bg = c.scrollbarSlider.hoverBackground,
@@ -197,7 +197,7 @@ function M.setup(c, config, hp)
     }, -- warning messages
     WinSeparator = {
       -- bg = c.editor.background,
-      fg = c.black,
+      fg = c.editor.border,
     }, -- the column separating windows
     Whitespace = {
       fg = c.dimmed4,

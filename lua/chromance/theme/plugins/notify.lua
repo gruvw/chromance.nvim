@@ -6,11 +6,11 @@ local M = {}
 function M.get(c, config, hp)
   local isBackgroundClear = vim.tbl_contains(config.background_clear, "notify")
   local notify_groups = {
-    NotifyERRORBorder = { fg = hp.blend(c.inputValidation.errorBorder, 0.3, c.background) },
-    NotifyWARNBorder = { fg = hp.blend(c.inputValidation.warningBorder, 0.3, c.background) },
-    NotifyINFOBorder = { fg = hp.blend(c.inputValidation.infoBorder, 0.3, c.background) },
-    NotifyDEBUGBorder = { fg = hp.blend(c.dimmed2, 0.3, c.background) },
-    NotifyTRACEBorder = { fg = hp.blend(c.red, 0.3, c.background) },
+    NotifyERRORBorder = { fg = hp.blend(c.inputValidation.errorBorder, 0.3, c.dark) },
+    NotifyWARNBorder = { fg = hp.blend(c.inputValidation.warningBorder, 0.3, c.dark) },
+    NotifyINFOBorder = { fg = hp.blend(c.inputValidation.infoBorder, 0.3, c.dark) },
+    NotifyDEBUGBorder = { fg = hp.blend(c.dimmed2, 0.3, c.dark) },
+    NotifyTRACEBorder = { fg = hp.blend(c.red, 0.3, c.dark) },
     NotifyERRORIcon = { fg = c.inputValidation.errorForeground },
     NotifyWARNIcon = { fg = c.inputValidation.warningForeground },
     NotifyINFOIcon = { fg = c.inputValidation.infoForeground },

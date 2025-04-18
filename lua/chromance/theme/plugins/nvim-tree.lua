@@ -11,17 +11,18 @@ function M.get(c, config, _)
     NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
 
     NvimTreeNormal = { bg = sidebar_bg, fg = c.sideBar.foreground },
+    NvimTreeNormalFloat = { fg = c.editor.text },
     NvimTreeEndOfBuffer = {
       bg = sidebar_bg,
       fg = sidebar_bg,
     },
     NvimTreeWinSeparator = {
       bg = c.editor.background,
-      fg = isBackgroundClear and c.black or c.editor.background,
+      fg = c.editor.border,
     },
 
-    NvimTreeFolderName = { fg = c.sideBar.foreground },
-    NvimTreeOpenedFolderName = { fg = c.sideBar.foreground, italic = true },
+    NvimTreeFolderName = { fg = c.editor.text },
+    NvimTreeOpenedFolderName = { fg = c.editor.text, italic = true },
     NvimTreeEmptyFolderName = { fg = c.sideBar.foreground, italic = true },
     NvimTreeImageFile = { fg = c.white },
     NvimTreeSpecialFile = { fg = c.white },
