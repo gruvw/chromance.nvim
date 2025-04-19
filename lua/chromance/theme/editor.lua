@@ -4,7 +4,6 @@ local M = {}
 --- @param config Config
 --- @param hp Helper
 function M.setup(c, config, hp)
-  local float_winBackgroundClear = vim.tbl_contains(config.background_clear, "float_win")
   return {
     ColorColumn = {
       bg = c.dimmed5
@@ -103,40 +102,17 @@ function M.setup(c, config, hp)
       bg = c.editor.background,
       fg = c.editor.text,
     },
-    NormalFloat = float_winBackgroundClear and {
-      bg = c.editor.background,
-      fg = c.editorSuggestWidget.foreground,
-    } or {
-      -- bg = c.editorHoverWidget.background,
-      bg = c.black,
-      fg = c.dimmed1,
-    }, -- Normal text in floating windows. example PackerNormal
-    FloatBorder = float_winBackgroundClear and {
-      bg = c.editor.background,
-      fg = c.editor.text,
-    } or {
-      bg = c.editor.background,
-      fg = c.black,
-    },
-    FloatTitle = float_winBackgroundClear and {
-      bg = c.editor.background,
-      fg = c.yellow,
-      bold = true,
-    } or {
+    NormalFloat = c.styles.normal, -- Normal text in floating windows. example PackerNormal
+    FloatBorder = c.styles.border,
+    FloatTitle = {
       bg = c.yellow,
       fg = c.black,
     },
-    Pmenu = float_winBackgroundClear and {
-      bg = c.editor.background,
-      fg = c.editorSuggestWidget.foreground,
-    } or {
+    Pmenu = {
       bg = c.editorSuggestWidget.background,
       fg = c.editorSuggestWidget.foreground,
     }, -- Popup menu: normal item.
-    PmenuSel = float_winBackgroundClear and {
-      bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7, c.dark),
-      bold = true,
-    } or {
+    PmenuSel = {
       bg = c.editorSuggestWidget.selectedBackground,
       bold = true,
     },

@@ -4,26 +4,13 @@ local M = {}
 --- @param config Config
 --- @param hp Helper
 function M.get(c, config, hp)
-  local isBackgroundClear = vim.tbl_contains(config.background_clear, "telescope")
-
-  local transparent_bg = c.editor.background
-  local transparent_bg_border = c.dimmed2
-  -- background
-  local preview_bg = c.dimmed5
-  local prompt_bg = c.dimmed5
-  local result_bg = c.dimmed5
-  -- foreground
-  local common_fg = c.sideBar.foreground
   return {
-    TelescopeSelection = isBackgroundClear and {
-      bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.3, transparent_bg),
-      bold = true,
-    } or {
-      bg = hp.blend(c.green, 0.2, result_bg),
+    TelescopeSelection = {
+      bg = c.editor.lineHighlightBackground,
       bold = true,
     },
 
-    TelescopeSelectionCaret = { bg = c.editor.background, fg = c.green, bold = true },
+    TelescopeSelectionCaret = { bg = c.editor.lineHighlightBackground, fg = c.green, bold = true },
     TelescopeNormal = c.styles.normal,
     TelescopePromptCounter = {
       fg = c.red,
@@ -42,7 +29,7 @@ function M.get(c, config, hp)
     },
     TelescopePromptNormal = c.styles.normal,
     TelescopePromptBorder = c.styles.border,
-    TelescopePromptPrefix = { fg = c.green },
+    TelescopePromptPrefix = { fg = c.green, },
 
     -- preview
     TelescopePreviewTitle = {
