@@ -9,7 +9,7 @@ function M.get(c, _, _)
     GitSignsAdd = { link = "SignAdd" },
     GitSignsChange = { link = "SignChange" },
     GitSignsDelete = { link = "SignDelete" },
-    GitSignsCurrentLineBlame = { fg = c.dimmed4 },
+    GitSignsCurrentLineBlame = { fg = c.silver },
     GitSignsAddInline = { link = "DiffAdd" },
     GitSignsChangeInline = { link = "DiffChange" },
     GitSignsDeleteInline = { link = "DiffDelete" },

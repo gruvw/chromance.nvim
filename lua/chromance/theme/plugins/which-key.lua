@@ -6,9 +6,9 @@ function M.get(c, config, _)
   local isBackgroundClear = vim.tbl_contains(config.background_clear, "which-key")
   local whichkey_bg = c.editorSuggestWidget.background
   local transparent_bg = c.editor.background
-  local transparent_bg_border = c.dimmed2
+  local transparent_bg_border = c.grey
   return {
-    WhichKey = { fg = c.cyan },
+    WhichKey = { fg = c.blue },
     WhichKeySeperator = { fg = c.red },
     WhichKeyGroup = { fg = c.red },
     WhichKeyDesc = { fg = c.yellow },

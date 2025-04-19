@@ -6,20 +6,17 @@ function M.get(c, config, _)
   local isBackgroundClear = vim.tbl_contains(config.background_clear, "nvim-tree")
   local sidebar_bg = isBackgroundClear and c.editor.background or c.sideBar.background
   return {
-    NvimTreeFolderIcon = { fg = c.sideBar.foreground },
+    NvimTreeFolderIcon = { fg = c.silver },
 
     NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
 
-    NvimTreeNormal = { bg = sidebar_bg, fg = c.sideBar.foreground },
+    NvimTreeNormal = c.styles.normal,
     NvimTreeNormalFloat = { fg = c.editor.text },
     NvimTreeEndOfBuffer = {
       bg = sidebar_bg,
       fg = sidebar_bg,
     },
-    NvimTreeWinSeparator = {
-      bg = c.editor.background,
-      fg = c.editor.border,
-    },
+    NvimTreeWinSeparator = c.styles.border,
 
     NvimTreeFolderName = { fg = c.editor.text },
     NvimTreeOpenedFolderName = { fg = c.editor.text, italic = true },
@@ -27,7 +24,7 @@ function M.get(c, config, _)
     NvimTreeImageFile = { fg = c.white },
     NvimTreeSpecialFile = { fg = c.white },
     NvimTreeCursorLine = {
-      bg = c.list.activeSelectionBackground,
+      bg = c.editor.lineHighlightBackground,
       -- bg_base = sidebar_bg,
     },
 

@@ -5,7 +5,7 @@ local M = {}
 function M.setup(c, config, _)
   local styles = config.styles
   return {
-    Comment = { fg = c.grey, italic = styles.comment.italic }, -- Comments
+    Comment = { fg = c.silver, italic = styles.comment.italic }, -- Comments
     Constant = { fg = c.red }, -- (preferred) any constant
     String = { fg = c.yellow }, --   a string constant: "this is a string"
     Character = { fg = c.red }, -- a character constant: 'c', '\n'
@@ -28,13 +28,13 @@ function M.setup(c, config, _)
     PreCondit = { fg = c.red }, -- preprocessor #if, #else, #endif, etc
     Type = { fg = c.white }, -- React, ReactDOM (import React from 'react';)
     StorageClass = { fg = c.red, italic = styles.type.italic }, -- static, register, volatile, etc
-    Structure = { fg = c.cyan, italic = styles.type.italic }, -- struct, union, enum, etc
+    Structure = { fg = c.blue, italic = styles.type.italic }, -- struct, union, enum, etc
     Typedef = { fg = c.red }, -- A typedef
-    Special = { fg = c.cyan }, -- (preferred) any special symbol
-    SpecialChar = { fg = c.cyan }, -- special character in a constant
+    Special = { fg = c.blue }, -- (preferred) any special symbol
+    SpecialChar = { fg = c.blue }, -- special character in a constant
     -- Tag = {}, -- you can use CTRL-] on this
     Delimiter = { fg = c.white }, -- character that needs attention
-    SpecialComment = { fg = c.grey }, -- special things inside a comment
+    SpecialComment = { fg = c.silver }, -- special things inside a comment
     -- Debug = {}, -- debugging statements
     Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
     Bold = { bold = true },
@@ -46,7 +46,7 @@ function M.setup(c, config, _)
       fg = c.red,
       bold = true,
     }, -- (preferred) anything that needs extra attention; mostly the keywords TO_DO FI_XME etc
-    javaAnnotation = { fg = c.dimmed2 },
+    javaAnnotation = { fg = c.grey },
   }
 end
 

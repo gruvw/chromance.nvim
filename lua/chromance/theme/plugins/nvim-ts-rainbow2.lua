@@ -5,11 +5,11 @@ function M.get(c, _, _)
   return {
     TSRainbowRed = { fg = c.red },
     TSRainbowYellow = { fg = c.yellow },
-    TSRainbowBlue = { fg = c.cyan },
-    TSRainbowOrange = { fg = c.cyan },
+    TSRainbowBlue = { fg = c.blue },
+    TSRainbowOrange = { fg = c.blue },
     TSRainbowGreen = { fg = c.green },
     TSRainbowViolet = { fg = c.red },
-    TSRainbowCyan = { fg = c.cyan },
+    TSRainbowCyan = { fg = c.blue },
   }
 end
 

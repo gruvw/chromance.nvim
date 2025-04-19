@@ -8,21 +8,18 @@ local M = {}
 
 ---@class Colors
 local colors = {
-  black = "#0F0F0F",
-  dark = "#1F1F1F",
-  grey = "#707070",
-  white = "#F2F2F2",
-  red = "#fc618d",
-  orange = "#fd9353",
-  yellow = "#fce566",
-  green = "#7bd88f",
-  cyan = "#5ad4e6",
-  purple = "#948ae3",
-  dark2 = "#131313",
-  dimmed1 = "#bab6c0",
-  dimmed2 = "#8A8A8A",
-  dimmed4 = "#525053",
-  dimmed5 = "#363537",
+  black = "#141414", -- dark background
+  dark = "#1F1F1F", -- background
+  slate = "#292929", -- light background
+  grey = "#4D4D4D",
+  silver = "#808080", -- dark foreground
+  white = "#F4F4F4", -- foreground
+  orange = "#FC9A69",
+  yellow = "#FCE369",
+  green = "#69FC9A",
+  blue = "#69CBFC",
+  purple = "#9A69FC",
+  red = "#FC6982",
 };
 
 -- TODO clear cs groups
@@ -43,17 +40,17 @@ function M.get()
     colors.orange,
     colors.yellow,
     colors.green,
-    colors.cyan,
+    colors.blue,
     colors.purple,
-    colors.grey,
+    colors.silver,
   }
 
   cs.editor = {
     background = colors.dark,
     text = colors.white,
     border = colors.white,
-    lineHighlightBackground = hp.blend(colors.white, 0.05, colors.dark), -- "#fcfcfa0c", -- background: background
-    selectionBackground = hp.blend(colors.dimmed1, 0.15, colors.dark), --"#c1c0c027", -- background: background
+    lineHighlightBackground = colors.slate,
+    selectionBackground = hp.blend(colors.white, 0.15, colors.dark), --"#c1c0c027", -- background: background
     findMatchBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#fcfcfa26", -- background: background
     findMatchBorder = colors.yellow,
     findMatchHighlightBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#fcfcfa26", -- background: background
@@ -87,31 +84,31 @@ function M.get()
   }
 
   cs.editorLineNumber = {
-    foreground = colors.dimmed4,
-    activeForeground = colors.dimmed1,
+    foreground = colors.grey,
+    activeForeground = colors.white,
   }
 
   cs.editorHoverWidget = {
-    background = colors.dimmed5,
+    background = colors.dark,
     border = colors.dark,
   }
 
   cs.editorSuggestWidget = {
-    background = colors.dimmed5, -- "#403e41",
-    border = colors.dimmed5, -- "#403e41",
-    foreground = colors.dimmed1, -- "#c1c0c0",
+    background = colors.dark, -- "#403e41",
+    border = colors.dark, -- "#403e41",
+    foreground = colors.white, -- "#c1c0c0",
     highlightForeground = colors.white, -- "#fcfcfa",
-    selectedBackground = colors.grey, -- "#727072",
+    selectedBackground = colors.silver, -- "#727072",
   }
 
   cs.editorIndentGuide = {
-    background = colors.dimmed5, -- "#403e41",
-    activeBackground = colors.grey, -- "#5b595c",
+    background = colors.dark, -- "#403e41",
+    activeBackground = colors.silver, -- "#5b595c",
   }
 
   cs.editorInlayHint = {
-    background = colors.dimmed5,
-    foreground = colors.dimmed2,
+    background = colors.dark,
+    foreground = colors.silver,
   }
 
   cs.editorGutter = {
@@ -122,11 +119,11 @@ function M.get()
 
   cs.sideBar = {
     background = colors.black, -- "#221f22",
-    foreground = colors.dimmed2, -- "#939293",
+    foreground = colors.silver, -- "#939293",
   }
 
   cs.sideBarTitle = {
-    foreground = colors.dimmed4, -- "#5b595c",
+    foreground = colors.silver, -- "#5b595c",
   }
 
   cs.list = {
@@ -135,43 +132,43 @@ function M.get()
 
   cs.sideBarSectionHeader = {
     background = colors.black, -- "#221f22",
-    foreground = colors.dimmed1, -- "#c1c0c0",
+    foreground = colors.white, -- "#c1c0c0",
   }
 
   cs.breadcrumb = {
-    foreground = colors.dimmed2, -- "#939293",
+    foreground = colors.silver, -- "#939293",
   }
 
   cs.button = {
-    background = colors.dimmed5, -- "#403e41",
-    foreground = colors.dimmed1, -- "#c1c0c0",
-    hoverBackground = colors.dimmed4, -- "#5b595c",
+    background = colors.dark, -- "#403e41",
+    foreground = colors.white, -- "#c1c0c0",
+    hoverBackground = colors.silver, -- "#5b595c",
     separator = colors.dark, -- "#272822",
   }
 
   cs.scrollbarSlider = {
-    hoverBackground = hp.blend(colors.dimmed1, 0.15, colors.dark), -- "#c1c0c026", -- background: background
+    hoverBackground = hp.blend(colors.white, 0.15, colors.dark), -- "#c1c0c026", -- background: background
   }
 
   cs.gitDecoration = {
     addedResourceForeground = colors.green, -- "#a9dc76",
     conflictingResourceForeground = colors.orange, -- "#fc9867",
     deletedResourceForeground = colors.red, -- "#ff6188",
-    ignoredResourceForeground = colors.dimmed4, -- "#5b595c",
+    ignoredResourceForeground = colors.silver, -- "#5b595c",
     modifiedResourceForeground = colors.yellow, -- "#ffd866",
     stageDeletedResourceForeground = colors.red, -- "#ff6188",
     stageModifiedResourceForeground = colors.yellow, -- "#ffd866",
-    untrackedResourceForeground = colors.dimmed2, -- "#c1c0c0",
+    untrackedResourceForeground = colors.silver, -- "#c1c0c0",
   }
 
   cs.inputValidation = {
-    errorBackground = colors.dimmed5, -- "#403e41",
+    errorBackground = colors.dark, -- "#403e41",
     errorBorder = colors.red, -- "#ff6188",
     errorForeground = colors.red, --"#ff6188",
-    infoBackground = colors.dimmed5, -- "#403e41",
-    infoBorder = colors.cyan, --"#78dce8",
-    infoForeground = colors.cyan, --"#78dce8",
-    warningBackground = colors.dimmed5, --"#403e41",
+    infoBackground = colors.dark, -- "#403e41",
+    infoBorder = colors.blue, --"#78dce8",
+    infoForeground = colors.blue, --"#78dce8",
+    warningBackground = colors.dark, --"#403e41",
     warningBorder = colors.orange, --"#fc9867",
     warningForeground = colors.orange, --"#fc9867",
   }
@@ -181,29 +178,29 @@ function M.get()
     errorForeground = colors.red,
     warningBackground = hp.blend(colors.orange, 0.1, colors.dark),
     warningForeground = colors.orange,
-    infoBackground = hp.blend(colors.cyan, 0.1, colors.dark),
-    infoForeground = colors.cyan,
-    hintBackground = hp.blend(colors.cyan, 0.1, colors.dark),
-    hintForeground = colors.cyan,
+    infoBackground = hp.blend(colors.blue, 0.1, colors.dark),
+    infoForeground = colors.blue,
+    hintBackground = hp.blend(colors.blue, 0.1, colors.dark),
+    hintForeground = colors.blue,
   }
 
   cs.terminal = {
-    background = colors.dimmed5, -- "#403e41",
+    background = colors.dark, -- "#403e41",
     foreground = colors.white, -- "#fcfcfa",
-    dark = colors.dark2, -- "#19181a"
+    dark = colors.dark, -- "#19181a"
     black = colors.black, --"#221f22",
     red = colors.red, -- "#ff6188",
     green = colors.green, -- "#a9dc76",
     yellow = colors.yellow, -- "#ffd866",
     blue = colors.orange, -- "#fc9867",
     magenta = colors.purple, -- "#ab9df2",
-    cyan = colors.cyan, -- "#78dce8",
+    cyan = colors.blue, -- "#78dce8",
     white = colors.white, -- "#fcfcfa",
-    dimmed1 = colors.dimmed1, -- "#c1c0c0",
-    dimmed2 = colors.dimmed2, -- "#939293",
-    dimmed3 = colors.grey, -- "#727072",
-    dimmed4 = colors.dimmed4, -- "#5b595c",
-    dimmed5 = colors.dimmed5, -- "#403e41",
+    dimmed1 = colors.white, -- "#c1c0c0",
+    dimmed2 = colors.silver, -- "#939293",
+    dimmed3 = colors.silver, -- "#727072",
+    dimmed4 = colors.silver, -- "#5b595c",
+    dimmed5 = colors.dark, -- "#403e41",
   }
 
   cs.terminalCursor = {
@@ -221,17 +218,17 @@ function M.get()
     activeBorder = colors.yellow, -- "#ffd866",
     activeForeground = colors.yellow, -- "#ffd866",
     inactiveBackground = hp.blend(colors.dark, 0.15, colors.white),
-    inactiveForeground = colors.dimmed2, -- "#939293",
+    inactiveForeground = colors.silver, -- "#939293",
     unfocusedActiveBackground = colors.dark, -- "#272822",
-    unfocusedActiveBorder = colors.dimmed2, -- "#939293",
-    unfocusedActiveForeground = colors.dimmed1, -- "#c1c0c0",
+    unfocusedActiveBorder = colors.silver, -- "#939293",
+    unfocusedActiveForeground = colors.white, -- "#c1c0c0",
   }
 
   cs.statusBar = {
     -- background = p.dark1,
-    background = colors.dark2,
-    foreground = colors.grey,
-    activeForeground = colors.dimmed1,
+    background = colors.dark,
+    foreground = colors.silver,
+    activeForeground = colors.white,
   }
 
   cs.diffEditor = {
@@ -247,15 +244,15 @@ function M.get()
   }
 
   cs.notifications = {
-    background = colors.dimmed5,
-    border = colors.dimmed5,
-    foreground = colors.dimmed1,
+    background = colors.dark,
+    border = colors.dark,
+    foreground = colors.white,
   }
   cs.notificationsErrorIcon = {
     foreground = colors.red,
   }
   cs.notificationsInfoIcon = {
-    foreground = colors.cyan,
+    foreground = colors.blue,
   }
   cs.notificationsWarningIcon = {
     foreground = colors.orange,

@@ -19,7 +19,7 @@ function M.get(c, config, _)
     },
     ToggleTermBorder = {
       bg = c.editor.background,
-      fg = isBackgroundClear and c.dimmed2 or c.terminal.background,
+      fg = isBackgroundClear and c.grey or c.terminal.background,
     },
   }
 end

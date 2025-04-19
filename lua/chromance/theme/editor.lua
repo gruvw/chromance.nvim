@@ -6,9 +6,9 @@ local M = {}
 function M.setup(c, config, hp)
   return {
     ColorColumn = {
-      bg = c.dimmed5
+      bg = c.dark
     }, -- used for the columns set with 'colorcolumn'
-    Conceal = { bg = c.editor.background, fg = c.grey }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal = { bg = c.editor.background, fg = c.silver }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
       bg = c.white,
       fg = c.white,
@@ -176,7 +176,7 @@ function M.setup(c, config, hp)
       fg = c.editor.border,
     }, -- the column separating windows
     Whitespace = {
-      fg = c.dimmed4,
+      fg = c.grey,
     }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu = { bg = C.cyan, fg = C.black }, -- current match in 'wildmenu' completion
 
@@ -186,7 +186,7 @@ function M.setup(c, config, hp)
     diffRemoved = { fg = c.red },
     diffFile = { fg = c.yellow },
     diffNewFile = { fg = c.yellow },
-    diffLine = { fg = c.cyan },
+    diffLine = { fg = c.blue },
     -- Spelling
     SpellBad = { fg = c.red, sp = c.red, undercurl = true },
     SpellCap = { fg = c.red, sp = c.red, undercurl = true },
@@ -195,7 +195,7 @@ function M.setup(c, config, hp)
     -- Neovim
     healthError = { fg = c.red },
     healthSuccess = { fg = c.green },
-    healthWarning = { fg = c.cyan },
+    healthWarning = { fg = c.blue },
   }
 end
 

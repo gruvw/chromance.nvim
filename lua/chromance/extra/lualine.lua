@@ -4,7 +4,7 @@ local M = {}
 
 M.normal = {
   a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
-  b = { bg = colors.dimmed5, fg = colors.yellow },
+  b = { bg = colors.dark, fg = colors.yellow },
   c = {
     bg = colors.statusBar.background,
     fg = colors.statusBar.activeForeground,
@@ -17,22 +17,22 @@ M.normal = {
 
 M.insert = {
   a = { bg = colors.green, fg = colors.black },
-  b = { bg = colors.dimmed5, fg = colors.green },
+  b = { bg = colors.dark, fg = colors.green },
 }
 
 M.command = {
   a = { bg = colors.yellow, fg = colors.black },
-  b = { bg = colors.dimmed5, fg = colors.yellow },
+  b = { bg = colors.dark, fg = colors.yellow },
 }
 
 M.visual = {
   a = { bg = colors.red, fg = colors.black },
-  b = { bg = colors.dimmed5, fg = colors.red },
+  b = { bg = colors.dark, fg = colors.red },
 }
 
 M.replace = {
   a = { bg = colors.red, fg = colors.black },
-  b = { bg = colors.dimmed5, fg = colors.red },
+  b = { bg = colors.dark, fg = colors.red },
 }
 
 M.inactive = {
