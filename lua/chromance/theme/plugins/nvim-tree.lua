@@ -6,7 +6,7 @@ function M.get(c, config, _)
   local isBackgroundClear = vim.tbl_contains(config.background_clear, "nvim-tree")
   local sidebar_bg = isBackgroundClear and c.editor.background or c.sideBar.background
   return {
-    NvimTreeFolderIcon = { fg = c.silver },
+    NvimTreeFolderIcon = { fg = c.grey },
 
     NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
 

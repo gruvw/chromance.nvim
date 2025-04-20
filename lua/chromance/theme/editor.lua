@@ -8,7 +8,7 @@ function M.setup(c, config, hp)
     ColorColumn = {
       bg = c.dark
     }, -- used for the columns set with 'colorcolumn'
-    Conceal = { bg = c.editor.background, fg = c.silver }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal = { bg = c.editor.background, fg = c.grey }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
       bg = c.white,
       fg = c.white,

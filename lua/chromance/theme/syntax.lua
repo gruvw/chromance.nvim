@@ -5,8 +5,8 @@ local M = {}
 function M.setup(c, config, _)
   local styles = config.styles
   return {
-    Comment = { fg = c.silver, italic = styles.comment.italic }, -- Comments
-    Constant = { fg = c.red }, -- (preferred) any constant
+    Comment = { fg = c.grey, italic = styles.comment.italic }, -- Comments
+    Constant = { fg = c.purple }, -- (preferred) any constant
     String = { fg = c.yellow }, --   a string constant: "this is a string"
     Character = { fg = c.red }, -- a character constant: 'c', '\n'
     Number = { fg = c.red }, -- a number constant: 234, 0xff
@@ -34,7 +34,7 @@ function M.setup(c, config, _)
     SpecialChar = { fg = c.blue }, -- special character in a constant
     -- Tag = {}, -- you can use CTRL-] on this
     Delimiter = { fg = c.white }, -- character that needs attention
-    SpecialComment = { fg = c.silver }, -- special things inside a comment
+    SpecialComment = { fg = c.grey }, -- special things inside a comment
     -- Debug = {}, -- debugging statements
     Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
     Bold = { bold = true },

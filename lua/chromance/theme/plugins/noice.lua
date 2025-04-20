@@ -14,7 +14,7 @@ function M.get(c, _, _)
     },
     NoiceCmdlineIconSearch = { fg = c.blue },
     NoiceFormatProgressDone = { bg = c.yellow, fg = c.black, bold = true },
-    NoiceFormatProgressTodo = { bg = c.silver, fg = c.dark },
+    NoiceFormatProgressTodo = { bg = c.grey, fg = c.dark },
     NoiceLspProgressTitle = { fg = c.grey },
     NoiceLspProgressClient = { fg = c.blue },
     NoiceConfirm = { bg = c.notifications.background, fg = c.notifications.foreground },
@@ -22,7 +22,7 @@ function M.get(c, _, _)
     NoiceFormatConfirm = { bg = c.button.background, fg = c.button.foreground },
     NoiceFormatConfirmDefault = { bg = c.button.hoverBackground, fg = c.button.foreground },
     NoiceSplit = { bg = c.editor.background },
-    NoiceMini = { fg = c.silver },
+    NoiceMini = { fg = c.grey },
   }
 end
 

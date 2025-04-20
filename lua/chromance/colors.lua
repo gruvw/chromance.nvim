@@ -3,24 +3,27 @@ local hp = require("chromance.utils.color_helper")
 
 local M = {}
 
--- TODO setup basic colors
 -- TODO apply new colors everywhere
 
 ---@class Colors
 local colors = {
-  black = "#141414", -- dark background
-  dark = "#1F1F1F", -- background
-  slate = "#292929", -- light background
-  grey = "#4D4D4D",
-  silver = "#808080", -- dark foreground
+  -- background
+  black = "#141414", -- dark
+  dark = "#1F1F1F", -- normal
+  slate = "#292929", -- light (highlight)
+
+  -- foreground
+  grey = "#757575", -- dark (secondary)
   white = "#F4F4F4", -- foreground
+
+  -- colors
   orange = "#FC9A69",
   yellow = "#FCE369",
   green = "#69FC9A",
   blue = "#69CBFC",
   purple = "#9A69FC",
   red = "#FC6982",
-};
+}
 
 -- TODO clear cs groups
 -- TODO try to avoid the get call (try to apply config overwrite and check if it works, also test lualine, overwrite yellow to try)
@@ -35,14 +38,14 @@ function M.get()
 
   -- allowed icon colors
   cs.icon_colors = {
+    colors.grey,
     colors.white,
-    colors.red,
     colors.orange,
     colors.yellow,
     colors.green,
     colors.blue,
     colors.purple,
-    colors.silver,
+    colors.red,
   }
 
   cs.editor = {
@@ -98,17 +101,17 @@ function M.get()
     border = colors.dark, -- "#403e41",
     foreground = colors.white, -- "#c1c0c0",
     highlightForeground = colors.white, -- "#fcfcfa",
-    selectedBackground = colors.silver, -- "#727072",
+    selectedBackground = colors.grey, -- "#727072",
   }
 
   cs.editorIndentGuide = {
     background = colors.dark, -- "#403e41",
-    activeBackground = colors.silver, -- "#5b595c",
+    activeBackground = colors.grey, -- "#5b595c",
   }
 
   cs.editorInlayHint = {
     background = colors.dark,
-    foreground = colors.silver,
+    foreground = colors.grey,
   }
 
   cs.editorGutter = {
@@ -119,11 +122,11 @@ function M.get()
 
   cs.sideBar = {
     background = colors.black, -- "#221f22",
-    foreground = colors.silver, -- "#939293",
+    foreground = colors.grey, -- "#939293",
   }
 
   cs.sideBarTitle = {
-    foreground = colors.silver, -- "#5b595c",
+    foreground = colors.grey, -- "#5b595c",
   }
 
   cs.list = {
@@ -136,13 +139,13 @@ function M.get()
   }
 
   cs.breadcrumb = {
-    foreground = colors.silver, -- "#939293",
+    foreground = colors.grey, -- "#939293",
   }
 
   cs.button = {
     background = colors.dark, -- "#403e41",
     foreground = colors.white, -- "#c1c0c0",
-    hoverBackground = colors.silver, -- "#5b595c",
+    hoverBackground = colors.grey, -- "#5b595c",
     separator = colors.dark, -- "#272822",
   }
 
@@ -154,11 +157,11 @@ function M.get()
     addedResourceForeground = colors.green, -- "#a9dc76",
     conflictingResourceForeground = colors.orange, -- "#fc9867",
     deletedResourceForeground = colors.red, -- "#ff6188",
-    ignoredResourceForeground = colors.silver, -- "#5b595c",
+    ignoredResourceForeground = colors.grey, -- "#5b595c",
     modifiedResourceForeground = colors.yellow, -- "#ffd866",
     stageDeletedResourceForeground = colors.red, -- "#ff6188",
     stageModifiedResourceForeground = colors.yellow, -- "#ffd866",
-    untrackedResourceForeground = colors.silver, -- "#c1c0c0",
+    untrackedResourceForeground = colors.grey, -- "#c1c0c0",
   }
 
   cs.inputValidation = {
@@ -197,9 +200,9 @@ function M.get()
     cyan = colors.blue, -- "#78dce8",
     white = colors.white, -- "#fcfcfa",
     dimmed1 = colors.white, -- "#c1c0c0",
-    dimmed2 = colors.silver, -- "#939293",
-    dimmed3 = colors.silver, -- "#727072",
-    dimmed4 = colors.silver, -- "#5b595c",
+    dimmed2 = colors.grey, -- "#939293",
+    dimmed3 = colors.grey, -- "#727072",
+    dimmed4 = colors.grey, -- "#5b595c",
     dimmed5 = colors.dark, -- "#403e41",
   }
 
@@ -218,16 +221,16 @@ function M.get()
     activeBorder = colors.yellow, -- "#ffd866",
     activeForeground = colors.yellow, -- "#ffd866",
     inactiveBackground = hp.blend(colors.dark, 0.15, colors.white),
-    inactiveForeground = colors.silver, -- "#939293",
+    inactiveForeground = colors.grey, -- "#939293",
     unfocusedActiveBackground = colors.dark, -- "#272822",
-    unfocusedActiveBorder = colors.silver, -- "#939293",
+    unfocusedActiveBorder = colors.grey, -- "#939293",
     unfocusedActiveForeground = colors.white, -- "#c1c0c0",
   }
 
   cs.statusBar = {
     -- background = p.dark1,
     background = colors.dark,
-    foreground = colors.silver,
+    foreground = colors.grey,
     activeForeground = colors.white,
   }
 

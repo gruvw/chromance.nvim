@@ -24,7 +24,7 @@ function M.get(c, config, hp)
     FzfLuaHeaderBind = { fg = c.blue },
     FzfLuaHeaderText = { fg = c.green },
     FzfLuaFzfHeader = { fg = common_fg },
-    FzfLuaFzfInfo = { fg = c.silver },
+    FzfLuaFzfInfo = { fg = c.grey },
     FzfLuaFzfPointer = { fg = c.blue },
   }
 end

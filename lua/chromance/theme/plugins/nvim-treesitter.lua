@@ -12,7 +12,7 @@ function M.get(c, config, _)
 
     -- Booleans & Constants
     ["@boolean"]                          = { fg = c.red },
-    ["@constant"]                         = { fg = c.red },
+    ["@constant"]                         = { link = "Constant" },
     ["@constant.builtin"]                 = { fg = c.red },
     ["@constant.macro"]                   = { fg = c.red },
 
@@ -63,12 +63,12 @@ function M.get(c, config, _)
 
     -- Punctuation
     ["@punctuation.bracket"]              = { fg = c.red },
-    ["@punctuation.delimiter"]            = { fg = c.grey },
+    ["@punctuation.delimiter"]            = { fg = c.white },
     ["@punctuation.special"]              = { fg = c.grey },
 
     -- Strings & Characters
     ["@string"]                           = { fg = c.yellow },
-    ["@string.documentation"]             = { fg = c.silver },
+    ["@string.documentation"]             = { fg = c.grey },
     ["@string.escape"]                    = { fg = c.red },
     ["@string.regexp"]                    = { fg = c.yellow },
     ["@character"]                        = { fg = c.yellow },
@@ -79,7 +79,7 @@ function M.get(c, config, _)
     ["@tag"]                              = { fg = c.red },
     ["@tag.attribute"]                    = { fg = c.blue, italic = true },
     ["@tag.builtin"]                      = { fg = c.red },
-    ["@tag.delimiter"]                    = { fg = c.grey },
+    ["@tag.delimiter"]                    = { fg = c.white },
 
     -- Markup Highlight Groups
     ["@markup"]                           = { fg = c.white },
@@ -121,7 +121,7 @@ function M.get(c, config, _)
     ["@keyword.cpp"]                       = { fg = c.blue, italic = styles.keyword.italic },
     ["@namespace.cpp"]                     = { fg = c.green },
     ["@operator.cpp"]                      = { fg = c.red },
-    ["@punctuation.delimiter.cpp"]         = { fg = c.sideBar.foreground },
+    ["@punctuation.delimiter.cpp"]         = { fg = c.white },
     ["@type.cpp"]                          = { fg = c.blue, italic = styles.type.italic },
     ["@variable.cpp"]                      = { fg = c.white },
 
@@ -158,7 +158,7 @@ function M.get(c, config, _)
     ["@punctuation.special.markdown"]      = { fg = c.grey },
     ["@text.emphasis.markdown_inline"]     = { fg = c.white, italic = true },
     ["@text.literal.block.markdown"]       = { bg = c.editor.background },
-    ["@text.literal.markdown_inline"]      = { bg = c.silver, fg = c.white },
+    ["@text.literal.markdown_inline"]      = { bg = c.grey, fg = c.white },
     ["@text.quote.markdown"]               = { bg = c.dark, fg = c.white },
     ["@text.reference.markdown_inline"]    = { fg = c.red },
     ["@text.strong.markdown_inline"]       = { bold = true },
