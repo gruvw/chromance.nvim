@@ -3,24 +3,19 @@ local M = {}
 --- @param c Colors The color palette
 --- @param config Config
 function M.get(c, config, _)
-  local isBackgroundClear = vim.tbl_contains(config.background_clear, "nvim-tree")
-  local sidebar_bg = isBackgroundClear and c.editor.background or c.sideBar.background
   return {
     NvimTreeFolderIcon = { fg = c.grey },
 
     NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
 
-    NvimTreeNormal = c.styles.normal,
+    NvimTreeNormal = c.groups.normal,
     NvimTreeNormalFloat = { fg = c.editor.text },
-    NvimTreeEndOfBuffer = {
-      bg = sidebar_bg,
-      fg = sidebar_bg,
-    },
-    NvimTreeWinSeparator = c.styles.border,
+    NvimTreeEndOfBuffer = c.groups.normal,
+    NvimTreeWinSeparator = c.groups.border,
 
     NvimTreeFolderName = { fg = c.editor.text },
     NvimTreeOpenedFolderName = { fg = c.editor.text, italic = true },
-    NvimTreeEmptyFolderName = { fg = c.sideBar.foreground, italic = true },
+    NvimTreeEmptyFolderName = { fg = c.grey, },
     NvimTreeImageFile = { fg = c.white },
     NvimTreeSpecialFile = { fg = c.white },
     NvimTreeCursorLine = {
@@ -37,9 +32,9 @@ function M.get(c, config, _)
     NvimTreeGitDeleted = { fg = c.gitDecoration.deletedResourceForeground },
     NvimTreeGitMerge = { fg = c.gitDecoration.conflictingResourceForeground },
 
-    NvimTreeSymlink = { fg = c.white },
+    NvimTreeSymlink = { fg = c.yellow },
     NvimTreeRootFolder = {
-      fg = c.sideBarSectionHeader.foreground,
+      fg = c.editor.text,
       bold = true,
     },
     NvimTreeExecFile = { fg = c.green },

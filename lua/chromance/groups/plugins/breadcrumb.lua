@@ -8,7 +8,7 @@ function M.get(c, _, _)
       fg = c.breadcrumb.foreground,
     },
     BreadcrumbIconsArray = { fg = c.red },
-    BreadcrumbIconsBoolean = { fg = c.red },
+    BreadcrumbIconsBoolean = { fg = c.purple },
     BreadcrumbIconsClass = { fg = c.blue },
     BreadcrumbIconsColor = { fg = c.red },
     BreadcrumbIconsConstant = { fg = c.red },

@@ -10,7 +10,7 @@ function M.get(c, _, hp)
     CmpItemAbbr = { fg = c.editorSuggestWidget.foreground }, -- text that not match
     CmpItemAbbrDeprecated = { fg = c.editorSuggestWidget.foreground, strikethrough = true }, -- text not match of deprecated
     CmpItemKindArray = { fg = c.red },
-    CmpItemKindBoolean = { fg = c.red },
+    CmpItemKindBoolean = { fg = c.purple },
     CmpItemKindClass = { fg = c.blue },
     CmpItemKindColor = { fg = c.red },
     CmpItemKindConstant = { fg = c.red },

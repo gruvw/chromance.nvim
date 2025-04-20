@@ -11,13 +11,13 @@ function M.get(c, config, hp)
     },
 
     TelescopeSelectionCaret = { bg = c.editor.lineHighlightBackground, fg = c.green, bold = true },
-    TelescopeNormal = c.styles.normal,
+    TelescopeNormal = c.groups.normal,
     TelescopePromptCounter = {
       fg = c.red,
       bold = true,
     },
-    TelescopeBorder = c.styles.border,
-    TelescopeMatching = c.styles.matchPrimary,
+    TelescopeBorder = c.groups.border,
+    TelescopeMatching = c.groups.match_primary,
 
     TelescopePreviewLine = { link = "TelescopeSelection" },
 
@@ -27,8 +27,8 @@ function M.get(c, config, hp)
       fg = c.black,
       bold = true,
     },
-    TelescopePromptNormal = c.styles.normal,
-    TelescopePromptBorder = c.styles.border,
+    TelescopePromptNormal = c.groups.normal,
+    TelescopePromptBorder = c.groups.border,
     TelescopePromptPrefix = { fg = c.green, },
 
     -- preview
@@ -37,8 +37,8 @@ function M.get(c, config, hp)
       fg = c.black,
       bold = true,
     },
-    TelescopePreviewNormal = c.styles.normal,
-    TelescopePreviewBorder = c.styles.border,
+    TelescopePreviewNormal = c.groups.normal,
+    TelescopePreviewBorder = c.groups.border,
 
     -- result
     TelescopeResultsTitle = {
@@ -46,8 +46,8 @@ function M.get(c, config, hp)
       fg = c.black,
       bold = true,
     },
-    TelescopeResultsNormal = c.styles.normal,
-    TelescopeResultsBorder = c.styles.border,
+    TelescopeResultsNormal = c.groups.normal,
+    TelescopeResultsBorder = c.groups.border,
   }
 end
 

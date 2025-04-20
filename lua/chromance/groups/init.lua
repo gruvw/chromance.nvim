@@ -53,6 +53,7 @@ local PLUGINS = {
   "wilder",
   "luasnip",
   "leap",
+  "highlight-undo",
 }
 
 -- Get highlight group dictionary

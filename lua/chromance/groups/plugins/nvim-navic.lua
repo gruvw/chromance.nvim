@@ -4,7 +4,7 @@ local M = {}
 function M.get(c, _, _)
   return {
     NavicIconsArray = { fg = c.red },
-    NavicIconsBoolean = { fg = c.red },
+    NavicIconsBoolean = { fg = c.purple },
     NavicIconsClass = { fg = c.blue },
     NavicIconsColor = { fg = c.red },
     NavicIconsConstant = { fg = c.red },

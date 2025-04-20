@@ -5,7 +5,7 @@ function M.get(c, _, _)
   return {
     AerialLine = { bg = c.editor.selectionHighlightBackground },
     AerialArray = { fg = c.red },
-    AerialBoolean = { fg = c.red },
+    AerialBoolean = { fg = c.purple },
     AerialClass = { fg = c.blue },
     AerialConstant = { fg = c.red },
     AerialConstructor = { fg = c.green },

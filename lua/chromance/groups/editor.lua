@@ -74,7 +74,7 @@ function M.setup(c, config, hp)
       bg = c.editor.background,
       fg = c.editorLineNumber.foreground,
     }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    MatchParen = c.styles.matchSecondary, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen = c.groups.match_secondary, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = {
       link = "Normal",
     }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -98,8 +98,8 @@ function M.setup(c, config, hp)
       bg = c.editor.background,
       fg = c.editor.text,
     },
-    NormalFloat = c.styles.normal, -- Normal text in floating windows. example PackerNormal
-    FloatBorder = c.styles.border,
+    NormalFloat = c.groups.normal, -- Normal text in floating windows. example PackerNormal
+    FloatBorder = c.groups.border,
     FloatTitle = {
       bg = c.yellow,
       fg = c.black,
@@ -128,17 +128,7 @@ function M.setup(c, config, hp)
     }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     -- SpecialKey   = {}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace| SpellBad  Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.  SpellCap  Word that should start with a capital. |spell| Combined with the highlighting used otherwise.  SpellLocal  Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    = {}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    IncSearch = config.inc_search == "underline" and {
-      bg = c.editor.findMatchBackground,
-      sp = c.editor.findMatchBorder,
-      underline = true,
-      bold = true,
-    } or {
-      bg = c.yellow,
-      fg = c.black,
-      underline = false,
-      bold = true,
-    }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch = c.groups.match_primary, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     StatusLine = {
       bg = c.statusBar.background,
       fg = c.statusBar.activeForeground,

@@ -3,8 +3,8 @@ local M = {}
 --- @param c Colors The color palette
 function M.get(c, _, _)
   return {
-    LeapLabelPrimary = c.groups.match_primary,
-    LeapLabelSecondary = c.groups.match_secondary,
+    HighlightUndo = c.groups.match_secondary,
+    HighlightRedo = c.groups.match_secondary,
   }
 end
 

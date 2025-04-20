@@ -23,7 +23,7 @@ function M.get(c, config, hp)
     BlinkCmpSource = { fg = c.editorSuggestWidget.foreground },
     BlinkCmpKind = { fg = c.editorSuggestWidget.foreground },
     BlinkCmpKindArray = { fg = c.red },
-    BlinkCmpKindBoolean = { fg = c.red },
+    BlinkCmpKindBoolean = { fg = c.purple },
     BlinkCmpKindClass = { fg = c.blue },
     BlinkCmpKindColor = { fg = c.red },
     BlinkCmpKindConstant = { fg = c.red },

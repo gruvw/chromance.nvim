@@ -9,8 +9,8 @@ function M.setup(c, config, _)
     Constant = { fg = c.purple }, -- (preferred) any constant
     String = { fg = c.yellow }, --   a string constant: "this is a string"
     Character = { fg = c.red }, -- a character constant: 'c', '\n'
-    Number = { fg = c.red }, -- a number constant: 234, 0xff
-    Boolean = { fg = c.red }, -- a boolean constant: TRUE, false
+    Number = { fg = c.purple }, -- a number constant: 234, 0xff
+    Boolean = { fg = c.purple }, -- a boolean constant: TRUE, false
     Float = { fg = c.red }, -- a floating point constant: 2.3e10
     Identifier = { fg = c.white }, -- (preferred) any variable name
     Function = { fg = c.green }, -- function name (also: methods for classes)

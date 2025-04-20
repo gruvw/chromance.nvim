@@ -11,7 +11,7 @@ function M.get(c, config, _)
     ["@attribute"]                        = { fg = c.green }, -- `@` in decorator. E.g. `@checked`
 
     -- Booleans & Constants
-    ["@boolean"]                          = { fg = c.red },
+    ["@boolean"]                          = { fg = c.purple },
     ["@constant"]                         = { link = "Constant" },
     ["@constant.builtin"]                 = { fg = c.red },
     ["@constant.macro"]                   = { fg = c.red },
@@ -50,7 +50,7 @@ function M.get(c, config, _)
     ["@keyword.type"]                     = { fg = c.blue, italic = true },
 
     -- Numbers & Operators
-    ["@number"]                           = { fg = c.red },
+    ["@number"]                           = { link = "Number" },
     ["@number.float"]                     = { fg = c.red },
     ["@operator"]                         = { fg = c.red }, -- `==`, `*`, `+`, `-`
 
@@ -167,7 +167,7 @@ function M.get(c, config, _)
     -- SCSS
     ["@function.scss"]                     = { fg = c.blue },
     ["@keyword.scss"]                      = { fg = c.red },
-    ["@number.scss"]                       = { fg = c.red },
+    ["@number.scss"]                       = { link = "Number" },
     ["@property.scss"]                     = { fg = c.green },
     ["@string.scss"]                       = { fg = c.blue, italic = true },
     ["@type.scss"]                         = { fg = c.blue },
@@ -184,7 +184,7 @@ function M.get(c, config, _)
     ["@variable.lua"]                     = { fg = c.white },
 
     -- Yaml
-    ["@number.yaml"]                      = { fg = c.red },
+    ["@number.yaml"]                      = { link = "Number" },
     ["@property.yaml"]                    = { fg = c.red },
     ["@punctuation.special.yaml"]         = { fg = c.white },
     ["@string.yaml"]                      = { fg = c.yellow },
