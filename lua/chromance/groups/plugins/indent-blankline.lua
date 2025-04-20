@@ -15,7 +15,7 @@ function M.get(c, config, _)
       sp = isContextPro and c.blue or c.editorIndentGuide.activeBackground,
       underline = isContextStartUnderline,
     },
-    IndentBlanklineSpaceChar = { fg = c.editor.background }, -- highlight the character Tab
+    IndentBlanklineSpaceChar = { fg = c.grey },
     IndentBlankLineIndent1 = { fg = c.red },
     IndentBlankLineIndent2 = { fg = c.blue },
     IndentBlankLineIndent3 = { fg = c.yellow },

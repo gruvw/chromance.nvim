@@ -74,11 +74,7 @@ function M.setup(c, config, hp)
       bg = c.editor.background,
       fg = c.editorLineNumber.foreground,
     }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    MatchParen = {
-      fg = c.yellow,
-      bold = true,
-      underline = true,
-    }, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen = c.styles.matchSecondary, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = {
       link = "Normal",
     }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -92,7 +88,7 @@ function M.setup(c, config, hp)
       fg = c.yellow,
     }, -- |more-prompt| ufo
     NonText = {
-      fg = c.editor.background,
+      fg = c.grey,
     }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|. Example the character space between words
     Normal = {
       bg = c.editor.background,

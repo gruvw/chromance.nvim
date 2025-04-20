@@ -1,5 +1,5 @@
 local config = require("chromance.config")
-local theme = require("chromance.theme")
+local theme = require("chromance.groups")
 local highlight = require("chromance.utils.highlight")
 local colors = require("chromance.colors")
 local extra = require("chromance.extra")

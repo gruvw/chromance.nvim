@@ -9,7 +9,7 @@ local M = {}
 
 setmetatable(M, {
   __index = function(_, k)
-    local plugin = require("chromance.theme.plugins" .. k)
+    local plugin = require("chromance.groups.plugins" .. k)
     return plugin
   end,
 })
@@ -51,6 +51,8 @@ local PLUGINS = {
   "ufo",
   "which-key",
   "wilder",
+  "luasnip",
+  "leap",
 }
 
 -- Get highlight group dictionary
@@ -62,9 +64,9 @@ local PLUGINS = {
 ---@param colors Colors
 ---@return HighlightGroups
 function M.highlight_groups(colors)
-  local editor = require("chromance.theme.editor").setup(colors, config.options, Helper)
-  local syntax = require("chromance.theme.syntax").setup(colors, config.options, Helper)
-  local semantic_tokens = require("chromance.theme.semantic_tokens").setup(colors, config.options, Helper)
+  local editor = require("chromance.groups.editor").setup(colors, config.options, Helper)
+  local syntax = require("chromance.groups.syntax").setup(colors, config.options, Helper)
+  local semantic_tokens = require("chromance.groups.semantic_tokens").setup(colors, config.options, Helper)
   --  The HlGroups class represents a collection of highlighter groups.
   --  Each group is identified by a string key (e.g. "editor") and holds the result of calling the `setup` function of a corresponding highlighter module (e.g. `editor.setup`).
   --  The class has a single field, `hl_groups`, which is a table containing the highlighter groups.
@@ -74,7 +76,7 @@ function M.highlight_groups(colors)
   for _, name in ipairs(PLUGINS) do
     local config_ok, plugin = xpcall(require, function(...)
       return ...
-    end, "chromance.theme.plugins." .. name)
+    end, "chromance.groups.plugins." .. name)
     if config_ok then
       hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, config.options, Helper))
     end
