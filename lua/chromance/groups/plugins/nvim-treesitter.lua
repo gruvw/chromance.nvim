@@ -48,6 +48,7 @@ function M.get(c, config, _)
     ["@keyword.return"]                    = { fg = c.red },
     ["@keyword.storage"]                   = { fg = c.red },
     ["@keyword.type"]                      = { fg = c.blue },
+    ["@keyword.python"]                    = { link = "@keyword", },
 
     -- Numbers & Operators
     ["@number"]                            = { link = "Number" },
@@ -100,7 +101,7 @@ function M.get(c, config, _)
     ["@markup.list.unchecked"]             = { fg = c.white },
     ["@markup.math"]                       = { fg = c.yellow },
     ["@markup.raw"]                        = { fg = c.yellow },
-    ["@markup.raw.markdown_inline"]        = { fg = c.yellow },
+    ["@markup.raw.markdown_inline"]        = { fg = c.orange, italic = true, },
     ["@markup.strikethrough"]              = { fg = c.white, strikethrough = true },
     ["@markup.strong"]                     = { fg = c.white, bold = true },
     ["@markup.underline"]                  = { fg = c.white, underline = true },
@@ -150,18 +151,15 @@ function M.get(c, config, _)
     ["@text.strong.latex"]                 = { bold = true },
 
     -- Markdown
-    ["@conceal.markdown"]                  = { bg = c.black },
     ["@markup.italic.markdown_inline"]     = { italic = true },
     ["@markup.link.label.markdown_inline"] = { fg = c.red },
     ["@markup.link.url.markdown_inline"]   = { fg = c.green, underline = true },
-    ["@markup.raw.block.markdown"]         = { bg = c.black },
     ["@markup.raw.delimiter.markdown"]     = { bg = c.black, fg = c.grey },
     ["@markup.strong.markdown_inline"]     = { bold = true },
-    ["@none.markdown"]                     = { bg = c.black },
     ["@punctuation.special.markdown"]      = { fg = c.grey },
     ["@text.emphasis.markdown_inline"]     = { fg = c.white, italic = true },
     ["@text.literal.block.markdown"]       = { bg = c.editor.background },
-    ["@text.literal.markdown_inline"]      = { bg = c.grey, fg = c.white },
+    ["@text.literal.markdown_inline"]      = { fg = c.orange, italic = true, },
     ["@text.quote.markdown"]               = { bg = c.dark, fg = c.white },
     ["@text.reference.markdown_inline"]    = { fg = c.red },
     ["@text.strong.markdown_inline"]       = { bold = true },
@@ -193,6 +191,7 @@ function M.get(c, config, _)
     ["@string.yaml"]                       = { fg = c.yellow },
   }
   for i = 1, 9 do
+    spec["@markup.heading." .. i .. ".markdown"] = { fg = c.yellow, bold = true, }
     spec["@markup.heading." .. i .. ".marker.markdown"] = { fg = c.grey }
   end
   return spec

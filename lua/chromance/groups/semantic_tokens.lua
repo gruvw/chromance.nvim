@@ -33,6 +33,14 @@ function M.setup(c, config, hp)
     ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = c.red },
     ["@lsp.type.variable"]                     = {},                              -- use treesitter styles for regular variables
     ["@lsp.type.annotation"]                   = { fg = c.blue, italic = true, }, -- use treesitter styles for regular variables
+    ["@lsp.type.class.dart"]                   = { fg = c.blue, italic = false, },
+    ["@lsp.type.pol.typst"]                    = { link = "@parameter" },
+    ["@lsp.type.string.typst"]                 = { link = "String" },
+    ["@lsp.type.operator.typst"]               = { link = "Operator" },
+    ["@lsp.type.punct.typst"]                  = { link = "@punctuation.bracket" },
+    ["@lsp.type.heading.typst"]                = { link = "@text.title.1.markdown" },
+    ["@lsp.type.marker.typst"]                 = { link = "@punctuation.special.markdown" },
+    ["@lsp.type.keyword.typst"]                = { link = "@keyword" },
     ["@lsp.typemod.property.annotation"]       = { fg = c.blue, italic = true, }, -- use treesitter styles for regular variables
     ["@lsp.typemod.class.defaultLibrary"]      = { fg = c.blue, },
     ["@lsp.typemod.enum.defaultLibrary"]       = { link = "@type.builtin" },
@@ -54,7 +62,7 @@ function M.setup(c, config, hp)
     ["@lsp.typemod.parameter.declaration"]     = { link = "@parameter", },
     ["@lsp.typemod.variable.readonly"]         = { fg = c.white, },
     ["@lsp.mod.interpolation"]                 = { fg = c.orange, },
-    ["@lsp.type.keyword.typst"]                = { link = "@keyword" },
+    ["@lsp.mod.strong.typst"]                  = { link = "@text.strong.markdown_inline" },
   }
 end
 

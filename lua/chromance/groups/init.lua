@@ -54,6 +54,7 @@ local PLUGINS = {
   "luasnip",
   "leap",
   "highlight-undo",
+  "oil",
 }
 
 -- Get highlight group dictionary
