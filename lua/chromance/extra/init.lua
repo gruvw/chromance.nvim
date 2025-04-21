@@ -7,7 +7,7 @@ local M = {}
 
 ---@param colors Colors
 function M.apply_extra(colors)
-  if config.terminal_colors then
+  if config.options.terminal_colors then
     terminal.terminal(colors)
   end
 

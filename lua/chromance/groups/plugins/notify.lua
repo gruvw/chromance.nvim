@@ -4,7 +4,6 @@ local M = {}
 --- @param config Config
 --- @param hp Helper
 function M.get(c, config, hp)
-  local isBackgroundClear = vim.tbl_contains(config.background_clear, "notify")
   local notify_groups = {
     NotifyERRORBorder = { fg = hp.blend(c.inputValidation.errorBorder, 0.3, c.dark) },
     NotifyWARNBorder = { fg = hp.blend(c.inputValidation.warningBorder, 0.3, c.dark) },
@@ -28,31 +27,7 @@ function M.get(c, config, hp)
     NotifyTRACEBody = { link = "Normal" },
     NotifyBackground = { link = "Normal" },
   }
-  if not isBackgroundClear then
-    local BORDER = "Border"
-    local ICON = "Icon"
-    local TITLE = "Title"
-    local BODY = "Body"
-    for group, hlValue in pairs(notify_groups) do
-      if string.match(group, BORDER) then
-        notify_groups[group] = {
-          bg = c.notifications.background,
-          fg = c.notifications.border,
-        }
-      end
-      if string.match(group, ICON) or string.match(group, TITLE) then
-        notify_groups[group] = vim.tbl_deep_extend("force", hlValue or {}, {
-          bg = c.notifications.background,
-        })
-      end
-      if string.match(group, BODY) or group == "NotifyBackground" then
-        notify_groups[group] = {
-          bg = c.notifications.background,
-          fg = c.notifications.foreground,
-        }
-      end
-    end
-  end
+
   return notify_groups
 end
 

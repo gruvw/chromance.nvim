@@ -55,6 +55,7 @@ local PLUGINS = {
   "leap",
   "highlight-undo",
   "oil",
+  "nvim-treesitter-context",
 }
 
 -- Get highlight group dictionary

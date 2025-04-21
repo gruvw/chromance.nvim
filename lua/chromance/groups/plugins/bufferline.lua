@@ -34,10 +34,6 @@ end
 --- @param config Config
 --- @param hp Helper
 function M.get(c, config, hp)
-  local bufferline_config = config.plugins.bufferline
-
-  M.underline_selected = bufferline_config.underline_selected
-  M.underline_visible = bufferline_config.underline_visible
   -- lighten alpha
   local normalAlpha = 0.6
   local visibleAlpha = 0.8
@@ -46,23 +42,18 @@ function M.get(c, config, hp)
 
   -- underline config
   M.isUnderlined = {
-    selected = bufferline_config.underline_selected
-      or bufferline_config.underline_visible
-      or bufferline_config.underline_fill,
-    visible = bufferline_config.underline_visible or bufferline_config.underline_fill,
-    fill = bufferline_config.underline_fill,
+    selected = true,
+    visible = true,
+    fill = false,
   }
 
-  local isBold = bufferline_config.bold
-  local isBackgroundClear = vim.tbl_contains(config.background_clear, "bufferline")
+  local tabsBackground = c.editor.background
 
-  local tabsBackground = isBackgroundClear and c.editor.background or c.editorGroupHeader.tabsBackground
-
-  local tab = vim.tbl_deep_extend("force", c.tab or {}, isBackgroundClear and {
+  local tab = vim.tbl_deep_extend("force", c.tab or {}, {
     activeBackground = c.tab.activeBackground,
     inactiveBackground = c.tab.inactiveBackground,
     unfocusedActiveBackground = c.tab.unfocusedActiveBackground,
-  } or {})
+  })
   M.get_tab = function()
     return tab
   end
@@ -70,11 +61,11 @@ function M.get(c, config, hp)
   ---@param underline_type "fill" | "visible" | "selected"
   M.fallback_sp = function(underline_type)
     if underline_type == "selected" then
-      return bufferline_config.underline_selected and tab.activeBorder or M.fallback_sp("visible")
+      return tab.activeBorder
     elseif underline_type == "visible" then
-      return bufferline_config.underline_visible and tab.unfocusedActiveBorder or M.fallback_sp("fill")
+      return tab.unfocusedActiveBorder
     elseif underline_type == "fill" then
-      return bufferline_config.underline_fill and c.editorGroupHeader.tabsBorder or c.editor.background
+      return c.editor.background
     end
   end
 
@@ -297,10 +288,8 @@ function M.get(c, config, hp)
       fg = tab.unfocusedActiveBackground,
     },
   }
-  if isBold then
-    M.add_bold(bufferline_groups)
-  end
 
+  M.add_bold(bufferline_groups)
   M.add_underline(bufferline_groups)
 
   return bufferline_groups

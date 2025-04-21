@@ -3,9 +3,8 @@ local M = {}
 --- @param c Colors The color palette
 --- @param config Config
 function M.setup(c, config, _)
-  local styles = config.styles
   return {
-    Comment = { fg = c.grey, italic = styles.comment.italic }, -- Comments
+    Comment = { fg = c.grey, italic = c.italic_enabled, }, -- Comments
     Constant = { fg = c.purple }, -- (preferred) any constant
     String = { fg = c.yellow }, --   a string constant: "this is a string"
     Character = { fg = c.red }, -- a character constant: 'c', '\n'
@@ -19,15 +18,15 @@ function M.setup(c, config, _)
     Repeat = { fg = c.red }, -- for, do, while, etc
     Label = { fg = c.red }, -- case, default, etc
     Operator = { fg = c.red }, -- "sizeof", "+", "*", etc
-    Keyword = { fg = c.red, italic = styles.keyword.italic }, -- any other keyword
+    Keyword = { fg = c.red, italic = c.italic_enabled, }, -- any other keyword
     Exception = { fg = c.red }, -- try, catch, throw
     PreProc = { fg = c.yellow }, -- (preferred) generic Preprocessor
     Include = { fg = c.red }, -- preprocessor #include
     Define = { fg = c.red }, -- preprocessor #define
-    Macro = { fg = c.blue, italic = true, }, -- same as Define
+    Macro = { fg = c.blue, italic = c.italic_enabled, }, -- same as Define
     PreCondit = { fg = c.red }, -- preprocessor #if, #else, #endif, etc
     Type = { fg = c.white }, -- React, ReactDOM (import React from 'react';)
-    StorageClass = { fg = c.red, italic = styles.type.italic }, -- static, register, volatile, etc
+    StorageClass = { fg = c.red, italic = c.italic_enabled, }, -- static, register, volatile, etc
     Structure = { fg = c.blue, }, -- struct, union, enum, etc
     Typedef = { fg = c.red }, -- A typedef
     Special = { fg = c.blue }, -- (preferred) any special symbol
@@ -39,7 +38,7 @@ function M.setup(c, config, _)
     Underlined = { underline = true }, -- (preferred) text that stands out, HTML links
     Bold = { bold = true },
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
-    Italic = { italic = true },
+    Italic = { italic = c.italic_enabled },
     Error = { fg = c.inputValidation.errorForeground }, -- (preferred) any erroneous construct
     Todo = {
       bg = c.editor.background,

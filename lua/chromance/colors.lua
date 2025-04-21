@@ -36,6 +36,8 @@ function M.get()
   ---@class Colors
   local cs = colors;
 
+  cs.italic_enabled = not options.italic_disabled
+
   -- allowed icon colors
   cs.icon_colors = {
     colors.grey,
@@ -50,6 +52,7 @@ function M.get()
 
   cs.editor = {
     background = colors.dark,
+    background_dark = colors.black,
     text = colors.white,
     border = colors.white,
     lineHighlightBackground = colors.slate,
@@ -90,10 +93,10 @@ function M.get()
   cs.indent_lines = {
     indent1 = hp.blend(colors.red, indent_lines_blend_factor, colors.editor.background),
     indent2 = hp.blend(colors.green, indent_lines_blend_factor, colors.editor.backrgound),
-    indent3 = hp.blend(colors.purple, indent_lines_blend_factor, colors.editor.backrgound),
+    indent3 = hp.blend(colors.blue, indent_lines_blend_factor, colors.editor.backrgound),
     indent4 = hp.blend(colors.yellow, indent_lines_blend_factor, colors.editor.backrgound),
     indent5 = hp.blend(colors.orange, indent_lines_blend_factor, colors.editor.backrgound),
-    indent6 = hp.blend(colors.blue, indent_lines_blend_factor, colors.editor.backrgound),
+    indent6 = hp.blend(colors.purple, indent_lines_blend_factor, colors.editor.backrgound),
   }
 
   cs.editorLineNumber = {
@@ -239,7 +242,7 @@ function M.get()
 
   cs.statusBar = {
     -- background = p.dark1,
-    background = colors.dark,
+    background = colors.black,
     foreground = colors.grey,
     activeForeground = colors.white,
   }

@@ -3,8 +3,7 @@ local M = {}
 --- @param c Colors The color palette
 --- @param config Config
 function M.get(c, config, _)
-  local isBackgroundClear = vim.tbl_contains(config.background_clear, "neo-tree")
-  local sidebar_bg = isBackgroundClear and c.editor.background or c.sideBar.background
+  local sidebar_bg = c.editor.background
   return {
     NeoTreeNormal = { bg = sidebar_bg, fg = c.sideBar.foreground },
     NeoTreeEndOfBuffer = {

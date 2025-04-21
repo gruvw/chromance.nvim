@@ -32,7 +32,7 @@ function M.setup(c, config, hp)
     ["@lsp.type.typeAlias"]                    = { link = "@type.definition" },
     ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = c.red },
     ["@lsp.type.variable"]                     = {},                              -- use treesitter styles for regular variables
-    ["@lsp.type.annotation"]                   = { fg = c.blue, italic = true, }, -- use treesitter styles for regular variables
+    ["@lsp.type.annotation"]                   = { fg = c.blue, italic = c.italic_enabled, }, -- use treesitter styles for regular variables
     ["@lsp.type.class.dart"]                   = { fg = c.blue, italic = false, },
     ["@lsp.type.pol.typst"]                    = { link = "@parameter" },
     ["@lsp.type.string.typst"]                 = { link = "String" },
@@ -41,7 +41,7 @@ function M.setup(c, config, hp)
     ["@lsp.type.heading.typst"]                = { link = "@text.title.1.markdown" },
     ["@lsp.type.marker.typst"]                 = { link = "@punctuation.special.markdown" },
     ["@lsp.type.keyword.typst"]                = { link = "@keyword" },
-    ["@lsp.typemod.property.annotation"]       = { fg = c.blue, italic = true, }, -- use treesitter styles for regular variables
+    ["@lsp.typemod.property.annotation"]       = { fg = c.blue, italic = c.italic_enabled, }, -- use treesitter styles for regular variables
     ["@lsp.typemod.class.defaultLibrary"]      = { fg = c.blue, },
     ["@lsp.typemod.enum.defaultLibrary"]       = { link = "@type.builtin" },
     ["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },

@@ -3,11 +3,10 @@ local M = {}
 --- @param c Colors The color palette
 --- @param config Config
 function M.get(c, config, _)
-  local styles = config.styles
   -- stylua: ignore
   local spec = {
     -- Annotations & Attributes
-    ["@annotation"]                        = { fg = c.blue, italic = styles.annotation.italic },
+    ["@annotation"]                        = { fg = c.blue, italic = c.italic_enabled, },
     ["@attribute"]                         = { fg = c.green }, -- `@` in decorator. E.g. `@checked`
 
     -- Booleans & Constants
@@ -41,7 +40,7 @@ function M.get(c, config, _)
     ["@keyword.directive"]                 = { fg = c.red },
     ["@keyword.directive.define"]          = { fg = c.red },
     ["@keyword.exception"]                 = { fg = c.red },
-    ["@keyword.function"]                  = { fg = c.blue, italic = true },
+    ["@keyword.function"]                  = { fg = c.blue, italic = c.italic_enabled },
     ["@keyword.import"]                    = { fg = c.red },
     ["@keyword.operator"]                  = { fg = c.red },
     ["@keyword.repeat"]                    = { fg = c.red },
@@ -57,10 +56,10 @@ function M.get(c, config, _)
 
     -- Parameters & Variables
     ["@variable"]                          = { fg = c.white },
-    ["@variable.builtin"]                  = { fg = c.white, italic = true },
+    ["@variable.builtin"]                  = { fg = c.white, italic = c.italic_enabled, },
     ["@variable.member"]                   = { fg = c.white },
-    ["@variable.parameter"]                = { fg = c.blue, italic = true },
-    ["@variable.parameter.builtin"]        = { fg = c.blue, italic = true },
+    ["@variable.parameter"]                = { fg = c.blue, italic = c.italic_enabled, },
+    ["@variable.parameter.builtin"]        = { fg = c.blue, italic = c.italic_enabled },
     ["@parameter"]                         = { fg = c.orange, },
     ["@property"]                          = { fg = c.red, },
 
@@ -80,17 +79,17 @@ function M.get(c, config, _)
 
     -- Tags & Markup
     ["@tag"]                               = { fg = c.red },
-    ["@tag.attribute"]                     = { fg = c.blue, italic = true },
+    ["@tag.attribute"]                     = { fg = c.blue, italic = c.italic_enabled, },
     ["@tag.builtin"]                       = { fg = c.red },
     ["@tag.delimiter"]                     = { fg = c.white },
 
     -- Markup Highlight Groups
     ["@markup"]                            = { fg = c.white },
-    ["@markup.emphasis"]                   = { fg = c.white, italic = true },
+    ["@markup.emphasis"]                   = { fg = c.white, italic = c.italic_enabled, },
     ["@markup.environment"]                = { fg = c.white },
     ["@markup.environment.name"]           = { fg = c.white },
     ["@markup.heading"]                    = { fg = c.yellow, bold = true },
-    ["@markup.italic"]                     = { fg = c.white, italic = true },
+    ["@markup.italic"]                     = { fg = c.white, italic = c.italic_enabled, },
     ["@markup.link"]                       = { fg = c.blue, underline = true },
     ["@markup.link.label"]                 = { fg = c.blue, underline = true },
     ["@markup.link.label.symbol"]          = { fg = c.blue, underline = true },
@@ -101,14 +100,14 @@ function M.get(c, config, _)
     ["@markup.list.unchecked"]             = { fg = c.white },
     ["@markup.math"]                       = { fg = c.yellow },
     ["@markup.raw"]                        = { fg = c.yellow },
-    ["@markup.raw.markdown_inline"]        = { fg = c.orange, italic = true, },
+    ["@markup.raw.markdown_inline"]        = { fg = c.orange, italic = c.italic_enabled, },
     ["@markup.strikethrough"]              = { fg = c.white, strikethrough = true },
     ["@markup.strong"]                     = { fg = c.white, bold = true },
     ["@markup.underline"]                  = { fg = c.white, underline = true },
 
     -- Types
     ["@type"]                              = { fg = c.blue },
-    ["@type.builtin"]                      = { fg = c.blue, italic = true },
+    ["@type.builtin"]                      = { fg = c.blue, italic = c.italic_enabled },
     ["@type.definition"]                   = { fg = c.green },
     ["@type.qualifier"]                    = { fg = c.blue },
     ["@module"]                            = { fg = c.blue },
@@ -122,11 +121,11 @@ function M.get(c, config, _)
     -- C++
     ["@constant.cpp"]                      = { fg = c.blue },
     ["@constant.macro.cpp"]                = { fg = c.red },
-    ["@keyword.cpp"]                       = { fg = c.blue, italic = styles.keyword.italic },
+    ["@keyword.cpp"]                       = { fg = c.blue, italic = c.italic_enabled, },
     ["@namespace.cpp"]                     = { fg = c.green },
     ["@operator.cpp"]                      = { fg = c.red },
     ["@punctuation.delimiter.cpp"]         = { fg = c.white },
-    ["@type.cpp"]                          = { fg = c.blue, italic = styles.type.italic },
+    ["@type.cpp"]                          = { fg = c.blue, italic = c.italic_enabled, },
     ["@variable.cpp"]                      = { fg = c.white },
 
     -- Dockerfile
@@ -144,22 +143,22 @@ function M.get(c, config, _)
     ["@function.macro.latex"]              = { fg = c.green },
     ["@punctuation.special.latex"]         = { fg = c.red },
     ["@string.latex"]                      = { fg = c.blue },
-    ["@text.emphasis.latex"]               = { italic = true },
+    ["@text.emphasis.latex"]               = { italic = c.italic_enabled },
     ["@text.environment.latex"]            = { fg = c.green },
-    ["@text.environment.name.latex"]       = { fg = c.blue, italic = true },
+    ["@text.environment.name.latex"]       = { fg = c.blue, italic = c.italic_enabled },
     ["@text.math.latex"]                   = { fg = c.red },
     ["@text.strong.latex"]                 = { bold = true },
 
     -- Markdown
-    ["@markup.italic.markdown_inline"]     = { italic = true },
+    ["@markup.italic.markdown_inline"]     = { italic = c.italic_enabled },
     ["@markup.link.label.markdown_inline"] = { fg = c.red },
     ["@markup.link.url.markdown_inline"]   = { fg = c.green, underline = true },
     ["@markup.raw.delimiter.markdown"]     = { bg = c.black, fg = c.grey },
     ["@markup.strong.markdown_inline"]     = { bold = true },
     ["@punctuation.special.markdown"]      = { fg = c.grey },
-    ["@text.emphasis.markdown_inline"]     = { fg = c.white, italic = true },
+    ["@text.emphasis.markdown_inline"]     = { fg = c.white, italic = c.italic_enabled },
     ["@text.literal.block.markdown"]       = { bg = c.editor.background },
-    ["@text.literal.markdown_inline"]      = { fg = c.orange, italic = true, },
+    ["@text.literal.markdown_inline"]      = { fg = c.orange, italic = c.italic_enabled, },
     ["@text.quote.markdown"]               = { bg = c.dark, fg = c.white },
     ["@text.reference.markdown_inline"]    = { fg = c.red },
     ["@text.strong.markdown_inline"]       = { bold = true },
@@ -170,7 +169,7 @@ function M.get(c, config, _)
     ["@keyword.scss"]                      = { fg = c.red },
     ["@number.scss"]                       = { link = "Number" },
     ["@property.scss"]                     = { fg = c.green },
-    ["@string.scss"]                       = { fg = c.blue, italic = true },
+    ["@string.scss"]                       = { fg = c.blue, italic = c.italic_enabled },
     ["@type.scss"]                         = { fg = c.blue },
 
     -- Lua
@@ -179,9 +178,9 @@ function M.get(c, config, _)
     ["@field.lua"]                         = { fg = c.white },
     ["@function.builtin.lua"]              = { fg = c.green },
     ["@keyword.function.lua"]              = { fg = c.red },
-    ["@keyword.lua"]                       = { fg = c.red, italic = styles.keyword.italic },
+    ["@keyword.lua"]                       = { fg = c.red, italic = c.italic_enabled, },
     ["@namespace.lua"]                     = { fg = c.red },
-    ["@parameter.lua"]                     = { fg = c.blue, italic = true },
+    ["@parameter.lua"]                     = { fg = c.blue, italic = c.italic_enabled },
     ["@variable.lua"]                      = { fg = c.white },
 
     -- Yaml

@@ -14,7 +14,7 @@ function M.get(c, config, _)
     NvimTreeWinSeparator = c.groups.border,
 
     NvimTreeFolderName = { fg = c.editor.text },
-    NvimTreeOpenedFolderName = { fg = c.editor.text, italic = true },
+    NvimTreeOpenedFolderName = { fg = c.editor.text, italic = c.italic_enabled },
     NvimTreeEmptyFolderName = { fg = c.grey, },
     NvimTreeImageFile = { fg = c.white },
     NvimTreeSpecialFile = { fg = c.white },

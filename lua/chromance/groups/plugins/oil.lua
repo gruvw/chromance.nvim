@@ -5,7 +5,7 @@ function M.get(c, _, _)
   return {
     OilDir = { fg = c.green, bold = true, },
     OilFile = { fg = c.white, },
-    OilSize = { fg = c.white, italic = true, },
+    OilSize = { fg = c.white, italic = c.italic_enabled, },
   }
 end
 
