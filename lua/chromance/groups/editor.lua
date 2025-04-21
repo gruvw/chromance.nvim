@@ -174,10 +174,10 @@ function M.setup(c, config, hp)
     diffNewFile = { fg = c.yellow },
     diffLine = { fg = c.blue },
     -- Spelling
-    SpellBad = { fg = c.red, sp = c.red, undercurl = true },
-    SpellCap = { fg = c.red, sp = c.red, undercurl = true },
-    SpellLocal = { fg = c.red, sp = c.red, undercurl = true },
-    SpellRare = { fg = c.red, sp = c.red, undercurl = true },
+    SpellBad = { sp = c.blue, underline = true, },
+    SpellCap = { link = "SpellBad", },
+    SpellLocal = { link = "SpellBad", },
+    SpellRare = { link = "SpellBad", },
     -- Neovim
     healthError = { fg = c.red },
     healthSuccess = { fg = c.green },

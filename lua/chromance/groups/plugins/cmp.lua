@@ -4,7 +4,7 @@ local M = {}
 --- @param hp Helper
 function M.get(c, _, hp)
   return {
-    CmpItemAbbrMatch = { fg = c.editorSuggestWidget.highlightForeground, bold = true }, -- text match in order
+    CmpItemAbbrMatch = c.groups.match_secondary, -- text match in order
     CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" }, -- text match not in order
     CmpItemMenu = { fg = c.editorSuggestWidget.foreground }, -- source of cmp. Ex: Lsp | Snippet
     CmpItemAbbr = { fg = c.editorSuggestWidget.foreground }, -- text that not match

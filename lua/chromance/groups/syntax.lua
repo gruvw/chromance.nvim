@@ -24,11 +24,11 @@ function M.setup(c, config, _)
     PreProc = { fg = c.yellow }, -- (preferred) generic Preprocessor
     Include = { fg = c.red }, -- preprocessor #include
     Define = { fg = c.red }, -- preprocessor #define
-    Macro = { fg = c.red }, -- same as Define
+    Macro = { fg = c.blue, italic = true, }, -- same as Define
     PreCondit = { fg = c.red }, -- preprocessor #if, #else, #endif, etc
     Type = { fg = c.white }, -- React, ReactDOM (import React from 'react';)
     StorageClass = { fg = c.red, italic = styles.type.italic }, -- static, register, volatile, etc
-    Structure = { fg = c.blue, italic = styles.type.italic }, -- struct, union, enum, etc
+    Structure = { fg = c.blue, }, -- struct, union, enum, etc
     Typedef = { fg = c.red }, -- A typedef
     Special = { fg = c.blue }, -- (preferred) any special symbol
     SpecialChar = { fg = c.blue }, -- special character in a constant

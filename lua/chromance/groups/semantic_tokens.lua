@@ -7,7 +7,7 @@ function M.setup(c, config, hp)
   return {
     ["@lsp.type.boolean"]                      = { link = "@boolean" },
     ["@lsp.type.builtinType"]                  = { link = "@type.builtin" },
-    ["@lsp.type.class"]                        = {},  -- use treesitter styles
+    ["@lsp.type.class"]                        = { fg = c.blue, },
     ["@lsp.type.comment"]                      = { link = "@comment" },
     ["@lsp.type.decorator"]                    = { link = "@attribute" },
     ["@lsp.type.deriveHelper"]                 = { link = "@attribute" },
@@ -23,16 +23,18 @@ function M.setup(c, config, hp)
     ["@lsp.type.namespace.python"]             = { link = "@variable" },
     ["@lsp.type.number"]                       = { link = "@number" },
     ["@lsp.type.operator"]                     = { link = "@operator" },
-    ["@lsp.type.parameter"]                    = {},  -- use treesitter
+    ["@lsp.type.parameter"]                    = { link = "@parameter" }, -- use treesitter
     ["@lsp.type.property"]                     = { link = "@property" },
     ["@lsp.type.selfKeyword"]                  = { link = "@variable.builtin" },
     ["@lsp.type.selfTypeKeyword"]              = { link = "@variable.builtin" },
     ["@lsp.type.string"]                       = { link = "@string" },
-    ["@lsp.type.type"]                         = {},  -- use treesitter styles
+    ["@lsp.type.type"]                         = {}, -- use treesitter styles
     ["@lsp.type.typeAlias"]                    = { link = "@type.definition" },
     ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = c.red },
-    ["@lsp.type.variable"]                     = {},  -- use treesitter styles for regular variables
-    ["@lsp.typemod.class.defaultLibrary"]      = { link = "@type.builtin" },
+    ["@lsp.type.variable"]                     = {},                              -- use treesitter styles for regular variables
+    ["@lsp.type.annotation"]                   = { fg = c.blue, italic = true, }, -- use treesitter styles for regular variables
+    ["@lsp.typemod.property.annotation"]       = { fg = c.blue, italic = true, }, -- use treesitter styles for regular variables
+    ["@lsp.typemod.class.defaultLibrary"]      = { fg = c.blue, },
     ["@lsp.typemod.enum.defaultLibrary"]       = { link = "@type.builtin" },
     ["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
     ["@lsp.typemod.function.defaultLibrary"]   = { link = "@function.builtin" },
@@ -49,6 +51,10 @@ function M.setup(c, config, hp)
     ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"]         = { link = "@variable" },
     ["@lsp.typemod.variable.static"]           = { link = "@constant" },
+    ["@lsp.typemod.parameter.declaration"]     = { link = "@parameter", },
+    ["@lsp.typemod.variable.readonly"]         = { fg = c.white, },
+    ["@lsp.mod.interpolation"]                 = { fg = c.orange, },
+    ["@lsp.type.keyword.typst"]                = { link = "@keyword" },
   }
 end
 
