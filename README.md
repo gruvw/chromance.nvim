@@ -11,3 +11,5 @@ An opinionated sleek and vibrant Neovim color theme.
 <!-- Important -->
 
 <!-- Set the configuration BEFORE loading the color scheme with colorscheme chromance. -->
+
+<!-- list of supported plugins with link to plugins directory -->

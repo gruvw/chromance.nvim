@@ -1,8 +1,7 @@
 local M = {}
 
 --- @param c Colors The color palette
---- @param hp Helper
-function M.get(c, _, hp)
+function M.get(c, _)
   local lazy_bg = c.sideBar.background
   return {
     LazyButton = { bg = c.button.background, fg = c.button.foreground },

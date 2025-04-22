@@ -2,15 +2,14 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
---- @param hp Helper
-function M.get(c, config, hp)
+function M.get(c, config)
   return {
     TelescopeSelection = {
-      bg = c.editor.lineHighlightBackground,
+      bg = c.editor.highlight_background,
       bold = true,
     },
 
-    TelescopeSelectionCaret = { bg = c.editor.lineHighlightBackground, fg = c.green, bold = true },
+    TelescopeSelectionCaret = { bg = c.editor.highlight_background, fg = c.green, bold = true },
     TelescopeNormal = c.groups.normal,
     TelescopePromptCounter = {
       fg = c.red,

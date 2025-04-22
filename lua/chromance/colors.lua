@@ -10,7 +10,7 @@ local colors = {
   -- background
   black = "#141414", -- dark
   dark = "#1F1F1F",  -- normal
-  slate = "#292929", -- light (highlight)
+  slate = "#292929", -- light (highlight / selection)
 
   -- foreground
   grey = "#757575",  -- dark (secondary)
@@ -53,10 +53,9 @@ function M.get()
   cs.editor = {
     background = colors.dark,
     background_dark = colors.black,
+    highlight_background = colors.slate,
     text = colors.white,
     border = colors.white,
-    lineHighlightBackground = colors.slate,
-    selectionBackground = hp.blend(colors.white, 0.15, colors.dark),           --"#c1c0c027", -- background: background
     findMatchBackground = hp.blend(colors.white, 0.15, colors.dark),           -- "#fcfcfa26", -- background: background
     findMatchBorder = colors.yellow,
     findMatchHighlightBackground = hp.blend(colors.white, 0.15, colors.dark),  -- "#fcfcfa26", -- background: background

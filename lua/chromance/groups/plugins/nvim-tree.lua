@@ -2,7 +2,7 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
-function M.get(c, config, _)
+function M.get(c, config)
   return {
     NvimTreeFolderIcon = { fg = c.grey },
 
@@ -19,7 +19,7 @@ function M.get(c, config, _)
     NvimTreeImageFile = { fg = c.white },
     NvimTreeSpecialFile = { fg = c.white },
     NvimTreeCursorLine = {
-      bg = c.editor.lineHighlightBackground,
+      bg = c.editor.highlight_background,
       -- bg_base = sidebar_bg,
     },
 

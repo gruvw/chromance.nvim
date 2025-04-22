@@ -2,7 +2,7 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
-function M.setup(c, config, _)
+function M.setup(c, config)
   return {
     Comment = { fg = c.grey, italic = c.italic_enabled, }, -- Comments
     Constant = { fg = c.purple }, -- (preferred) any constant

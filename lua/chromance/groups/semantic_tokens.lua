@@ -2,8 +2,7 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
---- @param hp Helper
-function M.setup(c, config, hp)
+function M.setup(c, config)
   return {
     ["@lsp.type.boolean"]                      = { link = "@boolean" },
     ["@lsp.type.builtinType"]                  = { link = "@type.builtin" },

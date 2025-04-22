@@ -2,8 +2,7 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
---- @param hp Helper
-function M.setup(c, config, hp)
+function M.setup(c, config)
   return {
     ColorColumn = {
       bg = c.dark
@@ -19,7 +18,7 @@ function M.setup(c, config, hp)
       bg = c.editor.background,
     }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = {
-      bg = c.editor.lineHighlightBackground,
+      bg = c.editor.highlight_background,
     }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground
     CursorLineNr = {
       bg = c.editor.background,
@@ -113,7 +112,7 @@ function M.setup(c, config, hp)
       bold = true,
     },
     PmenuSbar = {
-      bg = hp.blend(c.editorSuggestWidget.background, 0.1, c.white),
+      bg = c.editorSuggestWidget.background,
     }, -- Popup menu: scrollbar.
     PmenuThumb = {
       bg = c.scrollbarSlider.hoverBackground,
@@ -149,7 +148,7 @@ function M.setup(c, config, hp)
       bold = true,
     }, -- titles for output from ":set all", ":autocmd"
     Visual = {
-      bg = c.editor.selectionBackground,
+      bg = c.editor.highlight_background,
     }, -- Visual mode selection
     VisualNOS = {
       link = "Visual",

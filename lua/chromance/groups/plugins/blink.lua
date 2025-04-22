@@ -2,10 +2,9 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
---- @param hp Helper
-function M.get(c, config, hp)
+function M.get(c, config)
   return {
-    BlinkCmpMenu = { bg = c.editorSuggestWidget.background, fg = hp.blend(c.editorSuggestWidget.foreground, 0.1, c.white) },
+    BlinkCmpMenu = { bg = c.editorSuggestWidget.background, fg = c.editorSuggestWidget.foreground, },
     -- BlinkCmpMenuSelection = float_winBackgroundClear and {
     --   bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7),
     --   bold = true,

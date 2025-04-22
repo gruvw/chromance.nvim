@@ -1,7 +1,7 @@
 local M = {}
 
 --- @param c Colors The color palette
-function M.get(c, _, _)
+function M.get(c, _)
   return {
     SignAdd = { fg = c.editorGutter.addedBackground },
     SignChange = { fg = c.editorGutter.modifiedBackground },

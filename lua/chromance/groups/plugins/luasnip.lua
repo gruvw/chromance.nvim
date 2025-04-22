@@ -2,10 +2,9 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
---- @param hp Helper
-function M.get(c, config, hp)
+function M.get(c, config)
   return {
-    LuaSnipPlace = { bg = c.editor.lineHighlightBackground, },
+    LuaSnipPlace = { bg = c.editor.highlight_background, },
   }
 end
 

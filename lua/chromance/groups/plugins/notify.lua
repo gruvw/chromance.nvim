@@ -1,15 +1,13 @@
 local M = {}
 
 --- @param c Colors The color palette
---- @param config Config
---- @param hp Helper
-function M.get(c, config, hp)
+function M.get(c, _)
   local notify_groups = {
-    NotifyERRORBorder = { fg = hp.blend(c.inputValidation.errorBorder, 0.3, c.dark) },
-    NotifyWARNBorder = { fg = hp.blend(c.inputValidation.warningBorder, 0.3, c.dark) },
-    NotifyINFOBorder = { fg = hp.blend(c.inputValidation.infoBorder, 0.3, c.dark) },
-    NotifyDEBUGBorder = { fg = hp.blend(c.grey, 0.3, c.dark) },
-    NotifyTRACEBorder = { fg = hp.blend(c.red, 0.3, c.dark) },
+    NotifyERRORBorder = { fg = c.inputValidation.errorBorder },
+    NotifyWARNBorder = { fg = c.inputValidation.warningBorder, },
+    NotifyINFOBorder = { fg = c.inputValidation.infoBorder, },
+    NotifyDEBUGBorder = { fg = c.grey, },
+    NotifyTRACEBorder = { fg = c.red, },
     NotifyERRORIcon = { fg = c.inputValidation.errorForeground },
     NotifyWARNIcon = { fg = c.inputValidation.warningForeground },
     NotifyINFOIcon = { fg = c.inputValidation.infoForeground },

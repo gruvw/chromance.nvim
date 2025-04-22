@@ -2,7 +2,7 @@ local M = {}
 
 --- @param c Colors The color palette
 --- @param config Config
-function M.get(c, config, _)
+function M.get(c, config)
   return {
     RenamerNormal = {
       bg = c.editor.background,

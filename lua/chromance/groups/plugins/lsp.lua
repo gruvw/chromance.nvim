@@ -1,7 +1,7 @@
 local M = {}
 
 --- @param c Colors The color palette
-function M.get(c, _, _)
+function M.get(c, _)
   return {
     -- Neovim 0.6+
     DiagnosticError = { fg = c.inputValidation.errorForeground },

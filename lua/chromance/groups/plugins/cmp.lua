@@ -1,8 +1,7 @@
 local M = {}
 
 --- @param c Colors The color palette
---- @param hp Helper
-function M.get(c, _, hp)
+function M.get(c, _)
   return {
     CmpItemAbbrMatch = c.groups.match_secondary, -- text match in order
     CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" }, -- text match not in order
