@@ -1,23 +1,24 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   local notify_groups = {
-    NotifyERRORBorder = { fg = c.inputValidation.errorBorder },
-    NotifyWARNBorder = { fg = c.inputValidation.warningBorder, },
-    NotifyINFOBorder = { fg = c.inputValidation.infoBorder, },
-    NotifyDEBUGBorder = { fg = c.grey, },
-    NotifyTRACEBorder = { fg = c.red, },
-    NotifyERRORIcon = { fg = c.inputValidation.errorForeground },
-    NotifyWARNIcon = { fg = c.inputValidation.warningForeground },
-    NotifyINFOIcon = { fg = c.inputValidation.infoForeground },
-    NotifyDEBUGIcon = { fg = c.white },
-    NotifyTRACEIcon = { fg = c.red },
+    NotifyERRORBorder = { fg = colors.inputValidation.errorBorder },
+    NotifyWARNBorder = { fg = colors.inputValidation.warningBorder, },
+    NotifyINFOBorder = { fg = colors.inputValidation.infoBorder, },
+    NotifyDEBUGBorder = { fg = colors.grey, },
+    NotifyTRACEBorder = { fg = colors.red, },
+    NotifyERRORIcon = { fg = colors.inputValidation.errorForeground },
+    NotifyWARNIcon = { fg = colors.inputValidation.warningForeground },
+    NotifyINFOIcon = { fg = colors.inputValidation.infoForeground },
+    NotifyDEBUGIcon = { fg = colors.white },
+    NotifyTRACEIcon = { fg = colors.red },
     NotifyERRORTitle = { link = "NotifyERRORIcon" },
     NotifyWARNTitle = { link = "NotifyWARNIcon" },
     NotifyINFOTitle = { link = "NotifyINFOIcon" },
-    NotifyDEBUGTitle = { fg = c.grey },
-    NotifyTRACETitle = { fg = c.red },
+    NotifyDEBUGTitle = { fg = colors.grey },
+    NotifyTRACETitle = { fg = colors.red },
     NotifyERRORBody = { link = "Normal" },
     NotifyWARNBody = { link = "Normal" },
     NotifyINFOBody = { link = "Normal" },

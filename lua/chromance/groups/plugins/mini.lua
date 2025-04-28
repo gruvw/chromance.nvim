@@ -1,18 +1,18 @@
----@class chromance.theme.plugins.mini
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    MiniIndentscopeSymbol = { fg = c.blue },
+    MiniIndentscopeSymbol = { fg = colors.blue },
 
     -- mini.status
-    MiniStatuslineModeNormal = { fg = c.black, bg = c.green },
-    MiniStatuslineModeInsert = { fg = c.black, bg = c.yellow },
-    MiniStatuslineModeCommand = { fg = c.black, bg = c.red },
-    MiniStatuslineModeVisual = { fg = c.black, bg = c.blue },
-    MiniStatuslineModeReplace = { fg = c.black, bg = c.blue },
-    MiniStatuslineModeOther = { fg = c.black, bg = c.white },
+    MiniStatuslineModeNormal = { fg = colors.black, bg = colors.green },
+    MiniStatuslineModeInsert = { fg = colors.black, bg = colors.yellow },
+    MiniStatuslineModeCommand = { fg = colors.black, bg = colors.red },
+    MiniStatuslineModeVisual = { fg = colors.black, bg = colors.blue },
+    MiniStatuslineModeReplace = { fg = colors.black, bg = colors.blue },
+    MiniStatuslineModeOther = { fg = colors.black, bg = colors.white },
   }
 end
 

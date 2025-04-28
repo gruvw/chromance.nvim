@@ -1,15 +1,15 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    WhichKey = { fg = c.blue },
-    WhichKeySeperator = { fg = c.red },
-    WhichKeyGroup = { fg = c.red },
-    WhichKeyDesc = { fg = c.yellow },
-    WhichKeyNormal = c.groups.normal,
-    WhichKeyBorder = c.groups.border,
+    WhichKey = { fg = colors.blue },
+    WhichKeySeperator = { fg = colors.red },
+    WhichKeyGroup = { fg = colors.red },
+    WhichKeyDesc = { fg = colors.yellow },
+    WhichKeyNormal = colors.groups.normal,
+    WhichKeyBorder = colors.groups.border,
   }
 end
 

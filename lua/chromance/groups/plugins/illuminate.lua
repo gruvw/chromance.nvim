@@ -1,11 +1,12 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    IlluminatedWordRead = { bg = c.editor.wordHighlightBackground },
-    IlluminatedWordText = { bg = c.editor.selectionHighlightBackground },
-    IlluminatedWordWrite = { bg = c.editor.wordHighlightStrongBackground },
+    IlluminatedWordRead = { bg = colors.editor.background_highlight },
+    IlluminatedWordText = { bg = colors.editor.background_highlight },
+    IlluminatedWordWrite = { bg = colors.editor.background_highlight },
   }
 end
 

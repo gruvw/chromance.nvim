@@ -1,13 +1,14 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    CocGitAddedSign = { bg = c.editor.background, fg = c.gitDecoration.addedResourceForeground },
-    CocGitChangeRemovedSign = { bg = c.editor.background, fg = c.gitDecoration.deletedResourceForeground },
-    CocGitChangedSign = { bg = c.editor.background, fg = c.gitDecoration.modifiedResourceForeground },
-    CocGitRemovedSign = { bg = c.editor.background, fg = c.gitDecoration.stageDeletedResourceForeground },
-    CocGitTopRemovedSign = { bg = c.editor.background, fg = c.gitDecoration.stageDeletedResourceForeground },
+    CocGitAddedSign = { bg = colors.editor.background, fg = colors.gitDecoration.addedResourceForeground },
+    CocGitChangeRemovedSign = { bg = colors.editor.background, fg = colors.gitDecoration.deletedResourceForeground },
+    CocGitChangedSign = { bg = colors.editor.background, fg = colors.gitDecoration.modifiedResourceForeground },
+    CocGitRemovedSign = { bg = colors.editor.background, fg = colors.gitDecoration.stageDeletedResourceForeground },
+    CocGitTopRemovedSign = { bg = colors.editor.background, fg = colors.gitDecoration.stageDeletedResourceForeground },
   }
 end
 

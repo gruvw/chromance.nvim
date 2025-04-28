@@ -1,11 +1,12 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     WildMenu = {
-      bg = c.yellow,
-      fg = c.black,
+      bg = colors.yellow,
+      fg = colors.black,
       bold = true,
       underline = false,
     },

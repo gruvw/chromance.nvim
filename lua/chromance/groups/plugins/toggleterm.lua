@@ -1,22 +1,22 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     TermCursor = {
-      bg = c.terminalCursor.foreground,
-      fg = c.terminalCursor.background,
+      bg = colors.terminalCursor.foreground,
+      fg = colors.terminalCursor.background,
     },
     ToggleTerm = {
-      bg = c.editor.background,
-      fg = c.terminal.foreground,
+      bg = colors.editor.background,
+      fg = colors.terminal.foreground,
     },
     ToggleTermNormal = {
-      bg = c.editor.background,
-      fg = c.terminal.foreground,
+      bg = colors.editor.background,
+      fg = colors.terminal.foreground,
     },
-    ToggleTermBorder = c.groups.border,
+    ToggleTermBorder = colors.groups.border,
   }
 end
 

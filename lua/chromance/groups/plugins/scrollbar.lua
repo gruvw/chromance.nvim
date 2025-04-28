@@ -1,80 +1,81 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     ScrollbarHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.white,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.white,
     },
-    ScrollbarCursorHandle = { bg = c.scrollbarSlider.hoverBackground },
+    ScrollbarCursorHandle = { bg = colors.scrollbarSlider.hoverBackground },
     ScrollbarCursor = {
-      bg = c.list.activeSelectionBackground,
-      fg = c.list.activeSelectionBackground,
+      bg = colors.list.activeSelectionBackground,
+      fg = colors.list.activeSelectionBackground,
     },
 
-    ScrollbarSearchHandle = { bg = c.scrollbarSlider.hoverBackground },
-    ScrollbarSearch = { bg = c.editor.background, fg = c.white },
+    ScrollbarSearchHandle = { bg = colors.scrollbarSlider.hoverBackground },
+    ScrollbarSearch = { bg = colors.editor.background, fg = colors.white },
 
     ScrollbarErrorHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.inputValidation.errorForeground,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.inputValidation.errorForeground,
     },
     ScrollbarError = {
-      bg = c.editor.background,
-      fg = c.inputValidation.errorForeground,
+      bg = colors.editor.background,
+      fg = colors.inputValidation.errorForeground,
     },
 
     ScrollbarWarnHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.inputValidation.warningForeground,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.inputValidation.warningForeground,
     },
     ScrollbarWarn = {
-      bg = c.editor.background,
-      fg = c.inputValidation.warningForeground,
+      bg = colors.editor.background,
+      fg = colors.inputValidation.warningForeground,
     },
 
     ScrollbarInfoHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.inputValidation.infoForeground,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.inputValidation.infoForeground,
     },
     ScrollbarInfo = {
-      bg = c.editor.background,
-      fg = c.inputValidation.infoForeground,
+      bg = colors.editor.background,
+      fg = colors.inputValidation.infoForeground,
     },
 
     ScrollbarHintHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.inputValidation.infoForeground,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.inputValidation.infoForeground,
     },
     ScrollbarHint = {
-      bg = c.editor.background,
-      fg = c.inputValidation.infoForeground,
+      bg = colors.editor.background,
+      fg = colors.inputValidation.infoForeground,
     },
 
     ScrollbarGitAddHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.gitDecoration.addedResourceForeground,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.gitDecoration.addedResourceForeground,
     },
     ScrollbarGitAdd = {
-      bg = c.editor.background,
-      fg = c.gitDecoration.addedResourceForeground,
+      bg = colors.editor.background,
+      fg = colors.gitDecoration.addedResourceForeground,
     },
     ScrollbarGitChangeHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.gitDecoration.modifiedResourceForeground,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.gitDecoration.modifiedResourceForeground,
     },
     ScrollbarGitChange = {
-      bg = c.editor.background,
-      fg = c.gitDecoration.modifiedResourceForeground,
+      bg = colors.editor.background,
+      fg = colors.gitDecoration.modifiedResourceForeground,
     },
     ScrollbarGitDeleteHandle = {
-      bg = c.scrollbarSlider.hoverBackground,
-      fg = c.gitDecoration.deletedResourceForeground,
+      bg = colors.scrollbarSlider.hoverBackground,
+      fg = colors.gitDecoration.deletedResourceForeground,
     },
     ScrollbarGitDelete = {
-      bg = c.editor.background,
-      fg = c.gitDecoration.deletedResourceForeground,
+      bg = colors.editor.background,
+      fg = colors.gitDecoration.deletedResourceForeground,
     },
   }
 end

@@ -1,9 +1,10 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    Beacon = { bg = c.blue },
+    Beacon = { bg = colors.blue },
   }
 end
 

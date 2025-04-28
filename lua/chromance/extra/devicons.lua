@@ -12,7 +12,7 @@ function M.apply_icons(colors)
   -- set icon color from closest color in palette
   local icons = nvim_web_devicons.get_icons()
   for _, icon in pairs(icons) do
-    icon.color = ch.find_closest_color(icon.color, colors.icon_colors)
+    icon.color = ch.find_closest_color(icon.color, colors.icons_colors)
   end
 end
 

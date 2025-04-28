@@ -1,19 +1,19 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     RenamerNormal = {
-      bg = c.editor.background,
-      fg = c.editorHoverWidget.foreground,
+      bg = colors.editor.background,
+      fg = colors.editorHoverWidget.foreground,
     },
     RenamerBorder = {
-      bg = c.editor.background,
-      fg = c.editorSuggestWidget.foreground,
+      bg = colors.editor.background,
+      fg = colors.editorSuggestWidget.foreground,
     },
     RenamerTitle = {
-      fg = c.yellow,
+      fg = colors.yellow,
       bold = true,
     },
   }

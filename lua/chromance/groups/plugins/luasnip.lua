@@ -1,10 +1,10 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    LuaSnipPlace = { bg = c.editor.highlight_background, },
+    LuaSnipPlace = { bg = colors.editor.background_highlight, },
   }
 end
 

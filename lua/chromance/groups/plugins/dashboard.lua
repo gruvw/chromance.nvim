@@ -1,20 +1,21 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     -- General
-    DashboardHeader = { fg = c.yellow },
-    DashboardFooter = { fg = c.green },
+    DashboardHeader = { fg = colors.yellow },
+    DashboardFooter = { fg = colors.green },
     -- Doome theme
-    DashboardKey = { fg = c.blue },
-    DashboardDesc = { fg = c.white },
-    DashboardIcon = { fg = c.blue },
+    DashboardKey = { fg = colors.blue },
+    DashboardDesc = { fg = colors.white },
+    DashboardIcon = { fg = colors.blue },
     -- Hyper theme
-    DashboardProjectTitle = { fg = c.yellow },
-    DashboardMruTitle = { fg = c.yellow },
-    DashboardFiles = { fg = c.blue },
-    DashboardShortcut = { fg = c.red },
+    DashboardProjectTitle = { fg = colors.yellow },
+    DashboardMruTitle = { fg = colors.yellow },
+    DashboardFiles = { fg = colors.blue },
+    DashboardShortcut = { fg = colors.red },
   }
 end
 

@@ -1,12 +1,13 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    UfoFoldedBg = { bg = c.editor.background },
+    UfoFoldedBg = { bg = colors.editor.background },
     FoldColumn = {
-      bg = c.editor.background,
-      fg = c.button.foreground,
+      bg = colors.editor.background,
+      fg = colors.button.foreground,
     }, -- 'foldcolumn'
   }
 end

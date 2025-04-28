@@ -1,26 +1,26 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    FzfLuaNormal = c.groups.normal,
-    FzfLuaBorder = { bg = c.editor.background, fg = c.tab.unfocusedActiveBorder },
-    FzfLuaTitle = { bg = c.yellow, fg = c.black, bold = true },
-    FzfLuaBackdrop = { bg = c.dark },
-    FzfLuaPreviewNormal = c.groups.normal,
+    FzfLuaNormal = colors.groups.normal,
+    FzfLuaBorder = { bg = colors.editor.background, fg = colors.tab.unfocusedActiveBorder },
+    FzfLuaTitle = { bg = colors.yellow, fg = colors.black, bold = true },
+    FzfLuaBackdrop = { bg = colors.dark },
+    FzfLuaPreviewNormal = colors.groups.normal,
     FzfLuaPreviewBorder = { link = "FzfLuaBorder" },
-    FzfLuaPreviewTitle = { bg = c.editor.background, fg = c.blue, bold = true },
-    FzfLuaCursorLine = { bg = c.editor.highlight_background, bold = true },
+    FzfLuaPreviewTitle = { bg = colors.editor.background, fg = colors.blue, bold = true },
+    FzfLuaCursorLine = { bg = colors.editor.background_highlight, bold = true },
     FzfLuaScrollBorderEmpty = { link = "FzfLuaBorder" },
     FzfLuaScrollBorderFull = { link = "FzfLuaBorder" },
-    FzfLuaHelpNormal = c.groups.normal,
-    FzfLuaHelpBorder = c.groups.border,
-    FzfLuaHeaderBind = { fg = c.blue },
-    FzfLuaHeaderText = { fg = c.green },
-    FzfLuaFzfHeader = { fg = c.editor.text },
-    FzfLuaFzfInfo = { fg = c.grey },
-    FzfLuaFzfPointer = { fg = c.blue },
+    FzfLuaHelpNormal = colors.groups.normal,
+    FzfLuaHelpBorder = colors.groups.border,
+    FzfLuaHeaderBind = { fg = colors.blue },
+    FzfLuaHeaderText = { fg = colors.green },
+    FzfLuaFzfHeader = { fg = colors.editor.text },
+    FzfLuaFzfInfo = { fg = colors.grey },
+    FzfLuaFzfPointer = { fg = colors.blue },
   }
 end
 

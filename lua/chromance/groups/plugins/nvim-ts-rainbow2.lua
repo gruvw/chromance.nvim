@@ -1,15 +1,16 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    TSRainbowRed = { fg = c.red },
-    TSRainbowYellow = { fg = c.yellow },
-    TSRainbowBlue = { fg = c.blue },
-    TSRainbowOrange = { fg = c.blue },
-    TSRainbowGreen = { fg = c.green },
-    TSRainbowViolet = { fg = c.red },
-    TSRainbowCyan = { fg = c.blue },
+    TSRainbowRed = { fg = colors.red },
+    TSRainbowYellow = { fg = colors.yellow },
+    TSRainbowBlue = { fg = colors.blue },
+    TSRainbowOrange = { fg = colors.blue },
+    TSRainbowGreen = { fg = colors.green },
+    TSRainbowViolet = { fg = colors.red },
+    TSRainbowCyan = { fg = colors.blue },
   }
 end
 

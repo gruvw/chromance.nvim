@@ -1,11 +1,12 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    AlphaButton = { fg = c.red },
-    AlphaFooter = { fg = c.blue },
-    AlphaHeader = { fg = c.yellow },
+    AlphaButton = { fg = colors.red },
+    AlphaFooter = { fg = colors.blue },
+    AlphaHeader = { fg = colors.yellow },
   }
 end
 

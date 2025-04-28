@@ -1,7 +1,7 @@
 local M = {}
 
 --- @param c Colors The color palette
---- @param config Config
+--- @param config Options
 function M.setup(c, config)
   return {
     ["@lsp.type.boolean"]                      = { link = "@boolean" },

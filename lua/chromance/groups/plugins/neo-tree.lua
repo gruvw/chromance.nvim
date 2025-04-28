@@ -1,83 +1,83 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
-  local sidebar_bg = c.editor.background
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
+  local sidebar_bg = colors.editor.background
   return {
-    NeoTreeNormal = { bg = sidebar_bg, fg = c.sideBar.foreground },
+    NeoTreeNormal = { bg = sidebar_bg, fg = colors.sideBar.foreground },
     NeoTreeEndOfBuffer = {
       bg = sidebar_bg,
       fg = sidebar_bg,
     },
-    NeoTreeNormalNC = { bg = sidebar_bg, fg = c.sideBar.foreground },
-    NeoTreeSignColumn = { bg = sidebar_bg, fg = c.sideBar.foreground },
+    NeoTreeNormalNC = { bg = sidebar_bg, fg = colors.sideBar.foreground },
+    NeoTreeSignColumn = { bg = sidebar_bg, fg = colors.sideBar.foreground },
     NeoTreeStatusLine = { bg = sidebar_bg, fg = sidebar_bg },
     NeoTreeCursor = {
-      bg = c.list.activeSelectionBackground,
+      bg = colors.list.activeSelectionBackground,
       -- bg_base = sidebar_bg,
     },
     NeoTreeCursorLine = {
-      bg = c.list.activeSelectionBackground,
+      bg = colors.list.activeSelectionBackground,
       -- bg_base = sidebar_bg,
       bold = true,
     },
     NeoTreeCursorLineSign = {
-      bg = c.list.activeSelectionBackground,
+      bg = colors.list.activeSelectionBackground,
       -- bg_base = sidebar_bg,
     },
     NeoTreeWinSeparator = {
-      bg = c.editor.background,
-      fg = c.editor.border,
+      bg = colors.editor.background,
+      fg = colors.editor.border,
     },
     NeoTreeRootName = {
       -- bg = C.sideBarSectionHeader.background,
-      fg = c.sideBarSectionHeader.foreground,
+      fg = colors.sideBarSectionHeader.foreground,
       bold = true,
     },
-    NeoTreeDirectoryIcon = { fg = c.sideBar.foreground },
-    NeoTreeDirectoryName = { fg = c.sideBar.foreground },
-    NeoTreeGitAdded = { fg = c.gitDecoration.addedResourceForeground },
-    NeoTreeGitConflict = { fg = c.gitDecoration.conflictingResourceForeground },
-    NeoTreeGitDeleted = { fg = c.gitDecoration.deletedResourceForeground },
-    NeoTreeGitIgnored = { fg = c.gitDecoration.ignoredResourceForeground },
-    NeoTreeGitModified = { fg = c.gitDecoration.modifiedResourceForeground }, -- unstaged
-    NeoTreeGitStaged = { fg = c.gitDecoration.stageModifiedResourceForeground },
-    NeoTreeGitRenamed = { fg = c.gitDecoration.untrackedResourceForeground },
-    NeoTreeGitUntracked = { fg = c.gitDecoration.untrackedResourceForeground },
+    NeoTreeDirectoryIcon = { fg = colors.sideBar.foreground },
+    NeoTreeDirectoryName = { fg = colors.sideBar.foreground },
+    NeoTreeGitAdded = { fg = colors.gitDecoration.addedResourceForeground },
+    NeoTreeGitConflict = { fg = colors.gitDecoration.conflictingResourceForeground },
+    NeoTreeGitDeleted = { fg = colors.gitDecoration.deletedResourceForeground },
+    NeoTreeGitIgnored = { fg = colors.gitDecoration.ignoredResourceForeground },
+    NeoTreeGitModified = { fg = colors.gitDecoration.modifiedResourceForeground }, -- unstaged
+    NeoTreeGitStaged = { fg = colors.gitDecoration.stageModifiedResourceForeground },
+    NeoTreeGitRenamed = { fg = colors.gitDecoration.untrackedResourceForeground },
+    NeoTreeGitUntracked = { fg = colors.gitDecoration.untrackedResourceForeground },
     NeoTreeIndentMarker = { link = "IndentBlanklineChar" },
     NeoTreeExpander = { link = "NeoTreeDirectoryIcon" },
     NeoTreeFloatNormal = {
-      bg = c.editorSuggestWidget.background,
-      fg = c.editorSuggestWidget.foreground,
+      bg = colors.editorSuggestWidget.background,
+      fg = colors.editorSuggestWidget.foreground,
     },
     NeoTreeFloatBorder = {
-      bg = c.editor.background,
-      fg = c.editor.text,
+      bg = colors.editor.background,
+      fg = colors.editor.text,
     },
     NeoTreeTitleBar = {
       bg = sidebar_bg,
-      fg = c.yellow,
+      fg = colors.yellow,
       bold = true,
     },
     NeoTreeFloatTitle = {
-      bg = c.yellow,
+      bg = colors.yellow,
       fg = sidebar_bg,
       bold = true,
     },
     NeoTreeTabActive = {
-      bg = c.button.hoverBackground,
-      fg = c.button.foreground,
+      bg = colors.button.hoverBackground,
+      fg = colors.button.foreground,
       bold = true,
     },
-    NeoTreeTabInactive = { bg = c.button.background, fg = c.button.foreground },
+    NeoTreeTabInactive = { bg = colors.button.background, fg = colors.button.foreground },
     NeoTreeTabSeparatorActive = {
-      bg = c.button.hoverBackground,
-      fg = c.button.separator,
+      bg = colors.button.hoverBackground,
+      fg = colors.button.separator,
     },
     NeoTreeTabSeparatorInactive = {
-      bg = c.button.background,
-      fg = c.button.separator,
+      bg = colors.button.background,
+      fg = colors.button.separator,
     },
   }
 end

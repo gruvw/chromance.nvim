@@ -1,61 +1,62 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     -- Neovim 0.6+
-    DiagnosticError = { fg = c.inputValidation.errorForeground },
-    DiagnosticWarn = { fg = c.inputValidation.warningForeground },
-    DiagnosticInfo = { fg = c.inputValidation.infoForeground },
-    DiagnosticHint = { fg = c.inputValidation.infoForeground },
-    DiagnosticSignError = { fg = c.inputValidation.errorForeground },
-    DiagnosticSignWarn = { fg = c.inputValidation.warningForeground },
-    DiagnosticSignInfo = { fg = c.inputValidation.infoForeground },
-    DiagnosticSignHint = { fg = c.inputValidation.infoForeground },
+    DiagnosticError = { fg = colors.inputValidation.errorForeground },
+    DiagnosticWarn = { fg = colors.inputValidation.warningForeground },
+    DiagnosticInfo = { fg = colors.inputValidation.infoForeground },
+    DiagnosticHint = { fg = colors.inputValidation.infoForeground },
+    DiagnosticSignError = { fg = colors.inputValidation.errorForeground },
+    DiagnosticSignWarn = { fg = colors.inputValidation.warningForeground },
+    DiagnosticSignInfo = { fg = colors.inputValidation.infoForeground },
+    DiagnosticSignHint = { fg = colors.inputValidation.infoForeground },
     DiagnosticVirtualTextError = {
-      bg = c.errorLens.errorBackground,
-      fg = c.errorLens.errorForeground,
+      bg = colors.errorLens.errorBackground,
+      fg = colors.errorLens.errorForeground,
     },
     DiagnosticVirtualTextWarn = {
-      bg = c.errorLens.warningBackground,
-      fg = c.errorLens.warningForeground,
+      bg = colors.errorLens.warningBackground,
+      fg = colors.errorLens.warningForeground,
     },
     DiagnosticVirtualTextInfo = {
-      bg = c.errorLens.infoBackground,
-      fg = c.errorLens.infoForeground,
+      bg = colors.errorLens.infoBackground,
+      fg = colors.errorLens.infoForeground,
     },
     DiagnosticVirtualTextHint = {
-      bg = c.errorLens.hintBackground,
-      fg = c.errorLens.hintForeground,
+      bg = colors.errorLens.hintBackground,
+      fg = colors.errorLens.hintForeground,
     },
     DiagnosticUnderlineError = {
-      sp = c.inputValidation.errorBorder,
+      sp = colors.inputValidation.errorBorder,
       undercurl = true,
     },
     DiagnosticUnderlineWarn = {
-      sp = c.inputValidation.warningBorder,
+      sp = colors.inputValidation.warningBorder,
       undercurl = true,
     },
     DiagnosticUnderlineInfo = {
-      sp = c.inputValidation.infoBorder,
+      sp = colors.inputValidation.infoBorder,
       undercurl = true,
     },
     DiagnosticUnderlineHint = {
-      sp = c.inputValidation.infoBorder,
+      sp = colors.inputValidation.infoBorder,
       undercurl = true,
     },
     DiagnosticUnnecessary = {
-      sp = c.inputValidation.infoBorder,
+      sp = colors.inputValidation.infoBorder,
       undercurl = true,
     },
     LspInlayHint = {
-      bg = c.editorInlayHint.background,
-      fg = c.editorInlayHint.foreground,
+      bg = colors.editorInlayHint.background,
+      fg = colors.editorInlayHint.foreground,
     },
-    LspReferenceRead = { bg = c.editor.wordHighlightBackground },
-    LspReferenceText = { bg = c.editor.selectionHighlightBackground },
-    LspReferenceWrite = { bg = c.editor.wordHighlightStrongBackground },
-    LspInfoBorder = { fg = c.editor.border, },
+    LspReferenceRead = { bg = colors.editor.background_highlight },
+    LspReferenceText = { bg = colors.editor.background_highlight },
+    LspReferenceWrite = { bg = colors.editor.background_highlight },
+    LspInfoBorder = { fg = colors.editor.border, },
   }
 end
 

@@ -1,21 +1,21 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    IndentBlanklineChar = { fg = c.grey },
-    IndentBlanklineContextChar = { fg = c.editorIndentGuide.activeBackground, },
+    IndentBlanklineChar = { fg = colors.grey },
+    IndentBlanklineContextChar = { fg = colors.editorIndentGuide.activeBackground, },
     IndentBlanklineContextStart = {
-      sp = c.editorIndentGuide.activeBackground,
+      sp = colors.editorIndentGuide.activeBackground,
     },
-    IndentBlanklineSpaceChar = { fg = c.grey },
-    IndentBlankLineIndent1 = { fg = c.indent_lines.indent1, },
-    IndentBlankLineIndent2 = { fg = c.indent_lines.indent2, },
-    IndentBlankLineIndent3 = { fg = c.indent_lines.indent3, },
-    IndentBlankLineIndent4 = { fg = c.indent_lines.indent4, },
-    IndentBlankLineIndent5 = { fg = c.indent_lines.indent5, },
-    IndentBlankLineIndent6 = { fg = c.indent_lines.indent6, },
+    IndentBlanklineSpaceChar = { fg = colors.grey },
+    IndentBlankLineIndent1 = { fg = colors.indent_lines.indent1, },
+    IndentBlankLineIndent2 = { fg = colors.indent_lines.indent2, },
+    IndentBlankLineIndent3 = { fg = colors.indent_lines.indent3, },
+    IndentBlankLineIndent4 = { fg = colors.indent_lines.indent4, },
+    IndentBlankLineIndent5 = { fg = colors.indent_lines.indent5, },
+    IndentBlankLineIndent6 = { fg = colors.indent_lines.indent6, },
   }
 end
 

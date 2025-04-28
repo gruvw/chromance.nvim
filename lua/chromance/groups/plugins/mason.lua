@@ -1,37 +1,38 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     MasonNormal = { link = "LazyNormal" },
     MasonHeader = { link = "LazyH1" },
     MasonHeaderSecondary = {
-      bg = c.yellow,
-      fg = c.black,
+      bg = colors.yellow,
+      fg = colors.black,
       bold = true,
     },
-    MasonHighlight = { fg = c.blue },
-    MasonHighlightBlock = { bg = c.yellow, fg = "#222222" },
+    MasonHighlight = { fg = colors.blue },
+    MasonHighlightBlock = { bg = colors.yellow, fg = "#222222" },
     MasonHighlightBlockBold = { link = "LazyH1" },
-    MasonHighlightSecondary = { fg = c.blue },
+    MasonHighlightSecondary = { fg = colors.blue },
     MasonHighlightBlockSecondary = {
-      bg = c.blue,
-      fg = c.black,
+      bg = colors.blue,
+      fg = colors.black,
     },
     MasonHighlightBlockBoldSecondary = {
-      bg = c.blue,
-      fg = c.black,
+      bg = colors.blue,
+      fg = colors.black,
       bold = true,
     },
     MasonLink = { link = "LazyUrl" },
-    MasonMuted = { fg = c.grey },
+    MasonMuted = { fg = colors.grey },
     MasonMutedBlock = { link = "LazyButton" },
     MasonMutedBlockBold = {
-      bg = c.grey,
-      fg = c.black,
+      bg = colors.grey,
+      fg = colors.black,
       bold = true,
     },
-    MasonError = { fg = c.red },
+    MasonError = { fg = colors.red },
     MasonHeading = { link = "LazyH2" },
   }
 end

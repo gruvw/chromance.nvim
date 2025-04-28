@@ -1,43 +1,43 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    NvimTreeFolderIcon = { fg = c.grey },
+    NvimTreeFolderIcon = { fg = colors.grey },
 
     NvimTreeIndentMarker = { link = "IndentBlanklineChar" },
 
-    NvimTreeNormal = c.groups.normal,
-    NvimTreeNormalFloat = { fg = c.editor.text },
-    NvimTreeEndOfBuffer = c.groups.normal,
-    NvimTreeWinSeparator = c.groups.border,
+    NvimTreeNormal = colors.groups.normal,
+    NvimTreeNormalFloat = { fg = colors.editor.text },
+    NvimTreeEndOfBuffer = colors.groups.normal,
+    NvimTreeWinSeparator = colors.groups.border,
 
-    NvimTreeFolderName = { fg = c.editor.text },
-    NvimTreeOpenedFolderName = { fg = c.editor.text, italic = c.italic_enabled },
-    NvimTreeEmptyFolderName = { fg = c.grey, },
-    NvimTreeImageFile = { fg = c.white },
-    NvimTreeSpecialFile = { fg = c.white },
+    NvimTreeFolderName = { fg = colors.editor.text },
+    NvimTreeOpenedFolderName = { fg = colors.editor.text, italic = options.italic_enabled },
+    NvimTreeEmptyFolderName = { fg = colors.grey, },
+    NvimTreeImageFile = { fg = colors.white },
+    NvimTreeSpecialFile = { fg = colors.white },
     NvimTreeCursorLine = {
-      bg = c.editor.highlight_background,
+      bg = colors.editor.background_highlight,
       -- bg_base = sidebar_bg,
     },
 
-    NvimTreeGitIgnored = { fg = c.gitDecoration.ignoredResourceForeground },
-    NvimTreeGitignoreIcon = { fg = c.gitDecoration.ignoredResourceForeground },
-    NvimTreeGitStaged = { fg = c.gitDecoration.stageModifiedResourceForeground },
-    NvimTreeGitDirty = { fg = c.gitDecoration.modifiedResourceForeground }, -- unstaged/modified
-    NvimTreeGitNew = { fg = c.gitDecoration.untrackedResourceForeground },
-    NvimTreeGitRenamed = { fg = c.gitDecoration.untrackedResourceForeground },
-    NvimTreeGitDeleted = { fg = c.gitDecoration.deletedResourceForeground },
-    NvimTreeGitMerge = { fg = c.gitDecoration.conflictingResourceForeground },
+    NvimTreeGitIgnored = { fg = colors.gitDecoration.ignoredResourceForeground },
+    NvimTreeGitignoreIcon = { fg = colors.gitDecoration.ignoredResourceForeground },
+    NvimTreeGitStaged = { fg = colors.gitDecoration.stageModifiedResourceForeground },
+    NvimTreeGitDirty = { fg = colors.gitDecoration.modifiedResourceForeground }, -- unstaged/modified
+    NvimTreeGitNew = { fg = colors.gitDecoration.untrackedResourceForeground },
+    NvimTreeGitRenamed = { fg = colors.gitDecoration.untrackedResourceForeground },
+    NvimTreeGitDeleted = { fg = colors.gitDecoration.deletedResourceForeground },
+    NvimTreeGitMerge = { fg = colors.gitDecoration.conflictingResourceForeground },
 
-    NvimTreeSymlink = { fg = c.yellow },
+    NvimTreeSymlink = { fg = colors.yellow },
     NvimTreeRootFolder = {
-      fg = c.editor.text,
+      fg = colors.editor.text,
       bold = true,
     },
-    NvimTreeExecFile = { fg = c.green },
+    NvimTreeExecFile = { fg = colors.green },
   }
 end
 

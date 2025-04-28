@@ -1,46 +1,47 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    CmpItemAbbrMatch = c.groups.match_secondary, -- text match in order
+    CmpItemAbbrMatch = colors.groups.match_secondary, -- text match in order
     CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" }, -- text match not in order
-    CmpItemMenu = { fg = c.editorSuggestWidget.foreground }, -- source of cmp. Ex: Lsp | Snippet
-    CmpItemAbbr = { fg = c.editorSuggestWidget.foreground }, -- text that not match
-    CmpItemAbbrDeprecated = { fg = c.editorSuggestWidget.foreground, strikethrough = true }, -- text not match of deprecated
-    CmpItemKindArray = { fg = c.red },
-    CmpItemKindBoolean = { fg = c.purple },
-    CmpItemKindClass = { fg = c.blue },
-    CmpItemKindColor = { fg = c.red },
-    CmpItemKindConstant = { fg = c.red },
-    CmpItemKindConstructor = { fg = c.green },
-    CmpItemKindEnum = { fg = c.blue },
-    CmpItemKindEnumMember = { fg = c.blue },
-    CmpItemKindEvent = { fg = c.blue },
-    CmpItemKindField = { fg = c.blue },
-    CmpItemKindFile = { fg = c.editorLineNumber.activeForeground },
-    CmpItemKindFolder = { fg = c.editorLineNumber.activeForeground },
-    CmpItemKindFunction = { fg = c.green },
-    CmpItemKindInterface = { fg = c.blue },
-    CmpItemKindKey = { fg = c.blue },
-    CmpItemKindKeyword = { fg = c.red },
-    CmpItemKindMethod = { fg = c.green },
-    CmpItemKindModule = { fg = c.blue },
-    CmpItemKindNamespace = { fg = c.blue },
-    CmpItemKindNull = { fg = c.red },
-    CmpItemKindNumber = { fg = c.red },
-    CmpItemKindObject = { fg = c.blue },
-    CmpItemKindOperator = { fg = c.red },
-    CmpItemKindPackage = { fg = c.red },
-    CmpItemKindProperty = { fg = c.blue },
-    CmpItemKindReference = { fg = c.red },
-    CmpItemKindSnippet = { fg = c.green },
-    CmpItemKindString = { fg = c.yellow },
-    CmpItemKindStruct = { fg = c.red },
-    CmpItemKindText = { fg = c.yellow },
-    CmpItemKindTypeParameter = { fg = c.blue },
-    CmpItemKindUnit = { fg = c.red },
-    CmpItemKindVariable = { fg = c.blue },
+    CmpItemMenu = { fg = colors.editorSuggestWidget.foreground }, -- source of cmp. Ex: Lsp | Snippet
+    CmpItemAbbr = { fg = colors.editorSuggestWidget.foreground }, -- text that not match
+    CmpItemAbbrDeprecated = { fg = colors.editorSuggestWidget.foreground, strikethrough = true }, -- text not match of deprecated
+    CmpItemKindArray = { fg = colors.red },
+    CmpItemKindBoolean = { fg = colors.purple },
+    CmpItemKindClass = { fg = colors.blue },
+    CmpItemKindColor = { fg = colors.red },
+    CmpItemKindConstant = { fg = colors.red },
+    CmpItemKindConstructor = { fg = colors.green },
+    CmpItemKindEnum = { fg = colors.blue },
+    CmpItemKindEnumMember = { fg = colors.blue },
+    CmpItemKindEvent = { fg = colors.blue },
+    CmpItemKindField = { fg = colors.blue },
+    CmpItemKindFile = { fg = colors.editorLineNumber.activeForeground },
+    CmpItemKindFolder = { fg = colors.editorLineNumber.activeForeground },
+    CmpItemKindFunction = { fg = colors.green },
+    CmpItemKindInterface = { fg = colors.blue },
+    CmpItemKindKey = { fg = colors.blue },
+    CmpItemKindKeyword = { fg = colors.red },
+    CmpItemKindMethod = { fg = colors.green },
+    CmpItemKindModule = { fg = colors.blue },
+    CmpItemKindNamespace = { fg = colors.blue },
+    CmpItemKindNull = { fg = colors.red },
+    CmpItemKindNumber = { fg = colors.red },
+    CmpItemKindObject = { fg = colors.blue },
+    CmpItemKindOperator = { fg = colors.red },
+    CmpItemKindPackage = { fg = colors.red },
+    CmpItemKindProperty = { fg = colors.blue },
+    CmpItemKindReference = { fg = colors.red },
+    CmpItemKindSnippet = { fg = colors.green },
+    CmpItemKindString = { fg = colors.yellow },
+    CmpItemKindStruct = { fg = colors.red },
+    CmpItemKindText = { fg = colors.yellow },
+    CmpItemKindTypeParameter = { fg = colors.blue },
+    CmpItemKindUnit = { fg = colors.red },
+    CmpItemKindVariable = { fg = colors.blue },
   }
 end
 

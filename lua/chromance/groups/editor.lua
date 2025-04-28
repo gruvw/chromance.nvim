@@ -1,11 +1,11 @@
 local M = {}
 
 --- @param c Colors The color palette
---- @param config Config
-function M.setup(c, config)
+--- @param options Options
+function M.setup(c, options)
   return {
     ColorColumn = {
-      bg = c.editor.highlight_background,
+      bg = c.editor.background_highlight,
     }, -- used for the columns set with 'colorcolumn'
     Conceal = { bg = c.editor.background, fg = c.grey }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
@@ -18,7 +18,7 @@ function M.setup(c, config)
       bg = c.editor.background,
     }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = {
-      bg = c.editor.highlight_background,
+      bg = c.editor.background_highlight,
     }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground
     CursorLineNr = {
       bg = c.editor.background,
@@ -59,7 +59,7 @@ function M.setup(c, config)
       fg = c.black,
     }, -- the column separating vertically split windows
     Folded = {
-      bg = c.editor.foldBackground,
+      bg = c.editor.background_dark,
     }, -- line used for closed folds
     FoldColumn = {
       bg = c.editor.background,
@@ -122,7 +122,7 @@ function M.setup(c, config)
     -- QuickFixLine = { bg = C.bg }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     -- QuickFixLineNC = { bg = C.bg }, -- QuickFixLine, for inactive windows
     Search = {
-      bg = c.editor.findMatchHighlightBackground,
+      bg = c.editor.background_highlight,
       fg = nil, -- should set to NONE to use treesitter color
     }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     -- SpecialKey   = {}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace| SpellBad  Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.  SpellCap  Word that should start with a capital. |spell| Combined with the highlighting used otherwise.  SpellLocal  Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
@@ -148,7 +148,7 @@ function M.setup(c, config)
       bold = true,
     }, -- titles for output from ":set all", ":autocmd"
     Visual = {
-      bg = c.editor.highlight_background,
+      bg = c.editor.background_highlight,
     }, -- Visual mode selection
     VisualNOS = {
       link = "Visual",

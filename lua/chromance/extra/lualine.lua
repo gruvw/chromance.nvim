@@ -1,4 +1,7 @@
-local colors = require("chromance.colors").get();
+local config = require("chromance.config")
+local theme = require("chromance.theme")
+
+local colors = theme.colors(config.options)
 
 local M = {}
 

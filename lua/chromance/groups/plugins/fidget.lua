@@ -1,13 +1,14 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     FidgetTask = {
-      bg = c.editor.background,
-      fg = c.white,
+      bg = colors.editor.background,
+      fg = colors.white,
     },
-    FidgetTitle = { bg = c.editor.background, fg = c.yellow },
+    FidgetTitle = { bg = colors.editor.background, fg = colors.yellow },
   }
 end
 

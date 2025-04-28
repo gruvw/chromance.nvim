@@ -1,10 +1,11 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    LeapLabelPrimary = c.groups.match_primary,
-    LeapLabelSecondary = c.groups.match_secondary,
+    LeapLabelPrimary = colors.groups.match_primary,
+    LeapLabelSecondary = colors.groups.match_secondary,
   }
 end
 

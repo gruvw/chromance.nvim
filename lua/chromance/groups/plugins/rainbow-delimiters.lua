@@ -1,15 +1,16 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    RainbowDelimiterRed = { fg = c.red },
-    RainbowDelimiterYellow = { fg = c.yellow },
-    RainbowDelimiterBlue = { fg = c.blue },
-    RainbowDelimiterOrange = { fg = c.blue },
-    RainbowDelimiterGreen = { fg = c.green },
-    RainbowDelimiterViolet = { fg = c.red },
-    RainbowDelimiterCyan = { fg = c.blue },
+    RainbowDelimiterRed = { fg = colors.red },
+    RainbowDelimiterYellow = { fg = colors.yellow },
+    RainbowDelimiterBlue = { fg = colors.blue },
+    RainbowDelimiterOrange = { fg = colors.blue },
+    RainbowDelimiterGreen = { fg = colors.green },
+    RainbowDelimiterViolet = { fg = colors.red },
+    RainbowDelimiterCyan = { fg = colors.blue },
   }
 end
 

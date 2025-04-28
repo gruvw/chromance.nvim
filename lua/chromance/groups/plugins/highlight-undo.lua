@@ -1,10 +1,11 @@
 local M = {}
 
---- @param c Colors The color palette
-function M.get(c, _)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
-    HighlightUndo = c.groups.match_secondary,
-    HighlightRedo = c.groups.match_secondary,
+    HighlightUndo = colors.groups.match_secondary,
+    HighlightRedo = colors.groups.match_secondary,
   }
 end
 

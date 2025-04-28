@@ -1,52 +1,52 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Config
-function M.get(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.get(colors, options)
   return {
     TelescopeSelection = {
-      bg = c.editor.highlight_background,
+      bg = colors.editor.background_highlight,
       bold = true,
     },
 
-    TelescopeSelectionCaret = { bg = c.editor.highlight_background, fg = c.green, bold = true },
-    TelescopeNormal = c.groups.normal,
+    TelescopeSelectionCaret = { bg = colors.editor.background_highlight, fg = colors.green, bold = true },
+    TelescopeNormal = colors.groups.normal,
     TelescopePromptCounter = {
-      fg = c.red,
+      fg = colors.red,
       bold = true,
     },
-    TelescopeBorder = c.groups.border,
-    TelescopeMatching = c.groups.match_primary,
+    TelescopeBorder = colors.groups.border,
+    TelescopeMatching = colors.groups.match_primary,
 
     TelescopePreviewLine = { link = "TelescopeSelection" },
 
     -- prompt
     TelescopePromptTitle = {
-      bg = c.yellow,
-      fg = c.black,
+      bg = colors.yellow,
+      fg = colors.black,
       bold = true,
     },
-    TelescopePromptNormal = c.groups.normal,
-    TelescopePromptBorder = c.groups.border,
-    TelescopePromptPrefix = { fg = c.green, },
+    TelescopePromptNormal = colors.groups.normal,
+    TelescopePromptBorder = colors.groups.border,
+    TelescopePromptPrefix = { fg = colors.green, },
 
     -- preview
     TelescopePreviewTitle = {
-      bg = c.yellow,
-      fg = c.black,
+      bg = colors.yellow,
+      fg = colors.black,
       bold = true,
     },
-    TelescopePreviewNormal = c.groups.normal,
-    TelescopePreviewBorder = c.groups.border,
+    TelescopePreviewNormal = colors.groups.normal,
+    TelescopePreviewBorder = colors.groups.border,
 
     -- result
     TelescopeResultsTitle = {
-      bg = c.yellow,
-      fg = c.black,
+      bg = colors.yellow,
+      fg = colors.black,
       bold = true,
     },
-    TelescopeResultsNormal = c.groups.normal,
-    TelescopeResultsBorder = c.groups.border,
+    TelescopeResultsNormal = colors.groups.normal,
+    TelescopeResultsBorder = colors.groups.border,
   }
 end
 
