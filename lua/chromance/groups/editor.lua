@@ -5,7 +5,7 @@ local M = {}
 function M.setup(c, config)
   return {
     ColorColumn = {
-      bg = c.dark
+      bg = c.editor.highlight_background,
     }, -- used for the columns set with 'colorcolumn'
     Conceal = { bg = c.editor.background, fg = c.grey }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
@@ -173,7 +173,7 @@ function M.setup(c, config)
     diffNewFile = { fg = c.yellow },
     diffLine = { fg = c.blue },
     -- Spelling
-    SpellBad = { sp = c.blue, underline = true, },
+    SpellBad = { sp = c.blue, undercurl = true, },
     SpellCap = { link = "SpellBad", },
     SpellLocal = { link = "SpellBad", },
     SpellRare = { link = "SpellBad", },
