@@ -4,7 +4,7 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    AerialLine = { bg = colors.editor.background_highlight },
+    AerialLine = { bg = colors.editor.background_light },
     AerialArray = { fg = colors.red },
     AerialBoolean = { fg = colors.purple },
     AerialClass = { fg = colors.blue },

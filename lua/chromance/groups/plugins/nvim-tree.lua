@@ -19,7 +19,7 @@ function M.get(colors, options)
     NvimTreeImageFile = { fg = colors.white },
     NvimTreeSpecialFile = { fg = colors.white },
     NvimTreeCursorLine = {
-      bg = colors.editor.background_highlight,
+      bg = colors.editor.background_light,
       -- bg_base = sidebar_bg,
     },
 

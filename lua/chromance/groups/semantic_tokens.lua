@@ -1,12 +1,12 @@
 local M = {}
 
---- @param c Colors The color palette
---- @param config Options
-function M.setup(c, config)
+--- @param colors Colors
+--- @param options Options
+function M.setup(colors, options)
   return {
     ["@lsp.type.boolean"]                      = { link = "@boolean" },
     ["@lsp.type.builtinType"]                  = { link = "@type.builtin" },
-    ["@lsp.type.class"]                        = { fg = c.blue, },
+    ["@lsp.type.class"]                        = { fg = colors.blue, },
     ["@lsp.type.comment"]                      = { link = "@comment" },
     ["@lsp.type.decorator"]                    = { link = "@attribute" },
     ["@lsp.type.deriveHelper"]                 = { link = "@attribute" },
@@ -15,7 +15,7 @@ function M.setup(c, config)
     ["@lsp.type.escapeSequence"]               = { link = "@string.escape" },
     ["@lsp.type.formatSpecifier"]              = { link = "@markup.list" },
     ["@lsp.type.generic"]                      = { link = "@variable" },
-    ["@lsp.type.interface"]                    = { fg = c.blue },
+    ["@lsp.type.interface"]                    = { fg = colors.blue },
     ["@lsp.type.keyword"]                      = { link = "@keyword" },
     ["@lsp.type.lifetime"]                     = { link = "@keyword.storage" },
     ["@lsp.type.namespace"]                    = { link = "@module" },
@@ -29,10 +29,10 @@ function M.setup(c, config)
     ["@lsp.type.string"]                       = { link = "@string" },
     ["@lsp.type.type"]                         = {}, -- use treesitter styles
     ["@lsp.type.typeAlias"]                    = { link = "@type.definition" },
-    ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = c.red },
+    ["@lsp.type.unresolvedReference"]          = { undercurl = true, sp = colors.red },
     ["@lsp.type.variable"]                     = {},                              -- use treesitter styles for regular variables
-    ["@lsp.type.annotation"]                   = { fg = c.blue, italic = c.italic_enabled, }, -- use treesitter styles for regular variables
-    ["@lsp.type.class.dart"]                   = { fg = c.blue, italic = false, },
+    ["@lsp.type.annotation"]                   = { fg = colors.blue, italic = colors.italic_enabled, }, -- use treesitter styles for regular variables
+    ["@lsp.type.class.dart"]                   = { fg = colors.blue, italic = false, },
     ["@lsp.type.pol.typst"]                    = { link = "@parameter" },
     ["@lsp.type.string.typst"]                 = { link = "String" },
     ["@lsp.type.operator.typst"]               = { link = "Operator" },
@@ -40,8 +40,8 @@ function M.setup(c, config)
     ["@lsp.type.heading.typst"]                = { link = "@text.title.1.markdown" },
     ["@lsp.type.marker.typst"]                 = { link = "@punctuation.special.markdown" },
     ["@lsp.type.keyword.typst"]                = { link = "@keyword" },
-    ["@lsp.typemod.property.annotation"]       = { fg = c.blue, italic = c.italic_enabled, }, -- use treesitter styles for regular variables
-    ["@lsp.typemod.class.defaultLibrary"]      = { fg = c.blue, },
+    ["@lsp.typemod.property.annotation"]       = { fg = colors.blue, italic = colors.italic_enabled, }, -- use treesitter styles for regular variables
+    ["@lsp.typemod.class.defaultLibrary"]      = { fg = colors.blue, },
     ["@lsp.typemod.enum.defaultLibrary"]       = { link = "@type.builtin" },
     ["@lsp.typemod.enumMember.defaultLibrary"] = { link = "@constant.builtin" },
     ["@lsp.typemod.function.defaultLibrary"]   = { link = "@function.builtin" },
@@ -52,15 +52,15 @@ function M.setup(c, config)
     ["@lsp.typemod.operator.injected"]         = { link = "@operator" },
     ["@lsp.typemod.string.injected"]           = { link = "@string" },
     ["@lsp.typemod.struct.defaultLibrary"]     = { link = "@type.builtin" },
-    ["@lsp.typemod.type.defaultLibrary"]       = { fg = c.blue },
-    ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = c.blue },
+    ["@lsp.typemod.type.defaultLibrary"]       = { fg = colors.blue },
+    ["@lsp.typemod.typeAlias.defaultLibrary"]  = { fg = colors.blue },
     ["@lsp.typemod.variable.callable"]         = { link = "@function" },
     ["@lsp.typemod.variable.defaultLibrary"]   = { link = "@variable.builtin" },
     ["@lsp.typemod.variable.injected"]         = { link = "@variable" },
     ["@lsp.typemod.variable.static"]           = { link = "@constant" },
     ["@lsp.typemod.parameter.declaration"]     = { link = "@parameter", },
-    ["@lsp.typemod.variable.readonly"]         = { fg = c.white, },
-    ["@lsp.mod.interpolation"]                 = { fg = c.orange, },
+    ["@lsp.typemod.variable.readonly"]         = { fg = colors.white, },
+    ["@lsp.mod.interpolation"]                 = { fg = colors.orange, },
     ["@lsp.mod.strong.typst"]                  = { link = "@text.strong.markdown_inline" },
   }
 end

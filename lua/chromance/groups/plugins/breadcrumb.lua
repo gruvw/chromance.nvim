@@ -6,7 +6,7 @@ function M.get(colors, options)
   return {
     WinBar = {
       bg = colors.editor.background,
-      fg = colors.breadcrumb.foreground,
+      fg = colors.editor.text,
     },
     BreadcrumbIconsArray = { fg = colors.red },
     BreadcrumbIconsBoolean = { fg = colors.purple },
@@ -18,8 +18,8 @@ function M.get(colors, options)
     BreadcrumbIconsEnumMember = { fg = colors.blue },
     BreadcrumbIconsEvent = { fg = colors.blue },
     BreadcrumbIconsField = { fg = colors.blue },
-    BreadcrumbIconsFile = { fg = colors.editorLineNumber.activeForeground },
-    BreadcrumbIconsFolder = { fg = colors.editorLineNumber.activeForeground },
+    BreadcrumbIconsFile = { fg = colors.editor.text },
+    BreadcrumbIconsFolder = { fg = colors.editor.text },
     BreadcrumbIconsFunction = { fg = colors.green },
     BreadcrumbIconsInterface = { fg = colors.blue },
     BreadcrumbIconsKey = { fg = colors.blue },

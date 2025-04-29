@@ -50,12 +50,12 @@ function M.get(colors, options)
       undercurl = true,
     },
     LspInlayHint = {
-      bg = colors.editorInlayHint.background,
-      fg = colors.editorInlayHint.foreground,
+      bg = colors.editor.background_dark,
+      fg = colors.editor.text_dark,
     },
-    LspReferenceRead = { bg = colors.editor.background_highlight },
-    LspReferenceText = { bg = colors.editor.background_highlight },
-    LspReferenceWrite = { bg = colors.editor.background_highlight },
+    LspReferenceRead = { bg = colors.editor.background_light },
+    LspReferenceText = { bg = colors.editor.background_light },
+    LspReferenceWrite = { bg = colors.editor.background_light },
     LspInfoBorder = { fg = colors.editor.border, },
   }
 end

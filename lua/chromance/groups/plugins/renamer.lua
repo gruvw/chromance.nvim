@@ -4,14 +4,8 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    RenamerNormal = {
-      bg = colors.editor.background,
-      fg = colors.editorHoverWidget.foreground,
-    },
-    RenamerBorder = {
-      bg = colors.editor.background,
-      fg = colors.editorSuggestWidget.foreground,
-    },
+    RenamerNormal = colors.groups.normal,
+    RenamerBorder = colors.groups.border,
     RenamerTitle = {
       fg = colors.yellow,
       bold = true,

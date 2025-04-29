@@ -22,7 +22,7 @@ local base_colors = {
   red = "#FC6982",
 }
 
--- TODO clear cs groups
+-- TODO go through plugins
 
 --- @param options Options
 --- @return Colors
@@ -30,8 +30,22 @@ function M.colors(options)
   ---@class Colors
   local colors = base_colors;
 
-  -- options
-  -- colors.italic_enabled = not options.italic_disabled
+  colors.editor = {
+    background_dark = base_colors.black,
+    background = base_colors.dark,
+    background_light = base_colors.slate,
+    text_dark = base_colors.grey,
+    text = base_colors.white,
+    border = base_colors.white,
+  }
+
+  colors.semantic = {
+    success = base_colors.green,
+    warning = base_colors.orange,
+    error = base_colors.red,
+    info = base_colors.blue,
+    ignored = base_colors.grey,
+  }
 
   -- allowed icon colors
   colors.icons_colors = {
@@ -45,14 +59,7 @@ function M.colors(options)
     base_colors.red,
   }
 
-  colors.editor = {
-    background = base_colors.dark,
-    background_dark = base_colors.black,
-    background_highlight = base_colors.slate,
-    text = base_colors.white,
-    border = base_colors.white,
-  }
-
+  -- common color groups
   colors.groups = {
     normal = {
       bg = colors.editor.background,
@@ -76,6 +83,7 @@ function M.colors(options)
     },
   }
 
+  -- indent lines colors
   local indent_lines_blend_factor = 0.4
   colors.indent_lines = {
     indent1 = hp.blend(base_colors.red, indent_lines_blend_factor, base_colors.editor.background),
@@ -86,72 +94,26 @@ function M.colors(options)
     indent6 = hp.blend(base_colors.purple, indent_lines_blend_factor, base_colors.editor.backrgound),
   }
 
-  colors.editorLineNumber = {
-    foreground = base_colors.grey,
-    activeForeground = base_colors.white,
-  }
-
-  colors.editorHoverWidget = {
+  colors.terminal = {
     background = base_colors.dark,
-    border = base_colors.dark,
+    foreground = base_colors.white,
+    dark = base_colors.dark,
+    black = base_colors.black,
+    red = base_colors.red,
+    green = base_colors.green,
+    yellow = base_colors.yellow,
+    blue = base_colors.orange,
+    magenta = base_colors.purple,
+    cyan = base_colors.blue,
+    white = base_colors.white,
+    dimmed1 = base_colors.white,
+    dimmed2 = base_colors.grey,
+    dimmed3 = base_colors.grey,
+    dimmed4 = base_colors.grey,
+    dimmed5 = base_colors.grey,
   }
 
-  colors.editorSuggestWidget = {
-    background = base_colors.dark,           -- "#403e41",
-    border = base_colors.dark,               -- "#403e41",
-    foreground = base_colors.white,          -- "#c1c0c0",
-    highlightForeground = base_colors.white, -- "#fcfcfa",
-    selectedBackground = base_colors.grey,   -- "#727072",
-  }
-
-  colors.editorIndentGuide = {
-    background = base_colors.dark,       -- "#403e41",
-    activeBackground = base_colors.grey, -- "#5b595c",
-  }
-
-  colors.editorInlayHint = {
-    background = base_colors.dark,
-    foreground = base_colors.grey,
-  }
-
-  colors.editorGutter = {
-    addedBackground = base_colors.green,     -- "#a9dc76",
-    deletedBackground = base_colors.red,     -- "#ff6188",
-    modifiedBackground = base_colors.orange, -- "#fc9867",
-  }
-
-  colors.sideBar = {
-    background = base_colors.black, -- "#221f22",
-    foreground = base_colors.grey,  -- "#939293",
-  }
-
-  colors.sideBarTitle = {
-    foreground = base_colors.grey, -- "#5b595c",
-  }
-
-  colors.list = {
-    activeSelectionBackground = hp.blend(base_colors.white, 0.11, colors.sideBar.background), -- "#fcfcfa1c", -- background: sideBarBackground,
-  }
-
-  colors.sideBarSectionHeader = {
-    background = base_colors.black, -- "#221f22",
-    foreground = base_colors.white, -- "#c1c0c0",
-  }
-
-  colors.breadcrumb = {
-    foreground = base_colors.grey, -- "#939293",
-  }
-
-  colors.button = {
-    background = base_colors.dark,      -- "#403e41",
-    foreground = base_colors.white,     -- "#c1c0c0",
-    hoverBackground = base_colors.grey, -- "#5b595c",
-    separator = base_colors.dark,       -- "#272822",
-  }
-
-  colors.scrollbarSlider = {
-    hoverBackground = hp.blend(base_colors.white, 0.15, base_colors.dark), -- "#c1c0c026", -- background: background
-  }
+  -- TODO clear cs groups
 
   colors.gitDecoration = {
     addedResourceForeground = base_colors.green,          -- "#a9dc76",
@@ -185,30 +147,6 @@ function M.colors(options)
     infoForeground = base_colors.blue,
     hintBackground = hp.blend(base_colors.blue, 0.1, base_colors.dark),
     hintForeground = base_colors.blue,
-  }
-
-  colors.terminal = {
-    background = base_colors.dark,  -- "#403e41",
-    foreground = base_colors.white, -- "#fcfcfa",
-    dark = base_colors.dark,        -- "#19181a"
-    black = base_colors.black,      --"#221f22",
-    red = base_colors.red,          -- "#ff6188",
-    green = base_colors.green,      -- "#a9dc76",
-    yellow = base_colors.yellow,    -- "#ffd866",
-    blue = base_colors.orange,      -- "#fc9867",
-    magenta = base_colors.purple,   -- "#ab9df2",
-    cyan = base_colors.blue,        -- "#78dce8",
-    white = base_colors.white,      -- "#fcfcfa",
-    dimmed1 = base_colors.white,    -- "#c1c0c0",
-    dimmed2 = base_colors.grey,     -- "#939293",
-    dimmed3 = base_colors.grey,     -- "#727072",
-    dimmed4 = base_colors.grey,     -- "#5b595c",
-    dimmed5 = base_colors.dark,     -- "#403e41",
-  }
-
-  colors.terminalCursor = {
-    background = "#ffffff",    -- "#00000000",
-    foreground = base_colors.white, -- "#fcfcfa",
   }
 
   colors.editorGroupHeader = {

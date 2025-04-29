@@ -10,8 +10,8 @@ function M.get(colors, options)
     packerRelDate = { fg = colors.red },
     packerSuccess = { fg = colors.green },
     packerStatusSuccess = { fg = colors.green },
-    packerStatusFail = { fg = colors.red, bg = colors.editorHoverWidget.background },
-    packerFail = { fg = colors.red, bg = colors.editorHoverWidget.background },
+    packerStatusFail = { fg = colors.red, bg = colors.editor.background },
+    packerFail = { fg = colors.red, bg = colors.editor.background },
   }
 end
 

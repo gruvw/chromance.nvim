@@ -7,7 +7,7 @@ function M.get(colors, options)
     NoiceCmdlinePopup = { bg = colors.editor.background },
     NoiceCmdlinePopupBorder = {
       bg = colors.editor.background,
-      fg = colors.editorSuggestWidget.foreground,
+      fg = colors.editor.foreground,
     },
     NoiceCmdlinePopupBorderSearch = {
       bg = colors.editor.background,
@@ -20,8 +20,8 @@ function M.get(colors, options)
     NoiceLspProgressClient = { fg = colors.blue },
     NoiceConfirm = { bg = colors.notifications.background, fg = colors.notifications.foreground },
     NoiceConfirmBorder = { bg = colors.notifications.background, fg = colors.notifications.border },
-    NoiceFormatConfirm = { bg = colors.button.background, fg = colors.button.foreground },
-    NoiceFormatConfirmDefault = { bg = colors.button.hoverBackground, fg = colors.button.foreground },
+    NoiceFormatConfirm = { bg = colors.editor.background, fg = colors.editor.text },
+    NoiceFormatConfirmDefault = { bg = colors.editor.background_light, fg = colors.editor.text },
     NoiceSplit = { bg = colors.editor.background },
     NoiceMini = { fg = colors.grey },
   }

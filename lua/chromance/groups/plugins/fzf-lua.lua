@@ -11,7 +11,7 @@ function M.get(colors, options)
     FzfLuaPreviewNormal = colors.groups.normal,
     FzfLuaPreviewBorder = { link = "FzfLuaBorder" },
     FzfLuaPreviewTitle = { bg = colors.editor.background, fg = colors.blue, bold = true },
-    FzfLuaCursorLine = { bg = colors.editor.background_highlight, bold = true },
+    FzfLuaCursorLine = { bg = colors.editor.background_light, bold = true },
     FzfLuaScrollBorderEmpty = { link = "FzfLuaBorder" },
     FzfLuaScrollBorderFull = { link = "FzfLuaBorder" },
     FzfLuaHelpNormal = colors.groups.normal,

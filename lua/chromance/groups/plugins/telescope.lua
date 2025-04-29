@@ -5,11 +5,11 @@ local M = {}
 function M.get(colors, options)
   return {
     TelescopeSelection = {
-      bg = colors.editor.background_highlight,
+      bg = colors.editor.background_light,
       bold = true,
     },
 
-    TelescopeSelectionCaret = { bg = colors.editor.background_highlight, fg = colors.green, bold = true },
+    TelescopeSelectionCaret = { bg = colors.editor.background_light, fg = colors.green, bold = true },
     TelescopeNormal = colors.groups.normal,
     TelescopePromptCounter = {
       fg = colors.red,

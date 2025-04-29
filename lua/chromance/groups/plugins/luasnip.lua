@@ -4,7 +4,7 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    LuaSnipPlace = { bg = colors.editor.background_highlight, },
+    LuaSnipPlace = { bg = colors.editor.background_light, },
   }
 end
 

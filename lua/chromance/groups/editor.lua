@@ -1,79 +1,79 @@
 local M = {}
 
---- @param c Colors The color palette
+--- @param colors Colors
 --- @param options Options
-function M.setup(c, options)
+function M.setup(colors, options)
   return {
     ColorColumn = {
-      bg = c.editor.background_highlight,
+      bg = colors.editor.background_light,
     }, -- used for the columns set with 'colorcolumn'
-    Conceal = { bg = c.editor.background, fg = c.grey }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal = { bg = colors.editor.background, fg = colors.grey }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor = {
-      bg = c.white,
-      fg = c.white,
+      bg = colors.white,
+      fg = colors.white,
     }, -- character under the cursor
     -- lCursor      = {}, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     = {bg = theme.palette.red}, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn = {
-      bg = c.editor.background,
+      bg = colors.editor.background,
     }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = {
-      bg = c.editor.background_highlight,
+      bg = colors.editor.background_light,
     }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground
     CursorLineNr = {
-      bg = c.editor.background,
-      fg = c.editorLineNumber.activeForeground,
+      bg = colors.editor.background,
+      fg = colors.editor.text,
       bold = true,
     }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     -- CursorLineNrNC = { bg = C.bg, fg = C.lightGray }, -- CursorLineNr for inactive windows
     Directory = {
-      bg = c.editorGroupHeader.tabsBackground,
-      fg = c.statusBar.foreground,
+      bg = colors.editorGroupHeader.tabsBackground,
+      fg = colors.statusBar.foreground,
     }, -- directory names (and other special names in listings)
     CursorLineFold = {
-      bg = c.editor.background,
-      fg = c.white,
+      bg = colors.editor.background,
+      fg = colors.white,
     },
     DiffAdd = {
-      bg = c.diffEditor.insertedLineBackground,
-      fg = c.diffEditorOverview.insertedForeground,
+      bg = colors.diffEditor.insertedLineBackground,
+      fg = colors.diffEditorOverview.insertedForeground,
     }, -- diff mode: Added line |diff.txt|
     DiffChange = {
-      bg = c.diffEditor.modifiedLineBackground,
-      fg = c.diffEditorOverview.modifiedForeground,
+      bg = colors.diffEditor.modifiedLineBackground,
+      fg = colors.diffEditorOverview.modifiedForeground,
     }, -- diff mode: Changed line |diff.txt|
     DiffDelete = {
-      bg = c.diffEditor.removedLineBackground,
-      fg = c.diffEditorOverview.removedForeground,
+      bg = colors.diffEditor.removedLineBackground,
+      fg = colors.diffEditorOverview.removedForeground,
     },
-    DiffText = { bg = c.editor.background, fg = c.editor.text }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText = { bg = colors.editor.background, fg = colors.editor.text }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer = {
-      fg = c.editor.background,
+      fg = colors.editor.background,
     }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     ErrorMsg = {
-      bg = c.editor.background,
-      fg = c.inputValidation.errorForeground,
+      bg = colors.editor.background,
+      fg = colors.inputValidation.errorForeground,
     }, -- error messages on the command line
     VertSplit = {
-      bg = c.editor.background,
-      fg = c.black,
+      bg = colors.editor.background,
+      fg = colors.black,
     }, -- the column separating vertically split windows
     Folded = {
-      bg = c.editor.background_dark,
+      bg = colors.editor.background_dark,
     }, -- line used for closed folds
     FoldColumn = {
-      bg = c.editor.background,
-      fg = c.editorLineNumber.activeForeground,
+      bg = colors.editor.background,
+      fg = colors.editor.text,
     }, -- 'foldcolumn'
     SignColumn = {
-      bg = c.editor.background,
+      bg = colors.editor.background,
     }, -- column where |signs| are displayed
     -- Substitute = { bg = C.yellow, fg = C.bg }, -- |:substitute| replacement text highlighting
     LineNr = {
-      bg = c.editor.background,
-      fg = c.editorLineNumber.foreground,
+      bg = colors.editor.background,
+      fg = colors.editor.text_dark,
     }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-    MatchParen = c.groups.match_secondary, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
+    MatchParen = colors.groups.match_secondary, -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
     ModeMsg = {
       link = "Normal",
     }, -- 'showmode' message (e.g., "-- INSERT -- ")
@@ -84,103 +84,102 @@ function M.setup(c, options)
       link = "ModeMsg",
     }, -- Separator for scrolled messages, `msgsep` flag of 'display'
     MoreMsg = {
-      fg = c.yellow,
+      fg = colors.yellow,
     }, -- |more-prompt| ufo
     NonText = {
-      fg = c.grey,
+      fg = colors.grey,
     }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|. Example the character space between words
     Normal = {
-      bg = c.editor.background,
-      fg = c.editor.text,
+      bg = colors.editor.background,
+      fg = colors.editor.text,
     }, -- normal text
     NormalNC = {
-      bg = c.editor.background,
-      fg = c.editor.text,
+      bg = colors.editor.background,
+      fg = colors.editor.text,
     },
-    NormalFloat = c.groups.normal, -- Normal text in floating windows. example PackerNormal
-    FloatBorder = c.groups.border,
+    NormalFloat = colors.groups.normal, -- Normal text in floating windows. example PackerNormal
+    FloatBorder = colors.groups.border,
     FloatTitle = {
-      bg = c.yellow,
-      fg = c.black,
+      bg = colors.yellow,
+      fg = colors.black,
     },
     Pmenu = {
-      bg = c.editorSuggestWidget.background,
-      fg = c.editorSuggestWidget.foreground,
+      bg = colors.editor.background,
+      fg = colors.editor.foreground,
     }, -- Popup menu: normal item.
     PmenuSel = {
-      bg = c.editorSuggestWidget.selectedBackground,
+      bg = colors.editor.background_light,
       bold = true,
     },
     PmenuSbar = {
-      bg = c.editorSuggestWidget.background,
+      bg = colors.editor.background,
     }, -- Popup menu: scrollbar.
     PmenuThumb = {
-      bg = c.scrollbarSlider.hoverBackground,
-      -- bg_base = c.editorSuggestWidget.background,
+      bg = colors.editor.background_light,
     },
     -- Question = { bg = C.bg, fg = C.gray }, -- |hit-enter| prompt and yes/no questions
     -- QuickFixLine = { bg = C.bg }, -- Current |quickfix| item in the quickfix window. Combined with |hl-CursorLine| when the cursor is there.
     -- QuickFixLineNC = { bg = C.bg }, -- QuickFixLine, for inactive windows
     Search = {
-      bg = c.editor.background_highlight,
+      bg = colors.editor.background_light,
       fg = nil, -- should set to NONE to use treesitter color
     }, -- Last search pattern highlighting (see 'hlsearch').  Also used for similar items that need to stand out.
     -- SpecialKey   = {}, -- Unprintable characters: text displayed differently from what it really is.  But not 'listchars' whitespace. |hl-Whitespace| SpellBad  Word that is not recognized by the spellchecker. |spell| Combined with the highlighting used otherwise.  SpellCap  Word that should start with a capital. |spell| Combined with the highlighting used otherwise.  SpellLocal  Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     -- SpellRare    = {}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
-    IncSearch = c.groups.match_primary, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    IncSearch = colors.groups.match_primary, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     StatusLine = {
-      bg = c.statusBar.background,
-      fg = c.statusBar.activeForeground,
+      bg = colors.statusBar.background,
+      fg = colors.statusBar.activeForeground,
       reverse = false,
     }, -- status line of current window
     StatusLineNC = {
-      bg = c.statusBar.background,
-      fg = c.statusBar.foreground,
+      bg = colors.statusBar.background,
+      fg = colors.statusBar.foreground,
     }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    StatusLineSeparator = { fg = c.statusBar.background },
-    StatusLineTerm = { fg = c.statusBar.background },
-    StatusLineTermNC = { fg = c.statusBar.background },
+    StatusLineSeparator = { fg = colors.statusBar.background },
+    StatusLineTerm = { fg = colors.statusBar.background },
+    StatusLineTermNC = { fg = colors.statusBar.background },
     Tabline = { link = "BufferLineBackground" }, -- tab pages line, not active tab page label
     TablineFill = { link = "BufferLineFill" }, -- tab pages line, where there are no labels
     TablineSel = { link = "BufferLineBufferSelected" }, -- tab pages line, active tab page label
     Title = {
-      fg = c.yellow,
+      fg = colors.yellow,
       bold = true,
     }, -- titles for output from ":set all", ":autocmd"
     Visual = {
-      bg = c.editor.background_highlight,
+      bg = colors.editor.background_light,
     }, -- Visual mode selection
     VisualNOS = {
       link = "Visual",
     }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = {
-      fg = c.inputValidation.warningForeground,
+      fg = colors.inputValidation.warningForeground,
     }, -- warning messages
     WinSeparator = {
       -- bg = c.editor.background,
-      fg = c.editor.border,
+      fg = colors.editor.border,
     }, -- the column separating windows
     Whitespace = {
-      fg = c.grey,
+      fg = colors.grey,
     }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     -- WildMenu = { bg = C.cyan, fg = C.black }, -- current match in 'wildmenu' completion
 
     -- Git
-    diffAdded = { fg = c.green },
-    diffChanged = { fg = c.yellow },
-    diffRemoved = { fg = c.red },
-    diffFile = { fg = c.yellow },
-    diffNewFile = { fg = c.yellow },
-    diffLine = { fg = c.blue },
+    diffAdded = { fg = colors.green },
+    diffChanged = { fg = colors.yellow },
+    diffRemoved = { fg = colors.red },
+    diffFile = { fg = colors.yellow },
+    diffNewFile = { fg = colors.yellow },
+    diffLine = { fg = colors.blue },
     -- Spelling
-    SpellBad = { sp = c.blue, undercurl = true, },
+    SpellBad = { sp = colors.blue, undercurl = true, },
     SpellCap = { link = "SpellBad", },
     SpellLocal = { link = "SpellBad", },
     SpellRare = { link = "SpellBad", },
     -- Neovim
-    healthError = { fg = c.red },
-    healthSuccess = { fg = c.green },
-    healthWarning = { fg = c.blue },
+    healthError = { fg = colors.red },
+    healthSuccess = { fg = colors.green },
+    healthWarning = { fg = colors.blue },
   }
 end
 

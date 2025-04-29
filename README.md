@@ -1,8 +1,6 @@
 # Chromance
 
-An opinionated sleek and vibrant Neovim color theme.
-
-**Note** - Initially inspired by [loctvl842/monokai-pro.nvim](https://github.com/loctvl842/monokai-pro.nvim) Spectrum variant (project forked at [872f774](https://github.com/loctvl842/monokai-pro.nvim/commit/872f774303f79416000e8049630052f4124d9534)).
+An opinionated, stable and sleek Neovim color theme.
 
 ## Installation
 
@@ -13,3 +11,5 @@ An opinionated sleek and vibrant Neovim color theme.
 <!-- Set the configuration BEFORE loading the color scheme with colorscheme chromance. -->
 
 <!-- list of supported plugins with link to plugins directory -->
+
+**Note** - Initially inspired by [loctvl842/monokai-pro.nvim](https://github.com/loctvl842/monokai-pro.nvim) Spectrum variant (project forked at [872f774](https://github.com/loctvl842/monokai-pro.nvim/commit/872f774303f79416000e8049630052f4124d9534), nothing in common anymore).

@@ -6,9 +6,9 @@ function M.get(colors, options)
   return {
     CmpItemAbbrMatch = colors.groups.match_secondary, -- text match in order
     CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" }, -- text match not in order
-    CmpItemMenu = { fg = colors.editorSuggestWidget.foreground }, -- source of cmp. Ex: Lsp | Snippet
-    CmpItemAbbr = { fg = colors.editorSuggestWidget.foreground }, -- text that not match
-    CmpItemAbbrDeprecated = { fg = colors.editorSuggestWidget.foreground, strikethrough = true }, -- text not match of deprecated
+    CmpItemMenu = { fg = colors.editor.foreground }, -- source of cmp. Ex: Lsp | Snippet
+    CmpItemAbbr = { fg = colors.editor.foreground }, -- text that not match
+    CmpItemAbbrDeprecated = { fg = colors.editor.foreground, strikethrough = true }, -- text not match of deprecated
     CmpItemKindArray = { fg = colors.red },
     CmpItemKindBoolean = { fg = colors.purple },
     CmpItemKindClass = { fg = colors.blue },
@@ -19,8 +19,8 @@ function M.get(colors, options)
     CmpItemKindEnumMember = { fg = colors.blue },
     CmpItemKindEvent = { fg = colors.blue },
     CmpItemKindField = { fg = colors.blue },
-    CmpItemKindFile = { fg = colors.editorLineNumber.activeForeground },
-    CmpItemKindFolder = { fg = colors.editorLineNumber.activeForeground },
+    CmpItemKindFile = { fg = colors.editor.text },
+    CmpItemKindFolder = { fg = colors.editor.text },
     CmpItemKindFunction = { fg = colors.green },
     CmpItemKindInterface = { fg = colors.blue },
     CmpItemKindKey = { fg = colors.blue },

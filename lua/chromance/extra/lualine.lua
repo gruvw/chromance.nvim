@@ -1,13 +1,14 @@
 local config = require("chromance.config")
 local theme = require("chromance.theme")
 
-local colors = theme.colors(config.options)
-
 local M = {}
 
+local colors = theme.colors(config.options)
+local line_background = colors.editor.background_dark
+
 M.normal = {
-  a = { bg = colors.yellow, fg = colors.black, gui = "bold" },
-  b = { bg = colors.dark, fg = colors.yellow },
+  a = { bg = colors.yellow, fg = line_background, gui = "bold", },
+  b = { bg = line_background, fg = colors.yellow, },
   c = {
     bg = colors.statusBar.background,
     fg = colors.statusBar.activeForeground,
@@ -19,28 +20,28 @@ M.normal = {
 }
 
 M.insert = {
-  a = { bg = colors.green, fg = colors.black },
-  b = { bg = colors.dark, fg = colors.green },
+  a = { bg = colors.green, fg = colors.black, },
+  b = { bg = line_background, fg = colors.green, },
 }
 
 M.command = {
-  a = { bg = colors.yellow, fg = colors.black },
-  b = { bg = colors.dark, fg = colors.yellow },
+  a = { bg = colors.yellow, fg = colors.black, },
+  b = { bg = line_background, fg = colors.yellow, },
 }
 
 M.visual = {
-  a = { bg = colors.red, fg = colors.black },
-  b = { bg = colors.dark, fg = colors.red },
+  a = { bg = colors.red, fg = colors.black, },
+  b = { bg = line_background, fg = colors.red, },
 }
 
 M.replace = {
-  a = { bg = colors.red, fg = colors.black },
-  b = { bg = colors.dark, fg = colors.red },
+  a = { bg = colors.red, fg = colors.black, },
+  b = { bg = line_background, fg = colors.red, },
 }
 
 M.inactive = {
-  a = { bg = colors.black, fg = colors.yellow },
-  b = { bg = colors.black, fg = colors.black },
+  a = { bg = colors.black, fg = colors.yellow, },
+  b = { bg = colors.black, fg = colors.black, },
 }
 
 return M

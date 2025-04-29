@@ -7,7 +7,7 @@ function M.get(colors, options)
     UfoFoldedBg = { bg = colors.editor.background },
     FoldColumn = {
       bg = colors.editor.background,
-      fg = colors.button.foreground,
+      fg = colors.editor.text,
     }, -- 'foldcolumn'
   }
 end

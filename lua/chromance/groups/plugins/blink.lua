@@ -4,7 +4,7 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    BlinkCmpMenu = { bg = colors.editorSuggestWidget.background, fg = colors.editorSuggestWidget.foreground, },
+    BlinkCmpMenu = { bg = colors.editor.background, fg = colors.editor.foreground, },
     -- BlinkCmpMenuSelection = float_winBackgroundClear and {
     --   bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7),
     --   bold = true,
@@ -16,10 +16,10 @@ function M.get(colors, options)
     BlinkCmpLabelDescription = { fg = colors.white },
     BlinkCmpLabelDeprecated = { fg = nil, bg = nil, strikethrough = true },
     BlinkCmpGhostText = { link = "Comment" },
-    BlinkCmpLabel = { fg = colors.editorSuggestWidget.foreground },
-    BlinkCmpLabelMatch = { fg = colors.editorSuggestWidget.highlightForeground, bold = true },
-    BlinkCmpSource = { fg = colors.editorSuggestWidget.foreground },
-    BlinkCmpKind = { fg = colors.editorSuggestWidget.foreground },
+    BlinkCmpLabel = { fg = colors.editor.foreground },
+    BlinkCmpLabelMatch = colors.groups.match_secondary,
+    BlinkCmpSource = { fg = colors.editor.foreground },
+    BlinkCmpKind = { fg = colors.editor.foreground },
     BlinkCmpKindArray = { fg = colors.red },
     BlinkCmpKindBoolean = { fg = colors.purple },
     BlinkCmpKindClass = { fg = colors.blue },
@@ -30,8 +30,8 @@ function M.get(colors, options)
     BlinkCmpKindEnumMember = { fg = colors.blue },
     BlinkCmpKindEvent = { fg = colors.blue },
     BlinkCmpKindField = { fg = colors.blue },
-    BlinkCmpKindFile = { fg = colors.editorLineNumber.activeForeground },
-    BlinkCmpKindFolder = { fg = colors.editorLineNumber.activeForeground },
+    BlinkCmpKindFile = { fg = colors.editor.text },
+    BlinkCmpKindFolder = { fg = colors.editor.text_dark },
     BlinkCmpKindFunction = { fg = colors.green },
     BlinkCmpKindInterface = { fg = colors.blue },
     BlinkCmpKindKey = { fg = colors.blue },

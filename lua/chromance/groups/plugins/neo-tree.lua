@@ -5,38 +5,26 @@ local M = {}
 function M.get(colors, options)
   local sidebar_bg = colors.editor.background
   return {
-    NeoTreeNormal = { bg = sidebar_bg, fg = colors.sideBar.foreground },
+    NeoTreeNormal = { bg = sidebar_bg, fg = colors.editor.foreground },
     NeoTreeEndOfBuffer = {
       bg = sidebar_bg,
       fg = sidebar_bg,
     },
-    NeoTreeNormalNC = { bg = sidebar_bg, fg = colors.sideBar.foreground },
-    NeoTreeSignColumn = { bg = sidebar_bg, fg = colors.sideBar.foreground },
+    NeoTreeNormalNC = { bg = sidebar_bg, fg = colors.editor.foreground },
+    NeoTreeSignColumn = { bg = sidebar_bg, fg = colors.editor.foreground },
     NeoTreeStatusLine = { bg = sidebar_bg, fg = sidebar_bg },
-    NeoTreeCursor = {
-      bg = colors.list.activeSelectionBackground,
-      -- bg_base = sidebar_bg,
-    },
-    NeoTreeCursorLine = {
-      bg = colors.list.activeSelectionBackground,
-      -- bg_base = sidebar_bg,
-      bold = true,
-    },
-    NeoTreeCursorLineSign = {
-      bg = colors.list.activeSelectionBackground,
-      -- bg_base = sidebar_bg,
-    },
+    NeoTreeCursor = { link = "Cursor", },
+    NeoTreeCursorLine = { link = "CursorLine" },
     NeoTreeWinSeparator = {
       bg = colors.editor.background,
       fg = colors.editor.border,
     },
     NeoTreeRootName = {
-      -- bg = C.sideBarSectionHeader.background,
-      fg = colors.sideBarSectionHeader.foreground,
+      fg = colors.editor.text,
       bold = true,
     },
-    NeoTreeDirectoryIcon = { fg = colors.sideBar.foreground },
-    NeoTreeDirectoryName = { fg = colors.sideBar.foreground },
+    NeoTreeDirectoryIcon = { fg = colors.editor.foreground },
+    NeoTreeDirectoryName = { fg = colors.editor.foreground },
     NeoTreeGitAdded = { fg = colors.gitDecoration.addedResourceForeground },
     NeoTreeGitConflict = { fg = colors.gitDecoration.conflictingResourceForeground },
     NeoTreeGitDeleted = { fg = colors.gitDecoration.deletedResourceForeground },
@@ -48,8 +36,8 @@ function M.get(colors, options)
     NeoTreeIndentMarker = { link = "IndentBlanklineChar" },
     NeoTreeExpander = { link = "NeoTreeDirectoryIcon" },
     NeoTreeFloatNormal = {
-      bg = colors.editorSuggestWidget.background,
-      fg = colors.editorSuggestWidget.foreground,
+      bg = colors.editor.background,
+      fg = colors.editor.foreground,
     },
     NeoTreeFloatBorder = {
       bg = colors.editor.background,
@@ -66,18 +54,18 @@ function M.get(colors, options)
       bold = true,
     },
     NeoTreeTabActive = {
-      bg = colors.button.hoverBackground,
-      fg = colors.button.foreground,
+      bg = colors.editor.background_light,
+      fg = colors.editor.text,
       bold = true,
     },
-    NeoTreeTabInactive = { bg = colors.button.background, fg = colors.button.foreground },
+    NeoTreeTabInactive = { bg = colors.editor.background, fg = colors.editor.text },
     NeoTreeTabSeparatorActive = {
-      bg = colors.button.hoverBackground,
-      fg = colors.button.separator,
+      bg = colors.editor.background_light,
+      fg = colors.editor.text_dark,
     },
     NeoTreeTabSeparatorInactive = {
-      bg = colors.button.background,
-      fg = colors.button.separator,
+      bg = colors.editor.background,
+      fg = colors.editor.text_dark,
     },
   }
 end

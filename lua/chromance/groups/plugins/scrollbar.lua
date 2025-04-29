@@ -5,20 +5,17 @@ local M = {}
 function M.get(colors, options)
   return {
     ScrollbarHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.white,
     },
-    ScrollbarCursorHandle = { bg = colors.scrollbarSlider.hoverBackground },
-    ScrollbarCursor = {
-      bg = colors.list.activeSelectionBackground,
-      fg = colors.list.activeSelectionBackground,
-    },
+    ScrollbarCursorHandle = { bg = colors.editor.background_light },
+    ScrollbarCursor = { link = "Cursor"},
 
-    ScrollbarSearchHandle = { bg = colors.scrollbarSlider.hoverBackground },
+    ScrollbarSearchHandle = { bg = colors.editor.background_light },
     ScrollbarSearch = { bg = colors.editor.background, fg = colors.white },
 
     ScrollbarErrorHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.inputValidation.errorForeground,
     },
     ScrollbarError = {
@@ -27,7 +24,7 @@ function M.get(colors, options)
     },
 
     ScrollbarWarnHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.inputValidation.warningForeground,
     },
     ScrollbarWarn = {
@@ -36,7 +33,7 @@ function M.get(colors, options)
     },
 
     ScrollbarInfoHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.inputValidation.infoForeground,
     },
     ScrollbarInfo = {
@@ -45,7 +42,7 @@ function M.get(colors, options)
     },
 
     ScrollbarHintHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.inputValidation.infoForeground,
     },
     ScrollbarHint = {
@@ -54,7 +51,7 @@ function M.get(colors, options)
     },
 
     ScrollbarGitAddHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.gitDecoration.addedResourceForeground,
     },
     ScrollbarGitAdd = {
@@ -62,7 +59,7 @@ function M.get(colors, options)
       fg = colors.gitDecoration.addedResourceForeground,
     },
     ScrollbarGitChangeHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.gitDecoration.modifiedResourceForeground,
     },
     ScrollbarGitChange = {
@@ -70,7 +67,7 @@ function M.get(colors, options)
       fg = colors.gitDecoration.modifiedResourceForeground,
     },
     ScrollbarGitDeleteHandle = {
-      bg = colors.scrollbarSlider.hoverBackground,
+      bg = colors.editor.background_light,
       fg = colors.gitDecoration.deletedResourceForeground,
     },
     ScrollbarGitDelete = {

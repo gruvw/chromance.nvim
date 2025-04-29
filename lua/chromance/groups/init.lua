@@ -1,5 +1,3 @@
-local config = require("chromance.config")
-
 local M = {}
 
 ---@enum SupportedPlugins
@@ -45,20 +43,21 @@ local PLUGINS = {
   "nvim-treesitter-context",
 }
 
--- Get highlight group dictionary
+-- Get highlight groups dictionary
 ---@param colors Colors
+---@param options Options
 ---@return HighlightGroups
-function M.highlight_groups(colors)
-  local editor = require("chromance.groups.editor").setup(colors, config.options)
-  local syntax = require("chromance.groups.syntax").setup(colors, config.options)
-  local semantic_tokens = require("chromance.groups.semantic_tokens").setup(colors, config.options)
+function M.highlight_groups(colors, options)
+  local editor = require("chromance.groups.editor").setup(colors, options)
+  local syntax = require("chromance.groups.syntax").setup(colors, options)
+  local semantic_tokens = require("chromance.groups.semantic_tokens").setup(colors, options)
 
   --- @type HighlightGroups
   local hl_group_tbl = {}
   hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, editor, syntax, semantic_tokens)
   for _, name in ipairs(PLUGINS) do
     local plugin = require("chromance.groups.plugins." .. name)
-    hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, config.options))
+    hl_group_tbl = vim.tbl_deep_extend("force", hl_group_tbl, plugin.get(colors, options))
   end
 
   return hl_group_tbl

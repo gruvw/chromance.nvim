@@ -19,11 +19,12 @@ function M.load()
   vim.o.termguicolors = true
   vim.g.colors_name = "chromance"
 
-  local colors = theme.colors(config.options);
-  local highlight_groups = groups.highlight_groups(colors);
-  highlight.apply_highlights(highlight_groups)
+  local options = config.options
+  local colors = theme.colors(options);
+  local highlight_groups = groups.highlight_groups(colors, options);
 
-  extra.apply_extra(colors)
+  highlight.apply_highlights(highlight_groups)
+  extra.apply_extra(colors, options)
 end
 
 return M

@@ -5,10 +5,8 @@ local M = {}
 function M.get(colors, options)
   return {
     IndentBlanklineChar = { fg = colors.grey },
-    IndentBlanklineContextChar = { fg = colors.editorIndentGuide.activeBackground, },
-    IndentBlanklineContextStart = {
-      sp = colors.editorIndentGuide.activeBackground,
-    },
+    IndentBlanklineContextChar = { fg = colors.editor.background_light, },
+    IndentBlanklineContextStart = { sp = colors.editor.background_light, },
     IndentBlanklineSpaceChar = { fg = colors.grey },
     IndentBlankLineIndent1 = { fg = colors.indent_lines.indent1, },
     IndentBlankLineIndent2 = { fg = colors.indent_lines.indent2, },

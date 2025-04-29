@@ -61,7 +61,7 @@ function M.get(colors, options)
     ["@variable.parameter"]                = { fg = colors.blue, italic = options.italic_enabled, },
     ["@variable.parameter.builtin"]        = { fg = colors.blue, italic = options.italic_enabled },
     ["@parameter"]                         = { fg = colors.orange, },
-    ["@property"]                          = { fg = colors.red, },
+    ["@property"]                          = { fg = colors.white, },
 
     -- Punctuation
     ["@punctuation.bracket"]               = { fg = colors.red },
@@ -168,7 +168,7 @@ function M.get(colors, options)
     ["@function.scss"]                     = { fg = colors.blue },
     ["@keyword.scss"]                      = { fg = colors.red },
     ["@number.scss"]                       = { link = "Number" },
-    ["@property.scss"]                     = { fg = colors.green },
+    ["@property.scss"]                     = { link = "@property" },
     ["@string.scss"]                       = { fg = colors.blue, italic = options.italic_enabled },
     ["@type.scss"]                         = { fg = colors.blue },
 
