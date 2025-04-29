@@ -4,7 +4,7 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    CmpItemAbbrMatch = colors.groups.match_secondary, -- text match in order
+    CmpItemAbbrMatch = colors.groups.match_primary, -- text match in order
     CmpItemAbbrMatchFuzzy = { link = "CmpItemAbbrMatch" }, -- text match not in order
     CmpItemMenu = { fg = colors.editor.foreground }, -- source of cmp. Ex: Lsp | Snippet
     CmpItemAbbr = { fg = colors.editor.foreground }, -- text that not match

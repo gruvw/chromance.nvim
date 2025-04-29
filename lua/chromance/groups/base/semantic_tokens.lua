@@ -2,7 +2,7 @@ local M = {}
 
 --- @param colors Colors
 --- @param options Options
-function M.setup(colors, options)
+function M.get(colors, options)
   return {
     ["@lsp.type.boolean"]                      = { link = "@boolean" },
     ["@lsp.type.builtinType"]                  = { link = "@type.builtin" },

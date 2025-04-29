@@ -2,7 +2,7 @@ local M = {}
 
 --- @param colors Colors
 --- @param options Options
-function M.setup(colors, options)
+function M.get(colors, options)
   return {
     Comment = { fg = colors.grey, italic = options.italic_enabled, }, -- Comments
     Constant = { fg = colors.purple }, -- (preferred) any constant

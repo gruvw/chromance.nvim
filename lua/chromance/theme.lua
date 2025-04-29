@@ -1,4 +1,4 @@
-local hp = require("chromance.utils.color_helper")
+local ch = require("chromance.utils.color_helper")
 
 local M = {}
 
@@ -41,20 +41,25 @@ function M.colors(options)
 
   local semantic_blend_factor = 0.1
   colors.semantic = {
-    success_background = hp.blend(base_colors.green, semantic_blend_factor, colors.editor.background),
+    success_background = ch.blend(base_colors.green, semantic_blend_factor, colors.editor.background),
     success = base_colors.green,
-    warning_background = hp.blend(base_colors.orange, semantic_blend_factor, colors.editor.background),
+    warning_background = ch.blend(base_colors.orange, semantic_blend_factor, colors.editor.background),
     warning = base_colors.orange,
-    error_background = hp.blend(base_colors.red, semantic_blend_factor, colors.editor.background),
+    error_background = ch.blend(base_colors.red, semantic_blend_factor, colors.editor.background),
     error = base_colors.red,
-    info_background = hp.blend(base_colors.blue, semantic_blend_factor, colors.editor.background),
+    info_background = ch.blend(base_colors.blue, semantic_blend_factor, colors.editor.background),
     info = base_colors.blue,
     ignored = base_colors.grey,
   }
 
+  local edition_blend_factor = 0.08
   colors.edition = {
+    added_background = ch.blend(base_colors.green, edition_blend_factor, colors.editor.background),
     added = base_colors.green,
+    changed_background = ch.blend(base_colors.yellow, edition_blend_factor, colors.editor.background),
+    changed_word_background = ch.blend(base_colors.yellow, edition_blend_factor * 2, colors.editor.background),
     changed = base_colors.yellow,
+    deleted_background = ch.blend(base_colors.red, edition_blend_factor, colors.editor.background),
     deleted = base_colors.red,
     ignored = base_colors.grey,
     staged = base_colors.red,
@@ -88,12 +93,12 @@ function M.colors(options)
   -- indent lines colors
   local indent_lines_blend_factor = 0.4
   colors.indent_lines = {
-    indent1 = hp.blend(base_colors.red, indent_lines_blend_factor, base_colors.editor.background),
-    indent2 = hp.blend(base_colors.green, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent3 = hp.blend(base_colors.blue, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent4 = hp.blend(base_colors.yellow, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent5 = hp.blend(base_colors.orange, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent6 = hp.blend(base_colors.purple, indent_lines_blend_factor, base_colors.editor.backrgound),
+    indent1 = ch.blend(base_colors.red, indent_lines_blend_factor, base_colors.editor.background),
+    indent2 = ch.blend(base_colors.green, indent_lines_blend_factor, base_colors.editor.backrgound),
+    indent3 = ch.blend(base_colors.yellow, indent_lines_blend_factor, base_colors.editor.backrgound),
+    indent4 = ch.blend(base_colors.blue, indent_lines_blend_factor, base_colors.editor.backrgound),
+    indent5 = ch.blend(base_colors.orange, indent_lines_blend_factor, base_colors.editor.backrgound),
+    indent6 = ch.blend(base_colors.purple, indent_lines_blend_factor, base_colors.editor.backrgound),
   }
 
   -- terminal colors
@@ -131,38 +136,24 @@ function M.colors(options)
   -- TODO clear cs groups
 
   colors.editorGroupHeader = {
-    tabsBackground = base_colors.black, -- "#221f22",
-    tabsBorder = base_colors.black,     -- "#221f22",
-  }
-
-  colors.tab = {
-    activeBackground = base_colors.dark,
-    activeBorder = base_colors.yellow,             -- "#ffd866",
-    activeForeground = base_colors.yellow,         -- "#ffd866",
-    inactiveBackground = hp.blend(base_colors.dark, 0.15, base_colors.white),
-    inactiveForeground = base_colors.grey,         -- "#939293",
-    unfocusedActiveBackground = base_colors.dark,  -- "#272822",
-    unfocusedActiveBorder = base_colors.grey,      -- "#939293",
-    unfocusedActiveForeground = base_colors.white, -- "#c1c0c0",
+    tabsBackground = base_colors.black,
   }
 
   colors.statusBar = {
-    -- background = p.dark1,
     background = base_colors.black,
     foreground = base_colors.grey,
     activeForeground = base_colors.white,
   }
 
-  colors.diffEditor = {
-    insertedLineBackground = hp.blend(base_colors.green, 0.1, base_colors.black),  -- #a9dc7619
-    removedLineBackground = hp.blend(base_colors.red, 0.1, base_colors.black),     -- #ff618819
-    modifiedLineBackground = hp.blend(base_colors.orange, 0.1, base_colors.black), -- #fc986719
-  }
-
-  colors.diffEditorOverview = {
-    insertedForeground = hp.blend(base_colors.green, 0.65, colors.diffEditor.insertedLineBackground),  -- #a9dc76a5
-    removedForeground = hp.blend(base_colors.red, 0.65, colors.diffEditor.removedLineBackground),      -- #ff6188a5
-    modifiedForeground = hp.blend(base_colors.orange, 0.65, colors.diffEditor.modifiedLineBackground), -- #fc9867a5
+  colors.tab = {
+    activeBackground = base_colors.dark,
+    activeBorder = base_colors.yellow,
+    activeForeground = base_colors.yellow,
+    inactiveBackground = ch.blend(base_colors.dark, 0.15, base_colors.white),
+    inactiveForeground = base_colors.grey,
+    unfocusedActiveBackground = base_colors.dark,
+    unfocusedActiveBorder = base_colors.grey,
+    unfocusedActiveForeground = base_colors.white,
   }
 
   return colors

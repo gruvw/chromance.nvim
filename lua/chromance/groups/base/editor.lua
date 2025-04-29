@@ -2,7 +2,7 @@ local M = {}
 
 --- @param colors Colors
 --- @param options Options
-function M.setup(colors, options)
+function M.get(colors, options)
   return {
     ColorColumn = {
       bg = colors.editor.background_light,
@@ -19,6 +19,8 @@ function M.setup(colors, options)
     }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
     CursorLine = {
       bg = colors.editor.background_light,
+      -- diffview line is underlined, see https://github.com/neovim/neovim/issues/9800
+      -- ctermfg = "white"
     }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground
     CursorLineNr = {
       bg = colors.editor.background,
@@ -35,18 +37,19 @@ function M.setup(colors, options)
       fg = colors.white,
     },
     DiffAdd = {
-      bg = colors.diffEditor.insertedLineBackground,
-      fg = colors.diffEditorOverview.insertedForeground,
+      bg = colors.edition.added_background,
     }, -- diff mode: Added line |diff.txt|
     DiffChange = {
-      bg = colors.diffEditor.modifiedLineBackground,
-      fg = colors.diffEditorOverview.modifiedForeground,
+      bg = colors.edition.changed_background,
     }, -- diff mode: Changed line |diff.txt|
     DiffDelete = {
-      bg = colors.diffEditor.removedLineBackground,
-      fg = colors.diffEditorOverview.removedForeground,
+      bg = colors.edition.deleted_background,
+      fg = colors.edition.deleted,
     },
-    DiffText = { bg = colors.editor.background, fg = colors.editor.text }, -- diff mode: Changed text within a changed line |diff.txt|
+    DiffText = {
+      bg = colors.edition.changed_word_background,
+      -- fg = colors.edition.changed,
+    }, -- diff mode: Changed text within a changed line |diff.txt|
     EndOfBuffer = {
       fg = colors.editor.background,
     }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
@@ -170,7 +173,8 @@ function M.setup(colors, options)
     diffRemoved = { fg = colors.red },
     diffFile = { fg = colors.yellow },
     diffNewFile = { fg = colors.yellow },
-    diffLine = { fg = colors.blue },
+    diffLine = { fg = colors.blue, underline = false },
+
     -- Spelling
     SpellBad = { sp = colors.blue, undercurl = true, },
     SpellCap = { link = "SpellBad", },
