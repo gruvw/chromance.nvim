@@ -23,14 +23,14 @@ function M.get(colors, options)
       -- bg_base = sidebar_bg,
     },
 
-    NvimTreeGitIgnored = { fg = colors.gitDecoration.ignoredResourceForeground },
-    NvimTreeGitignoreIcon = { fg = colors.gitDecoration.ignoredResourceForeground },
-    NvimTreeGitStaged = { fg = colors.gitDecoration.stageModifiedResourceForeground },
-    NvimTreeGitDirty = { fg = colors.gitDecoration.modifiedResourceForeground }, -- unstaged/modified
-    NvimTreeGitNew = { fg = colors.gitDecoration.untrackedResourceForeground },
-    NvimTreeGitRenamed = { fg = colors.gitDecoration.untrackedResourceForeground },
-    NvimTreeGitDeleted = { fg = colors.gitDecoration.deletedResourceForeground },
-    NvimTreeGitMerge = { fg = colors.gitDecoration.conflictingResourceForeground },
+    NvimTreeGitIgnored = { fg = colors.edition.ignored },
+    NvimTreeGitignoreIcon = { fg = colors.edition.ignored },
+    NvimTreeGitStaged = { fg = colors.edition.staged },
+    NvimTreeGitDirty = { fg = colors.edition.changed }, -- unstaged/modified
+    NvimTreeGitNew = { fg = colors.edition.ignored },
+    NvimTreeGitRenamed = { fg = colors.edition.ignored },
+    NvimTreeGitDeleted = { fg = colors.edition.deletedResourceForeground },
+    NvimTreeGitMerge = { fg = colors.edition.conflict },
 
     NvimTreeSymlink = { fg = colors.yellow },
     NvimTreeRootFolder = {

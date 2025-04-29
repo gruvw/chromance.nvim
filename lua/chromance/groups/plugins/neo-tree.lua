@@ -25,14 +25,14 @@ function M.get(colors, options)
     },
     NeoTreeDirectoryIcon = { fg = colors.editor.foreground },
     NeoTreeDirectoryName = { fg = colors.editor.foreground },
-    NeoTreeGitAdded = { fg = colors.gitDecoration.addedResourceForeground },
-    NeoTreeGitConflict = { fg = colors.gitDecoration.conflictingResourceForeground },
-    NeoTreeGitDeleted = { fg = colors.gitDecoration.deletedResourceForeground },
-    NeoTreeGitIgnored = { fg = colors.gitDecoration.ignoredResourceForeground },
-    NeoTreeGitModified = { fg = colors.gitDecoration.modifiedResourceForeground }, -- unstaged
-    NeoTreeGitStaged = { fg = colors.gitDecoration.stageModifiedResourceForeground },
-    NeoTreeGitRenamed = { fg = colors.gitDecoration.untrackedResourceForeground },
-    NeoTreeGitUntracked = { fg = colors.gitDecoration.untrackedResourceForeground },
+    NeoTreeGitAdded = { fg = colors.edition.added },
+    NeoTreeGitConflict = { fg = colors.edition.conflict },
+    NeoTreeGitDeleted = { fg = colors.edition.deleted },
+    NeoTreeGitIgnored = { fg = colors.edition.ignored },
+    NeoTreeGitModified = { fg = colors.edition.changed }, -- unstaged
+    NeoTreeGitStaged = { fg = colors.edition.staged },
+    NeoTreeGitRenamed = { fg = colors.edition.ignored },
+    NeoTreeGitUntracked = { fg = colors.edition.ignored },
     NeoTreeIndentMarker = { link = "IndentBlanklineChar" },
     NeoTreeExpander = { link = "NeoTreeDirectoryIcon" },
     NeoTreeFloatNormal = {

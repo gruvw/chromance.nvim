@@ -52,7 +52,7 @@ function M.setup(colors, options)
     }, -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
     ErrorMsg = {
       bg = colors.editor.background,
-      fg = colors.inputValidation.errorForeground,
+      fg = colors.semantic.error,
     }, -- error messages on the command line
     VertSplit = {
       bg = colors.editor.background,
@@ -153,7 +153,7 @@ function M.setup(colors, options)
       link = "Visual",
     }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg = {
-      fg = colors.inputValidation.warningForeground,
+      fg = colors.semantic.warning,
     }, -- warning messages
     WinSeparator = {
       -- bg = c.editor.background,

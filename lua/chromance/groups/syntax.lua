@@ -39,7 +39,7 @@ function M.setup(colors, options)
     Bold = { bold = true },
     -- Ignore = { }, -- (preferred) left blank, hidden  |hl-Ignore|
     Italic = { italic = options.italic_enabled },
-    Error = { fg = colors.inputValidation.errorForeground }, -- (preferred) any erroneous construct
+    Error = { fg = colors.semantic.error }, -- (preferred) any erroneous construct
     Todo = {
       bg = colors.editor.background,
       fg = colors.red,

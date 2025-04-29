@@ -4,9 +4,9 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    SignAdd = { fg = colors.semantic.addedBackground },
-    SignChange = { fg = colors.semantic.warning },
-    SignDelete = { fg = colors.semantic.error },
+    SignAdd = { fg = colors.edition.added },
+    SignChange = { fg = colors.edition.changed },
+    SignDelete = { fg = colors.edition.deleted },
     GitSignsAdd = { link = "SignAdd" },
     GitSignsChange = { link = "SignChange" },
     GitSignsDelete = { link = "SignDelete" },

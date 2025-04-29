@@ -39,24 +39,26 @@ function M.colors(options)
     border = base_colors.white,
   }
 
+  local semantic_blend_factor = 0.1
   colors.semantic = {
+    success_background = hp.blend(base_colors.green, semantic_blend_factor, colors.editor.background),
     success = base_colors.green,
+    warning_background = hp.blend(base_colors.orange, semantic_blend_factor, colors.editor.background),
     warning = base_colors.orange,
+    error_background = hp.blend(base_colors.red, semantic_blend_factor, colors.editor.background),
     error = base_colors.red,
+    info_background = hp.blend(base_colors.blue, semantic_blend_factor, colors.editor.background),
     info = base_colors.blue,
     ignored = base_colors.grey,
   }
 
-  -- allowed icon colors
-  colors.icons_colors = {
-    base_colors.grey,
-    base_colors.white,
-    base_colors.orange,
-    base_colors.yellow,
-    base_colors.green,
-    base_colors.blue,
-    base_colors.purple,
-    base_colors.red,
+  colors.edition = {
+    added = base_colors.green,
+    changed = base_colors.yellow,
+    deleted = base_colors.red,
+    ignored = base_colors.grey,
+    staged = base_colors.red,
+    conflict = base_colors.orange,
   }
 
   -- common color groups
@@ -94,6 +96,7 @@ function M.colors(options)
     indent6 = hp.blend(base_colors.purple, indent_lines_blend_factor, base_colors.editor.backrgound),
   }
 
+  -- terminal colors
   colors.terminal = {
     background = base_colors.dark,
     foreground = base_colors.white,
@@ -113,41 +116,19 @@ function M.colors(options)
     dimmed5 = base_colors.grey,
   }
 
+  -- allowed icon colors
+  colors.icons_colors = {
+    base_colors.grey,
+    base_colors.white,
+    base_colors.orange,
+    base_colors.yellow,
+    base_colors.green,
+    base_colors.blue,
+    base_colors.purple,
+    base_colors.red,
+  }
+
   -- TODO clear cs groups
-
-  colors.gitDecoration = {
-    addedResourceForeground = base_colors.green,          -- "#a9dc76",
-    conflictingResourceForeground = base_colors.orange,   -- "#fc9867",
-    deletedResourceForeground = base_colors.red,          -- "#ff6188",
-    ignoredResourceForeground = base_colors.grey,         -- "#5b595c",
-    modifiedResourceForeground = base_colors.yellow,      -- "#ffd866",
-    stageDeletedResourceForeground = base_colors.red,     -- "#ff6188",
-    stageModifiedResourceForeground = base_colors.yellow, -- "#ffd866",
-    untrackedResourceForeground = base_colors.grey,       -- "#c1c0c0",
-  }
-
-  colors.inputValidation = {
-    errorBackground = base_colors.dark,     -- "#403e41",
-    errorBorder = base_colors.red,          -- "#ff6188",
-    errorForeground = base_colors.red,      --"#ff6188",
-    infoBackground = base_colors.dark,      -- "#403e41",
-    infoBorder = base_colors.blue,          --"#78dce8",
-    infoForeground = base_colors.blue,      --"#78dce8",
-    warningBackground = base_colors.dark,   --"#403e41",
-    warningBorder = base_colors.orange,     --"#fc9867",
-    warningForeground = base_colors.orange, --"#fc9867",
-  }
-
-  colors.errorLens = {
-    errorBackground = hp.blend(base_colors.red, 0.1, base_colors.dark),
-    errorForeground = base_colors.red,
-    warningBackground = hp.blend(base_colors.orange, 0.1, base_colors.dark),
-    warningForeground = base_colors.orange,
-    infoBackground = hp.blend(base_colors.blue, 0.1, base_colors.dark),
-    infoForeground = base_colors.blue,
-    hintBackground = hp.blend(base_colors.blue, 0.1, base_colors.dark),
-    hintForeground = base_colors.blue,
-  }
 
   colors.editorGroupHeader = {
     tabsBackground = base_colors.black, -- "#221f22",
@@ -182,21 +163,6 @@ function M.colors(options)
     insertedForeground = hp.blend(base_colors.green, 0.65, colors.diffEditor.insertedLineBackground),  -- #a9dc76a5
     removedForeground = hp.blend(base_colors.red, 0.65, colors.diffEditor.removedLineBackground),      -- #ff6188a5
     modifiedForeground = hp.blend(base_colors.orange, 0.65, colors.diffEditor.modifiedLineBackground), -- #fc9867a5
-  }
-
-  colors.notifications = {
-    background = base_colors.dark,
-    border = base_colors.dark,
-    foreground = base_colors.white,
-  }
-  colors.notificationsErrorIcon = {
-    foreground = base_colors.red,
-  }
-  colors.notificationsInfoIcon = {
-    foreground = base_colors.blue,
-  }
-  colors.notificationsWarningIcon = {
-    foreground = base_colors.orange,
   }
 
   return colors

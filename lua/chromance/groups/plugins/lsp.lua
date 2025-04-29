@@ -5,48 +5,48 @@ local M = {}
 function M.get(colors, options)
   return {
     -- Neovim 0.6+
-    DiagnosticError = { fg = colors.inputValidation.errorForeground },
-    DiagnosticWarn = { fg = colors.inputValidation.warningForeground },
-    DiagnosticInfo = { fg = colors.inputValidation.infoForeground },
-    DiagnosticHint = { fg = colors.inputValidation.infoForeground },
-    DiagnosticSignError = { fg = colors.inputValidation.errorForeground },
-    DiagnosticSignWarn = { fg = colors.inputValidation.warningForeground },
-    DiagnosticSignInfo = { fg = colors.inputValidation.infoForeground },
-    DiagnosticSignHint = { fg = colors.inputValidation.infoForeground },
+    DiagnosticError = { fg = colors.semantic.errorForeground },
+    DiagnosticWarn = { fg = colors.semantic.warning },
+    DiagnosticInfo = { fg = colors.semantic.info },
+    DiagnosticHint = { fg = colors.semantic.info },
+    DiagnosticSignError = { fg = colors.semantic.errorForeground },
+    DiagnosticSignWarn = { fg = colors.semantic.warning },
+    DiagnosticSignInfo = { fg = colors.semantic.info },
+    DiagnosticSignHint = { fg = colors.semantic.info },
     DiagnosticVirtualTextError = {
-      bg = colors.errorLens.errorBackground,
-      fg = colors.errorLens.errorForeground,
+      bg = colors.semantic.error_background,
+      fg = colors.semantic.error,
     },
     DiagnosticVirtualTextWarn = {
-      bg = colors.errorLens.warningBackground,
-      fg = colors.errorLens.warningForeground,
+      bg = colors.semantic.warning_background,
+      fg = colors.semantic.warningForeground,
     },
     DiagnosticVirtualTextInfo = {
-      bg = colors.errorLens.infoBackground,
-      fg = colors.errorLens.infoForeground,
+      bg = colors.semantic.info_background,
+      fg = colors.semantic.info,
     },
     DiagnosticVirtualTextHint = {
-      bg = colors.errorLens.hintBackground,
-      fg = colors.errorLens.hintForeground,
+      bg = colors.semantic.info_background,
+      fg = colors.semantic.info,
     },
     DiagnosticUnderlineError = {
-      sp = colors.inputValidation.errorBorder,
+      sp = colors.semantic.error,
       undercurl = true,
     },
     DiagnosticUnderlineWarn = {
-      sp = colors.inputValidation.warningBorder,
+      sp = colors.semantic.warning,
       undercurl = true,
     },
     DiagnosticUnderlineInfo = {
-      sp = colors.inputValidation.infoBorder,
+      sp = colors.semantic.info,
       undercurl = true,
     },
     DiagnosticUnderlineHint = {
-      sp = colors.inputValidation.infoBorder,
+      sp = colors.semantic.info,
       undercurl = true,
     },
     DiagnosticUnnecessary = {
-      sp = colors.inputValidation.infoBorder,
+      sp = colors.semantic.info,
       undercurl = true,
     },
     LspInlayHint = {
