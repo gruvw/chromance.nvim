@@ -188,7 +188,7 @@ function M.get(colors, options)
 
     -- Spelling
     SpellBad = {
-      -- fg = colors.semantic.info,
+      fg = colors.semantic.info,
       sp = colors.semantic.info,
       undercurl = true,
     },
