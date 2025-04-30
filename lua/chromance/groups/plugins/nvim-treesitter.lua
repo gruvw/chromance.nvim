@@ -3,11 +3,10 @@ local M = {}
 --- @param colors Colors
 --- @param options Options
 function M.get(colors, options)
-  -- stylua: ignore
   local spec = {
     -- Annotations & Attributes
     ["@annotation"]                        = { fg = colors.blue, italic = options.italic_enabled, },
-    ["@attribute"]                         = { fg = colors.green }, -- `@` in decorator. E.g. `@checked`
+    ["@attribute"]                         = { fg = colors.green },
 
     -- Booleans & Constants
     ["@boolean"]                           = { fg = colors.purple },
@@ -189,6 +188,7 @@ function M.get(colors, options)
     ["@punctuation.special.yaml"]          = { fg = colors.white },
     ["@string.yaml"]                       = { fg = colors.yellow },
   }
+
   for i = 1, 9 do
     spec["@markup.heading." .. i .. ".markdown"] = { fg = colors.yellow, bold = true, }
     spec["@markup.heading." .. i .. ".marker.markdown"] = { fg = colors.grey }
