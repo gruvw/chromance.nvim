@@ -14,10 +14,10 @@ function M.get(colors, options)
       bold = true,
     },
     LazyNormal = colors.groups.normal,
-    LazyProgressDone = { bg = colors.editor.background, fg = colors.tab.activeBorder },
+    LazyProgressDone = { bg = colors.editor.background, fg = colors.semantic.active },
     LazyProgressTodo = {
       bg = colors.editor.background,
-      fg = colors.tab.unfocusedActiveBorder,
+      fg = colors.editor.text_dark,
     },
     LazyProp = {
       bg = colors.editor.background,

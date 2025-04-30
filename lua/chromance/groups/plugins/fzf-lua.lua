@@ -5,7 +5,7 @@ local M = {}
 function M.get(colors, options)
   return {
     FzfLuaNormal = colors.groups.normal,
-    FzfLuaBorder = { bg = colors.editor.background, fg = colors.tab.unfocusedActiveBorder },
+    FzfLuaBorder = colors.groups.border,
     FzfLuaTitle = { bg = colors.yellow, fg = colors.black, bold = true },
     FzfLuaBackdrop = { bg = colors.dark },
     FzfLuaPreviewNormal = colors.groups.normal,

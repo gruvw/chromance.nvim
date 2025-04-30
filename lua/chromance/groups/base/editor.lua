@@ -29,8 +29,8 @@ function M.get(colors, options)
     }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     -- CursorLineNrNC = { bg = C.bg, fg = C.lightGray }, -- CursorLineNr for inactive windows
     Directory = {
-      bg = colors.editorGroupHeader.tabsBackground,
-      fg = colors.statusBar.foreground,
+      bg = colors.editor.background_dark,
+      fg = colors.editor.text_dark,
     }, -- directory names (and other special names in listings)
     CursorLineFold = {
       bg = colors.editor.background,
@@ -131,17 +131,17 @@ function M.get(colors, options)
     -- SpellRare    = {}, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
     IncSearch = colors.groups.match_primary, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     StatusLine = {
-      bg = colors.statusBar.background,
-      fg = colors.statusBar.activeForeground,
+      bg = colors.editor.background_dark,
+      fg = colors.editor.text,
       reverse = false,
     }, -- status line of current window
     StatusLineNC = {
-      bg = colors.statusBar.background,
-      fg = colors.statusBar.foreground,
+      bg = colors.editor.background_dark,
+      fg = colors.editor.text_dark,
     }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
-    StatusLineSeparator = { fg = colors.statusBar.background },
-    StatusLineTerm = { fg = colors.statusBar.background },
-    StatusLineTermNC = { fg = colors.statusBar.background },
+    StatusLineSeparator = { fg = colors.editor.text_dark },
+    StatusLineTerm = { fg = colors.editor.text_dark },
+    StatusLineTermNC = { fg = colors.editor.text_dark },
     Tabline = { link = "BufferLineBackground" }, -- tab pages line, not active tab page label
     TablineFill = { link = "BufferLineFill" }, -- tab pages line, where there are no labels
     TablineSel = { link = "BufferLineBufferSelected" }, -- tab pages line, active tab page label

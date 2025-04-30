@@ -36,6 +36,7 @@ function M.colors(options)
     background_light = base_colors.slate,
     text_dark = base_colors.grey,
     text = base_colors.white,
+    title_text = base_colors.yellow,
     border = base_colors.white,
   }
 
@@ -49,6 +50,7 @@ function M.colors(options)
     error = base_colors.red,
     info_background = ch.blend(base_colors.blue, semantic_blend_factor, colors.editor.background),
     info = base_colors.blue,
+    active = base_colors.yellow,
     ignored = base_colors.grey,
   }
 
@@ -131,29 +133,6 @@ function M.colors(options)
     base_colors.blue,
     base_colors.purple,
     base_colors.red,
-  }
-
-  -- TODO clear cs groups
-
-  colors.editorGroupHeader = {
-    tabsBackground = base_colors.black,
-  }
-
-  colors.statusBar = {
-    background = base_colors.black,
-    foreground = base_colors.grey,
-    activeForeground = base_colors.white,
-  }
-
-  colors.tab = {
-    activeBackground = base_colors.dark,
-    activeBorder = base_colors.yellow,
-    activeForeground = base_colors.yellow,
-    inactiveBackground = ch.blend(base_colors.dark, 0.15, base_colors.white),
-    inactiveForeground = base_colors.grey,
-    unfocusedActiveBackground = base_colors.dark,
-    unfocusedActiveBorder = base_colors.grey,
-    unfocusedActiveForeground = base_colors.white,
   }
 
   return colors
