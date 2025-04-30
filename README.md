@@ -31,6 +31,7 @@ Install using [folke/lazy.nvim](https://github.com/folke/lazy.nvim):
 
 - Default **options** (plugin config): [config.lua](./lua/chromance/config.lua) (see `default_options`)
 - List of **supported plugins**: [groups/plugins/](./lua/chromance/groups/plugins)
+- **Colors** used: [theme.lua](./lua/chromance/theme.lua) (see `base_colors`)
 
 ## Contributing
 
