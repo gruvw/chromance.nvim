@@ -4,14 +4,32 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    packerString = { fg = colors.blue },
-    packerHash = { fg = colors.blue },
-    packerOutput = { fg = colors.yellow },
-    packerRelDate = { fg = colors.red },
-    packerSuccess = { fg = colors.green },
-    packerStatusSuccess = { fg = colors.green },
-    packerStatusFail = { fg = colors.red, bg = colors.editor.background },
-    packerFail = { fg = colors.red, bg = colors.editor.background },
+    packerString = {
+      fg = colors.blue,
+    },
+    packerHash = {
+      fg = colors.blue,
+    },
+    packerOutput = {
+      fg = colors.yellow,
+    },
+    packerRelDate = {
+      fg = colors.red,
+    },
+    packerSuccess = {
+      fg = colors.green,
+    },
+    packerStatusSuccess = {
+      fg = colors.green,
+    },
+    packerStatusFail = {
+      fg = colors.red,
+      bg = colors.editor.background,
+    },
+    packerFail = {
+      fg = colors.red,
+      bg = colors.editor.background,
+    },
   }
 end
 

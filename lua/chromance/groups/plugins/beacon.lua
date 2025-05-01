@@ -4,7 +4,9 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    Beacon = { bg = colors.blue },
+    Beacon = {
+      bg = colors.blue,
+    },
   }
 end
 

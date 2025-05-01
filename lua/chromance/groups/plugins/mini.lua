@@ -4,15 +4,35 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    MiniIndentscopeSymbol = { fg = colors.blue },
+    MiniIndentscopeSymbol = {
+      fg = colors.blue,
+    },
 
     -- mini.status
-    MiniStatuslineModeNormal = { fg = colors.black, bg = colors.green },
-    MiniStatuslineModeInsert = { fg = colors.black, bg = colors.yellow },
-    MiniStatuslineModeCommand = { fg = colors.black, bg = colors.red },
-    MiniStatuslineModeVisual = { fg = colors.black, bg = colors.blue },
-    MiniStatuslineModeReplace = { fg = colors.black, bg = colors.blue },
-    MiniStatuslineModeOther = { fg = colors.black, bg = colors.white },
+    MiniStatuslineModeNormal = {
+      bg = colors.green,
+      fg = colors.black,
+    },
+    MiniStatuslineModeInsert = {
+      bg = colors.yellow,
+      fg = colors.black,
+    },
+    MiniStatuslineModeCommand = {
+      bg = colors.red,
+      fg = colors.black,
+    },
+    MiniStatuslineModeVisual = {
+      bg = colors.blue,
+      fg = colors.black,
+    },
+    MiniStatuslineModeReplace = {
+      bg = colors.blue,
+      fg = colors.black,
+    },
+    MiniStatuslineModeOther = {
+      bg = colors.white,
+      fg = colors.black,
+    },
   }
 end
 

@@ -4,17 +4,27 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    MasonNormal = { link = "LazyNormal" },
-    MasonHeader = { link = "LazyH1" },
+    MasonNormal = colors.groups.normal,
+    MasonHeader = {
+      link = "LazyH1",
+    },
     MasonHeaderSecondary = {
       bg = colors.yellow,
       fg = colors.black,
       bold = true,
     },
-    MasonHighlight = { fg = colors.blue },
-    MasonHighlightBlock = { bg = colors.yellow, fg = "#222222" },
-    MasonHighlightBlockBold = { link = "LazyH1" },
-    MasonHighlightSecondary = { fg = colors.blue },
+    MasonHighlight = {
+      fg = colors.blue,
+    },
+    MasonHighlightBlock = {
+      bg = colors.yellow, fg = "#222222",
+    },
+    MasonHighlightBlockBold = {
+      link = "LazyH1",
+    },
+    MasonHighlightSecondary = {
+      fg = colors.blue,
+    },
     MasonHighlightBlockSecondary = {
       bg = colors.blue,
       fg = colors.black,
@@ -24,16 +34,26 @@ function M.get(colors, options)
       fg = colors.black,
       bold = true,
     },
-    MasonLink = { link = "LazyUrl" },
-    MasonMuted = { fg = colors.grey },
-    MasonMutedBlock = { link = "LazyButton" },
+    MasonLink = {
+      link = "LazyUrl",
+    },
+    MasonMuted = {
+      fg = colors.grey,
+    },
+    MasonMutedBlock = {
+      link = "LazyButton",
+    },
     MasonMutedBlockBold = {
       bg = colors.grey,
       fg = colors.black,
       bold = true,
     },
-    MasonError = { fg = colors.red },
-    MasonHeading = { link = "LazyH2" },
+    MasonError = {
+      fg = colors.semantic.error,
+    },
+    MasonHeading = {
+      link = "LazyH2",
+    },
   }
 end
 

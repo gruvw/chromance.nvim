@@ -4,7 +4,9 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    TermCursor = { link = "Cursor", },
+    TermCursor = {
+      link = "Cursor",
+    },
     ToggleTerm = {
       bg = colors.editor.background,
       fg = colors.terminal.foreground,

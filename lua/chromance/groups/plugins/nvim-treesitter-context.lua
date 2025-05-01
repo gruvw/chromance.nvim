@@ -4,7 +4,9 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    TreesitterContext = { bg = colors.editor.background_light, },
+    TreesitterContext = {
+      bg = colors.editor.background_light,
+    },
   }
 end
 

@@ -8,7 +8,10 @@ function M.get(colors, options)
       bg = colors.editor.background,
       fg = colors.white,
     },
-    FidgetTitle = { bg = colors.editor.background, fg = colors.yellow },
+    FidgetTitle = {
+      bg = colors.editor.background,
+      fg = colors.yellow,
+    },
   }
 end
 

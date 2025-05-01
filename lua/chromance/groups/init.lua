@@ -30,7 +30,6 @@ local PLUGINS = {
   "nvim-navic",
   "nvim-tree",
   "nvim-treesitter",
-  "nvim-ts-rainbow2",
   "packer",
   "rainbow-delimiters",
   "renamer",

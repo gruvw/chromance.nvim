@@ -92,15 +92,21 @@ function M.colors(options)
     },
   }
 
-  -- indent lines colors
-  local indent_lines_blend_factor = 0.4
-  colors.indent_lines = {
-    indent1 = ch.blend(base_colors.red, indent_lines_blend_factor, base_colors.editor.background),
-    indent2 = ch.blend(base_colors.green, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent3 = ch.blend(base_colors.yellow, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent4 = ch.blend(base_colors.blue, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent5 = ch.blend(base_colors.orange, indent_lines_blend_factor, base_colors.editor.backrgound),
-    indent6 = ch.blend(base_colors.purple, indent_lines_blend_factor, base_colors.editor.backrgound),
+  -- rainbow colors
+  local rainbow_blend_factor = 0.4
+  colors.rainbow = {
+    rainbow1_dark = ch.blend(base_colors.red, rainbow_blend_factor, base_colors.editor.background),
+    rainbow1 = base_colors.red,
+    rainbow2_dark = ch.blend(base_colors.green, rainbow_blend_factor, base_colors.editor.backrgound),
+    rainbow2 = base_colors.green,
+    rainbow3_dark = ch.blend(base_colors.yellow, rainbow_blend_factor, base_colors.editor.backrgound),
+    rainbow3 = base_colors.yellow,
+    rainbow4_dark = ch.blend(base_colors.blue, rainbow_blend_factor, base_colors.editor.backrgound),
+    rainbow4 = base_colors.blue,
+    rainbow5_dark = ch.blend(base_colors.orange, rainbow_blend_factor, base_colors.editor.backrgound),
+    rainbow5 = base_colors.orange,
+    rainbow6_dark = ch.blend(base_colors.purple, rainbow_blend_factor, base_colors.editor.backrgound),
+    rainbow6 = base_colors.purple,
   }
 
   -- terminal colors

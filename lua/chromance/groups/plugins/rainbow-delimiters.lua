@@ -4,13 +4,27 @@ local M = {}
 --- @param options Options
 function M.get(colors, options)
   return {
-    RainbowDelimiterRed = { fg = colors.red },
-    RainbowDelimiterYellow = { fg = colors.yellow },
-    RainbowDelimiterBlue = { fg = colors.blue },
-    RainbowDelimiterOrange = { fg = colors.blue },
-    RainbowDelimiterGreen = { fg = colors.green },
-    RainbowDelimiterViolet = { fg = colors.red },
-    RainbowDelimiterCyan = { fg = colors.blue },
+    RainbowDelimiterRed = {
+      fg = colors.rainbow.rainbow1,
+    },
+    RainbowDelimiterYellow = {
+      fg = colors.rainbow.rainbow2,
+    },
+    RainbowDelimiterBlue = {
+      fg = colors.rainbow.rainbow3,
+    },
+    RainbowDelimiterOrange = {
+      fg = colors.rainbow.rainbow4,
+    },
+    RainbowDelimiterGreen = {
+      fg = colors.rainbow.rainbow5,
+    },
+    RainbowDelimiterViolet = {
+      fg = colors.rainbow.rainbow6,
+    },
+    RainbowDelimiterCyan = {
+      fg = colors.rainbow.rainbow3,
+    },
   }
 end
 

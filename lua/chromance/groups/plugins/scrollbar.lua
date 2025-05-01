@@ -8,11 +8,20 @@ function M.get(colors, options)
       bg = colors.editor.background_light,
       fg = colors.white,
     },
-    ScrollbarCursorHandle = { bg = colors.editor.background_light },
-    ScrollbarCursor = { link = "Cursor"},
+    ScrollbarCursorHandle = {
+      bg = colors.editor.background_light,
+    },
+    ScrollbarCursor = {
+      link = "Cursor",
+    },
 
-    ScrollbarSearchHandle = { bg = colors.editor.background_light },
-    ScrollbarSearch = { bg = colors.editor.background, fg = colors.white },
+    ScrollbarSearchHandle = {
+      bg = colors.editor.background_light,
+    },
+    ScrollbarSearch = {
+      bg = colors.editor.background,
+      fg = colors.white,
+    },
 
     ScrollbarErrorHandle = {
       bg = colors.editor.background_light,

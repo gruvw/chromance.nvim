@@ -34,6 +34,7 @@ function M.get(colors, options)
     ["@lsp.type.annotation"]                   = { fg = colors.blue, italic = options.italic_enabled, },
 
     ["@lsp.type.class.dart"]                   = { fg = colors.blue, italic = false, },
+    ["@lsp.type.class.markdown"]               = { fg = colors.red, italic = false, },
     ["@lsp.type.pol.typst"]                    = { link = "@parameter" },
     ["@lsp.type.string.typst"]                 = { link = "String" },
     ["@lsp.type.operator.typst"]               = { link = "Operator" },

@@ -6,21 +6,50 @@ function M.get(colors, options)
   return {
     FzfLuaNormal = colors.groups.normal,
     FzfLuaBorder = colors.groups.border,
-    FzfLuaTitle = { bg = colors.yellow, fg = colors.black, bold = true },
-    FzfLuaBackdrop = { bg = colors.dark },
+    FzfLuaTitle = {
+      bg = colors.yellow,
+      fg = colors.black,
+      bold = true,
+    },
+    FzfLuaBackdrop = {
+      bg = colors.dark,
+    },
     FzfLuaPreviewNormal = colors.groups.normal,
-    FzfLuaPreviewBorder = { link = "FzfLuaBorder" },
-    FzfLuaPreviewTitle = { bg = colors.editor.background, fg = colors.blue, bold = true },
-    FzfLuaCursorLine = { bg = colors.editor.background_light, bold = true },
-    FzfLuaScrollBorderEmpty = { link = "FzfLuaBorder" },
-    FzfLuaScrollBorderFull = { link = "FzfLuaBorder" },
+    FzfLuaPreviewBorder = {
+      link = "FzfLuaBorder",
+    },
+    FzfLuaPreviewTitle = {
+      bg = colors.editor.background,
+      fg = colors.blue,
+      bold = true,
+    },
+    FzfLuaCursorLine = {
+      bg = colors.editor.background_light,
+      bold = true,
+    },
+    FzfLuaScrollBorderEmpty = {
+      link = "FzfLuaBorder",
+    },
+    FzfLuaScrollBorderFull = {
+      link = "FzfLuaBorder",
+    },
     FzfLuaHelpNormal = colors.groups.normal,
     FzfLuaHelpBorder = colors.groups.border,
-    FzfLuaHeaderBind = { fg = colors.blue },
-    FzfLuaHeaderText = { fg = colors.green },
-    FzfLuaFzfHeader = { fg = colors.editor.text },
-    FzfLuaFzfInfo = { fg = colors.grey },
-    FzfLuaFzfPointer = { fg = colors.blue },
+    FzfLuaHeaderBind = {
+      fg = colors.blue,
+    },
+    FzfLuaHeaderText = {
+      fg = colors.green,
+    },
+    FzfLuaFzfHeader = {
+      fg = colors.editor.text,
+    },
+    FzfLuaFzfInfo = {
+      fg = colors.grey,
+    },
+    FzfLuaFzfPointer = {
+      fg = colors.blue,
+    },
   }
 end
 
