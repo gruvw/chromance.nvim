@@ -114,10 +114,7 @@ function M.get(colors, options)
     PmenuThumb = {
       bg = colors.editor.background_light,
     },
-    Search = {
-      bg = colors.editor.background_light,
-      fg = nil,
-    },
+    Search = colors.groups.match_secondary,
     IncSearch = colors.groups.match_primary,
     StatusLine = {
       bg = colors.editor.background_dark,
