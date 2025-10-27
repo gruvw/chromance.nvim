@@ -39,7 +39,7 @@ function M.get(colors, options)
     ["@keyword.directive"]                 = { fg = colors.red },
     ["@keyword.directive.define"]          = { fg = colors.red },
     ["@keyword.exception"]                 = { fg = colors.red },
-    ["@keyword.function"]                  = { fg = colors.blue, italic = options.italic_enabled },
+    ["@keyword.function"]                  = { fg = colors.red, italic = options.italic_enabled },
     ["@keyword.import"]                    = { fg = colors.red },
     ["@keyword.operator"]                  = { fg = colors.red },
     ["@keyword.repeat"]                    = { fg = colors.red },
@@ -106,7 +106,7 @@ function M.get(colors, options)
     -- Types
     ["@type"]                              = { fg = colors.blue },
     ["@type.builtin"]                      = { fg = colors.blue, italic = options.italic_enabled },
-    ["@type.definition"]                   = { fg = colors.green },
+    ["@type.definition"]                   = { fg = colors.blue },
     ["@type.qualifier"]                    = { fg = colors.blue },
     ["@module"]                            = { fg = colors.blue },
     ["@module.builtin"]                    = { fg = colors.blue },
@@ -163,11 +163,12 @@ function M.get(colors, options)
     ["@text.uri.markdown_inline"]          = { fg = colors.green, sp = colors.green, underline = true },
 
     -- SCSS
-    ["@function.scss"]                     = { fg = colors.blue },
+    ["@function.scss"]                     = { fg = colors.green },
     ["@keyword.scss"]                      = { fg = colors.red },
     ["@number.scss"]                       = { link = "Number" },
-    ["@property.scss"]                     = { link = "@property" },
-    ["@string.scss"]                       = { fg = colors.blue, italic = options.italic_enabled },
+    ["@property.css"]                     = { fg = colors.purple, },
+    ["@property.scss"]                     = { link = "@property.css" },
+    ["@string.scss"]                       = { fg = colors.yellow, },
     ["@type.scss"]                         = { fg = colors.blue },
 
     -- Lua

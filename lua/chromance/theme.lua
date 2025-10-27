@@ -18,7 +18,7 @@ local base_colors = {
   yellow = "#FCE369",
   green = "#69FC9A",
   blue = "#69CBFC",
-  purple = "#A77DFC",
+  purple = "#AE88FC",
   red = "#FC6982",
 }
 
