@@ -20,18 +20,14 @@ function M.get(colors, options)
       bold = true,
     },
     TelescopeBorder = colors.groups.border,
-    TelescopeMatching = colors.groups.match_primary,
+    TelescopeMatching = colors.groups.match_secondary,
 
     TelescopePreviewLine = {
       link = "TelescopeSelection",
     },
 
     -- prompt
-    TelescopePromptTitle = {
-      bg = colors.yellow,
-      fg = colors.black,
-      bold = true,
-    },
+    TelescopePromptTitle = colors.groups.match_primary,
     TelescopePromptNormal = colors.groups.normal,
     TelescopePromptBorder = colors.groups.border,
     TelescopePromptPrefix = {
@@ -39,20 +35,12 @@ function M.get(colors, options)
     },
 
     -- preview
-    TelescopePreviewTitle = {
-      bg = colors.yellow,
-      fg = colors.black,
-      bold = true,
-    },
+    TelescopePreviewTitle = colors.groups.match_primary,
     TelescopePreviewNormal = colors.groups.normal,
     TelescopePreviewBorder = colors.groups.border,
 
     -- result
-    TelescopeResultsTitle = {
-      bg = colors.yellow,
-      fg = colors.black,
-      bold = true,
-    },
+    TelescopeResultsTitle = colors.groups.match_primary,
     TelescopeResultsNormal = colors.groups.normal,
     TelescopeResultsBorder = colors.groups.border,
   }
