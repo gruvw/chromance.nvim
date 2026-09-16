@@ -5,17 +5,15 @@ local M = {}
 function M.get(colors, options)
   return {
     BlinkCmpMenu = colors.groups.normal,
-    -- BlinkCmpMenuSelection = float_winBackgroundClear and {
-    --   bg = hp.blend(c.editorSuggestWidget.selectedBackground, 0.7),
-    --   bold = true,
-    -- } or {
-    --   fg = hp.lighten(c.yellow, -15),
-    --   bg = c.editorSuggestWidget.selectedBackground,
-    --   bold = true,
-    -- },
+    BlinkCmpLabel = {
+      fg = colors.editor.foreground,
+      bg = colors.editor.white,
+    },
     BlinkCmpLabelDescription = {
       fg = colors.white,
     },
+    BlinkCmpMenuSelection = { bg = colors.editor.background_light, bold = true },
+    BlinkCmpLabelMatch = colors.groups.match_secondary,
     BlinkCmpLabelDeprecated = {
       fg = nil,
       bg = nil,
@@ -24,10 +22,6 @@ function M.get(colors, options)
     BlinkCmpGhostText = {
       link = "Comment",
     },
-    BlinkCmpLabel = {
-      fg = colors.editor.foreground,
-    },
-    BlinkCmpLabelMatch = colors.groups.match_secondary,
     BlinkCmpSource = {
       fg = colors.editor.foreground,
     },
